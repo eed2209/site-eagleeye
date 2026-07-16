@@ -16,8 +16,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Build Astro
-        uses: withastro/action@v3
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Installation
+        run: npm ci
+      - name: Build + adaptation des chemins pour le sous-dossier Pages
+        run: npm run build && node scripts/fix-base.mjs
+        env:
+          BASE_PATH: /site-eagleeye
+      - name: Artefact Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
 
   deploy:
     needs: build
