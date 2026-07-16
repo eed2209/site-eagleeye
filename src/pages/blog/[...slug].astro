@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const dateFr = post.data.date.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toISOString(),
+  author: { "@type": "Organization", name: "Eagle Eye Digital", url: "https://eagleeye.digital" },
+  publisher: { "@type": "Organization", name: "Eagle Eye Digital" },
+};
+---
+<Base title={post.data.title} description={post.data.description}>
+  <Header />
+  <main class="page prose">
+    <span class="eyebrow">Blog</span>
+    <h1>{post.data.title}</h1>
+    <p class="post-meta">Publié le {dateFr} · Eagle Eye Digital</p>
+    <Content />
+    <section>
+      <h2>Passez à l'action</h2>
+      <p>Mesurez où vous en êtes en 2 minutes avec le diagnostic gratuit.</p>
+      <a class="btn" href="/#scanner">Faire mon diagnostic gratuit</a>
+    </section>
+  </main>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+</Base>

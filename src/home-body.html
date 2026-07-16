@@ -1,0 +1,332 @@
+<div class="hero">
+  <canvas id="net" aria-hidden="true"></canvas>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#" aria-label="Eagle Eye Digital — accueil">
+        <img class="logo-dark" src="/images/logo-blanc.webp" alt="Eagle Eye Digital">
+        <img class="logo-light" src="/images/logo-couleur.png" alt="Eagle Eye Digital">
+      </a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="/methode/">La méthode</a>
+        <a href="/offres/">Nos offres</a>
+        <a href="/temoignages/">Témoignages</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Changer de thème" title="Changer de thème">☀️</button>
+      <a class="btn" href="#scanner">Scanner mon profil</a>
+    </div>
+  </header>
+
+  <div class="trust" aria-label="Éléments de confiance">
+    <div class="wrap">
+      <span class="trust-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-2 7 5.5-3 5.5 3-2-7"/></svg>
+        <b>6 ans</b>&nbsp;d'expertise LinkedIn
+      </span>
+      <span class="trust-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" fill="currentColor" stroke="none"/></svg>
+        <b>4,9/5</b>&nbsp;· avis clients
+      </span>
+      <span class="trust-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.5l2.7 2.7L16.5 9"/></svg>
+        Diagnostic gratuit
+      </span>
+    </div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">Prospection LinkedIn · Toulouse</span>
+      <h1>Votre réseau dort.<br>On va le <span class="outline-word">réveiller</span>.</h1>
+      <p class="lede">Chaque point qui flotte derrière cette page est un contact potentiel. Notre métier : les connecter à vous.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="#scanner">Lancer mon diagnostic gratuit</a>
+        <a class="link" href="#methode">Voir la méthode ↓</a>
+      </div>
+      <p class="hero-note"><b>2 minutes</b>, zéro engagement. Le scanner analyse votre profil et vous dit où vous perdez des clients.</p>
+    </div>
+
+    <div class="scanner-col">
+      <div class="scanner" id="scanner">
+        <div class="scanner-in">
+          <div class="scan-title">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <h2>Scanner sur-mesure</h2>
+            <span class="scan-badge">Gratuit</span>
+          </div>
+          <p class="scan-sub">Diagnostic de votre profil et de votre potentiel de prospection.</p>
+
+          <div class="quiz-intro" id="quizIntro">
+            <div class="scan-tiles">
+              <div class="scan-tile"><b>10</b><span>questions</span></div>
+              <div class="scan-tile"><b>2 min</b><span>chrono</span></div>
+              <div class="scan-tile"><b>100 %</b><span>anonyme</span></div>
+            </div>
+            <div class="scan-preview">
+              <span class="ghost-ring" aria-hidden="true">?</span>
+              <span class="ghost-txt">Votre <b>score sur 100</b> vous attend,<br>avec vos <b>3 actions prioritaires</b>.</span>
+            </div>
+            <button class="btn" id="startQuiz" type="button">Commencer le diagnostic</button>
+            <p class="scan-foot">Sans connexion à votre compte LinkedIn</p>
+          </div>
+
+          <div class="quiz" id="quiz">
+            <div class="quiz-head">
+              <button class="quiz-back" id="quizBack" type="button">← Précédent</button>
+              <span class="quiz-progress" id="quizProgress">1/10</span>
+            </div>
+            <div class="quiz-bar"><i id="quizBarFill"></i></div>
+            <div class="quiz-step" id="quizStep">
+              <p class="quiz-q" id="quizQ"></p>
+              <div class="quiz-opts" id="quizOpts"></div>
+            </div>
+          </div>
+
+          <div class="scan-log" id="scanLog" role="status" aria-live="polite"></div>
+
+          <div class="scan-results" id="results">
+            <div class="score-top">
+              <div class="score-ring" id="scoreRing">
+                <span class="val" id="scoreVal">0</span>
+              </div>
+              <p class="score-verdict" id="verdict"></p>
+            </div>
+            <div class="bars" id="bars"></div>
+            <ol class="recos" id="recos"></ol>
+            <a class="stage-link" href="#offres">Voir l'offre recommandée pour mon score ↓</a>
+            <form class="report-form" id="reportForm">
+              <input type="email" placeholder="votre@email.pro" required aria-label="Votre email professionnel">
+              <button class="btn" type="submit">Recevoir mon rapport complet</button>
+            </form>
+            <p class="report-ok" id="reportOk">✔ Rapport en route ! Vérifiez votre boîte mail. <span style="opacity:.6">(simulation pour la maquette)</span></p>
+            <button class="rescan" id="rescan" type="button">Refaire le diagnostic</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack">
+      <span>Diagnostic gratuit <i>◆</i> +1 200 profils analysés <i>◆</i> +300 indépendants accompagnés <i>◆</i> Fondateurs de l'Indépendance Day <i>◆</i> 15 % de taux de réponse moyen <i>◆</i> Toulouse &amp; partout en France <i>◆</i></span>
+    </div>
+  </div>
+</div>
+
+<section class="methode" id="methode">
+  <div class="wrap">
+    <div class="methode-head">
+      <div>
+        <span class="eyebrow">La méthode</span>
+        <h2>Une machine à rendez-vous, quatre étages.</h2>
+      </div>
+      <p>Chaque étage se mesure, chaque chiffre se pilote. Le scanner l'a fait sur votre profil. Nous le faisons ensuite sur toute votre prospection.</p>
+    </div>
+
+    <div class="factory">
+      <div class="machines">
+        <div class="machine">
+          <span class="pipe" aria-hidden="true"></span>
+          <span class="m-glow" aria-hidden="true"></span>
+          <span class="hopper" aria-hidden="true"></span>
+          <span class="drop" aria-hidden="true"></span>
+          <div class="m-panel">
+            <span class="m-num">1</span>
+            <span class="m-tag">Profil</span>
+            <span class="m-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+          </div>
+          <div class="m-body">
+            <span class="m-fan" aria-hidden="true"><i></i></span>
+            <span class="bolt tl"></span><span class="bolt tr"></span><span class="bolt bl"></span><span class="bolt br"></span>
+            <h3>Un profil qui inspire confiance</h3>
+            <p>Titre, résumé, preuves sociales : votre profil devient une page de vente silencieuse, pas un CV.</p>
+          </div>
+          <div class="m-plaque">Indicateur : <b>vues de profil</b></div>
+          <div class="m-feet" aria-hidden="true"><i></i><i></i></div>
+        </div>
+        <div class="machine">
+          <span class="pipe" aria-hidden="true"></span>
+          <span class="m-glow" aria-hidden="true"></span>
+          <div class="m-panel">
+            <span class="m-num">2</span>
+            <span class="m-tag">Prospection</span>
+            <span class="m-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+          </div>
+          <div class="m-body">
+            <span class="m-fan" aria-hidden="true"><i></i></span>
+            <span class="bolt tl"></span><span class="bolt tr"></span><span class="bolt bl"></span><span class="bolt br"></span>
+            <h3>Des contacts qualifiés, chaque jour</h3>
+            <p>Ajouts ciblés et messages personnalisés. Une conversation qui démarre, jamais un pitch subi.</p>
+          </div>
+          <div class="m-plaque">Indicateur : <b>taux de réponse</b></div>
+          <div class="m-feet" aria-hidden="true"><i></i><i></i></div>
+        </div>
+        <div class="machine">
+          <span class="pipe" aria-hidden="true"></span>
+          <span class="m-glow" aria-hidden="true"></span>
+          <div class="m-panel">
+            <span class="m-num">3</span>
+            <span class="m-tag">Webinaire</span>
+            <span class="m-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+          </div>
+          <div class="m-body">
+            <span class="m-fan" aria-hidden="true"><i></i></span>
+            <span class="bolt tl"></span><span class="bolt tr"></span><span class="bolt bl"></span><span class="bolt br"></span>
+            <h3>Votre expertise en démonstration</h3>
+            <p>Un webinaire régulier qui transforme vos contacts en prospects convaincus.</p>
+          </div>
+          <div class="m-plaque">Indicateur : <b>taux de présence</b></div>
+          <div class="m-feet" aria-hidden="true"><i></i><i></i></div>
+        </div>
+        <div class="machine">
+          <span class="pipe" aria-hidden="true"></span>
+          <span class="m-glow" aria-hidden="true"></span>
+          <span class="chute" aria-hidden="true"></span>
+          <div class="m-panel">
+            <span class="m-num">4</span>
+            <span class="m-tag">Rendez-vous</span>
+            <span class="m-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+          </div>
+          <div class="m-body">
+            <span class="m-fan" aria-hidden="true"><i></i></span>
+            <span class="bolt tl"></span><span class="bolt tr"></span><span class="bolt bl"></span><span class="bolt br"></span>
+            <h3>Un agenda qui se remplit</h3>
+            <p>Qualification et prise de rendez-vous directement dans votre agenda. Vous n'avez plus qu'à vendre.</p>
+          </div>
+          <div class="m-plaque">Indicateur : <b>RDV / mois</b></div>
+          <div class="m-feet" aria-hidden="true"><i></i><i></i></div>
+        </div>
+      </div>
+      <div class="belt" aria-hidden="true">
+        <span class="lead"></span><span class="lead"></span><span class="lead"></span>
+      </div>
+      <div class="belt-labels">
+        <span>→ Entrée : <b>vos contacts LinkedIn</b></span>
+        <span>Sortie : <b>des rendez-vous qualifiés</b> →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offres" id="offres">
+  <div class="wrap">
+    <div class="offres-head">
+      <span class="eyebrow">Nos offres</span>
+      <h2>Chaque score a son plan de vol.</h2>
+      <p>Le diagnostic vous situe,<br>et vous décollez avec l'offre adaptée à votre étape.<br>Pas de sur-vente, pas de programme inutile. On monte ensemble.</p>
+    </div>
+    <div class="flight">
+      <div class="stage">
+        <span class="reco-badge">Votre étape</span>
+        <span class="stage-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2.8c2.8 2.3 3.8 6 2.3 9.7L12 15.3l-2.3-2.8C8.2 8.8 9.2 5.1 12 2.8z"/><circle cx="12" cy="8.3" r="1.3"/><path d="M9.6 12.4L7.2 14.8l2 .6M14.4 12.4l2.4 2.4-2 .6M12 16.5v3.7"/></svg>
+        </span>
+        <span class="stage-level">Étape 1 · Décollage</span>
+        <h3>Formation LinkedIn</h3>
+        <p>Le meilleur endroit pour commencer : chaque action produit des résultats visibles tout de suite. Profil optimisé, ligne éditoriale, premiers messages. Des fondations qui rapportent vite.</p>
+        <div class="stage-gauge">
+          <span class="track"><span class="zone" style="left:0;width:40%"></span></span>
+          <small>Score 0 → 40 · <b>la plus forte marge de progression</b></small>
+        </div>
+        <a class="btn ghost" href="#">Découvrir la formation</a>
+      </div>
+      <div class="stage star">
+        <span class="reco-badge">Votre étape</span>
+        <span class="stage-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8.5M15.5 6.5H21V12"/></svg>
+        </span>
+        <span class="stage-level">Étape 2 · Ascension</span>
+        <h3>Accompagnement prospection</h3>
+        <p>Les bases sont là, on branche la machine. Vous gardez la relation client, nous tenons les commandes. Chaque mois, vous lisez les chiffres avec nous.</p>
+        <div class="stage-gauge">
+          <span class="track"><span class="zone" style="left:40%;width:30%"></span></span>
+          <small>Score 40 → 70 · <b>8 clients sur 10 passent par ici</b></small>
+        </div>
+        <a class="btn" href="#">Découvrir l'accompagnement</a>
+      </div>
+      <div class="stage">
+        <span class="reco-badge">Votre étape</span>
+        <span class="stage-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M2.5 14.5q4.5-6.5 9-1M12.5 13.5q4.5-6.5 9-1M9 19.5q3-4 6-.5"/></svg>
+        </span>
+        <span class="stage-level">Étape 3 · Plein ciel</span>
+        <h3>Campagnes multicanales</h3>
+        <p>Vous maîtrisez déjà : place à l'échelle. LinkedIn, email et publicité pilotés à la donnée, avec un rapport chaque mois.</p>
+        <div class="stage-gauge">
+          <span class="track"><span class="zone" style="left:70%;width:30%"></span></span>
+          <small>Score 70+ · <b>cap sur l'échelle</b></small>
+        </div>
+        <a class="btn ghost" href="#">Découvrir les campagnes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="temoignages" id="temoignages">
+  <span class="ghost-word" aria-hidden="true">résultats</span>
+  <div class="wrap">
+    <div class="temo-head">
+      <span class="eyebrow">Témoignages</span>
+      <h2>Ils ont confié leur LinkedIn à Eagle Eye Digital.</h2>
+    </div>
+    <div class="temo-layout">
+      <figure class="quote-big">
+        <span class="qmark" aria-hidden="true">“</span>
+        <blockquote>Je publiais dans le vide depuis deux ans. En trois mois d'accompagnement, mon agenda s'est rempli de rendez-vous qualifiés, sans publicité et sans forcer.</blockquote>
+        <figcaption><span class="avatar">CM</span><span><b>C. M.</b>Consultante indépendante, Toulouse</span></figcaption>
+      </figure>
+      <figure class="quote-sm">
+        <blockquote>« Le diagnostic a mis le doigt exactement là où ça bloquait : mon titre de profil. Une correction, et le taux de réponse a doublé. »</blockquote>
+        <figcaption><span class="avatar">JR</span><span><b>J. R.</b>Dirigeant de TPE, secteur BTP</span></figcaption>
+      </figure>
+      <figure class="quote-sm">
+        <blockquote>« Tout est mesuré. Je sais ce que chaque euro et chaque heure investis me rapportent en rendez-vous. »</blockquote>
+        <figcaption><span class="avatar">SB</span><span><b>S. B.</b>Formatrice indépendante, Occitanie</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="founder" id="fondateur">
+  <div class="wrap founder-grid">
+    <div class="founder-photo">
+      <img src="/images/nassim.jpg" alt="Nassim, fondateur d'Eagle Eye Digital, sur scène à l'Indépendance Day">
+      <span class="founder-tag">Sur scène à l'Indépendance Day · Diagora, Toulouse</span>
+    </div>
+    <div class="founder-txt">
+      <span class="eyebrow">Qui est derrière Eagle Eye Digital</span>
+      <h2>Nassim, fondateur d'Eagle Eye Digital.</h2>
+      <p>Six ans d'expertise LinkedIn, des centaines d'indépendants et de TPE accompagnés, et une conviction restée la même depuis le premier jour : la prospection se pilote avec des chiffres, pas avec de l'espoir.</p>
+      <p class="founder-quote">« Votre réseau contient déjà vos prochains clients. Notre travail, c'est de les révéler. »</p>
+      <a class="btn" href="#scanner">Faire mon diagnostic gratuit</a>
+    </div>
+  </div>
+</section>
+
+<section class="event" id="evenement">
+  <span class="big-date" aria-hidden="true">22.09</span>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">L'événement</span>
+      <h2>L'Indépendance Day 3, la journée des indépendants.</h2>
+      <p>300 indépendants, freelances et dirigeants de TPE réunis à Diagora Toulouse pour une journée de conférences et d'ateliers : LinkedIn, IA, prospection, vente.</p>
+      <div class="ev-meta">
+        <div><b>22 septembre 2026</b>Diagora, Toulouse</div>
+        <div><b>10 experts</b>Conférences &amp; ateliers</div>
+        <div><b>300 places</b>Early bird jusqu'au 31 août</div>
+      </div>
+    </div>
+    <a class="btn" href="https://independance-day.com">Réserver ma place</a>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div>
+      <h2>Deux minutes. Zéro engagement. Un <span class="grad-text">plan d'action</span>.</h2>
+      <p>Le scanner sur-mesure vous attend en haut de page.</p>
+    </div>
+    <a class="btn" href="#scanner">Lancer mon diagnostic gratuit</a>
+  </div>
+</section>

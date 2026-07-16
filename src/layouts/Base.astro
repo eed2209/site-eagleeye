@@ -1,0 +1,66 @@
+---
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Eagle Eye Digital aide les indépendants et les TPE à trouver des clients grâce à LinkedIn : diagnostic gratuit, formation, prospection accompagnée et campagnes multicanales.",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+
+const organization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Eagle Eye Digital",
+  url: "https://eagleeye.digital",
+  logo: "https://eagleeye.digital/images/logo-couleur.png",
+  email: "contact@eagleeye.digital",
+  address: { "@type": "PostalAddress", addressLocality: "Toulouse", addressCountry: "FR" },
+  sameAs: ["https://independance-day.com"],
+  description: "Agence spécialisée dans le développement commercial des indépendants et TPE via LinkedIn : diagnostic, formation, prospection et campagnes multicanales.",
+};
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/images/logo-couleur.png', Astro.site)} />
+    <meta property="og:locale" content="fr_FR" />
+    <link rel="icon" href="/images/logo-couleur.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <script type="application/ld+json" set:html={JSON.stringify(organization)} />
+  </head>
+  <body>
+    <slot />
+    <Footer />
+
+    <div class="wipe" id="wipe" aria-hidden="true">
+      <div class="wipe-curtain">
+        <svg class="wipe-eagle" viewBox="0 0 130 100">
+          <g class="w-up"><path d="M62 46 Q40 10 10 2 Q44 26 58 48 Z"></path></g>
+          <g class="w-dn"><path d="M62 54 Q40 90 10 98 Q44 74 58 52 Z"></path></g>
+          <path d="M36 46 L14 40 L24 50 L14 60 L36 54 Z"></path>
+          <ellipse cx="68" cy="50" rx="34" ry="11"></ellipse>
+          <path d="M98 44 L122 50 L98 57 Z"></path>
+          <circle cx="96" cy="47" r="2.6" fill="#0B0E1A"></circle>
+        </svg>
+      </div>
+    </div>
+
+    <script is:inline src="/site.js" defer></script>
+  </body>
+</html>

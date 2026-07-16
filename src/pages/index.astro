@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import body from '../home-body.html?raw';
+---
+<Base
+  title="Eagle Eye Digital : trouvez vos clients grâce à LinkedIn"
+  description="Diagnostic LinkedIn gratuit en 10 questions, puis la méthode Eagle Eye Digital : profil, prospection, webinaire, rendez-vous. Pour les indépendants et TPE, à Toulouse et partout en France."
+>
+  <Fragment set:html={body} />
+</Base>

@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+<Base
+  title="Blog : prospection LinkedIn pour indépendants et TPE"
+  description="Conseils concrets pour trouver des clients sur LinkedIn quand on est indépendant ou TPE : profil, messages de prospection, contenu, webinaires."
+>
+  <Header />
+  <main class="page">
+    <span class="eyebrow">Blog</span>
+    <h1>Trouver des clients sur LinkedIn, article après article.</h1>
+    <p class="lede">Des conseils applicables tout de suite, tirés de six ans d'accompagnement d'indépendants et de TPE.</p>
+
+    <section>
+      <ul class="post-list">
+        {posts.map((post) => (
+          <li class="post-card">
+            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            <p>{post.data.description}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</Base>
