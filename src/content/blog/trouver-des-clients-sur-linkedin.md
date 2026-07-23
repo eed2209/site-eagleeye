@@ -34,7 +34,7 @@ LinkedIn amplifie le réel. Un salon, une conférence, un afterwork : chaque ren
 
 ## 7. Le webinaire : le levier le plus puissant
 
-Un webinaire régulier transforme vos contacts tièdes en prospects convaincus. Ils vous voient travailler pendant 45 minutes avant de vous acheter quoi que ce soit. C'est l'étage 3 de [notre méthode](/methode/), et celui qui convertit le mieux.
+Un webinaire régulier transforme vos contacts tièdes en prospects convaincus. Ils vous voient travailler pendant 45 minutes avant de vous acheter quoi que ce soit. C'est le cœur de la Conversion dans [notre méthode 3C+2](/methode/), et le levier qui convertit le mieux.
 
 ## Par où commencer ?
 

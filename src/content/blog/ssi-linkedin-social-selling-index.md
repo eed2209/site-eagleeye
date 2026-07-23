@@ -38,4 +38,4 @@ C'est exactement ce que mesure notre [diagnostic LinkedIn gratuit](/diagnostic-l
 
 ## En résumé
 
-Consultez votre SSI une fois par curiosité, puis concentrez-vous sur les chiffres qui remplissent votre agenda. Si votre SSI monte mais que vos rendez-vous stagnent, c'est le signe qu'il faut régler la machine, pas accélérer. Notre [méthode en 4 étages](/methode/) explique quel indicateur piloter à chaque étape.
+Consultez votre SSI une fois par curiosité, puis concentrez-vous sur les chiffres qui remplissent votre agenda. Si votre SSI monte mais que vos rendez-vous stagnent, c'est le signe qu'il faut régler la machine, pas accélérer. Notre [méthode 3C+2](/methode/) explique quel indicateur piloter à chaque maillon.

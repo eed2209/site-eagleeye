@@ -41,7 +41,7 @@ La prospection se pilote avec quatre chiffres :
 3. **Taux de réponse** : la qualité de vos messages (visez 15 % et plus).
 4. **Rendez-vous obtenus** : le seul chiffre qui paie les factures.
 
-Si un chiffre décroche, vous savez quel étage de la machine régler. C'est exactement la logique de [notre méthode en 4 étages](/methode/).
+Si un chiffre décroche, vous savez quel étage de la machine régler. C'est exactement la logique de [notre méthode 3C+2](/methode/).
 
 ## Combien de temps ça prend ?
 

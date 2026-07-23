@@ -311,8 +311,8 @@
 
   /* chaîne d'usine : 4 machines + tuyaux + tapis roulant */
   .factory{margin-top:76px}
-  .machines{display:grid;grid-template-columns:repeat(4,1fr);gap:34px}
-  @media (max-width:960px){.machines{grid-template-columns:repeat(2,1fr);row-gap:52px}}
+  .machines{display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
+  @media (max-width:1100px){.machines{grid-template-columns:repeat(2,1fr);row-gap:52px}}
   @media (max-width:600px){.machines{grid-template-columns:1fr}}
   .machine{
     position:relative;display:flex;flex-direction:column;
@@ -322,9 +322,10 @@
   }
   /* progression : du plus foncé (étape 1) au plus clair (étape 4) */
   .machine:nth-child(1){--mbg:#171130}
-  .machine:nth-child(2){--mbg:#332A61}
-  .machine:nth-child(3){--mbg:#54459C}
-  .machine:nth-child(4){--mbg:#7A5BD6}
+  .machine:nth-child(2){--mbg:#2B2458}
+  .machine:nth-child(3){--mbg:#403683}
+  .machine:nth-child(4){--mbg:#5A48AC}
+  .machine:nth-child(5){--mbg:#7A5BD6}
   /* couche d'activation : l'étape en cours s'allume en dégradé */
   .m-glow{
     position:absolute;inset:0;border-radius:10px;pointer-events:none;
@@ -344,6 +345,7 @@
   .machine:nth-child(2)::after{animation-delay:.7s}
   .machine:nth-child(3)::after{animation-delay:1.4s}
   .machine:nth-child(4)::after{animation-delay:2.1s}
+  .machine:nth-child(5)::after{animation-delay:2.8s}
   @keyframes puff{0%{transform:translateY(0) scale(.8);opacity:.3}70%{opacity:.08}100%{transform:translateY(-16px) scale(1.5);opacity:0}}
   /* trémie d'entrée (machine 1) : un lead tombe dedans */
   .hopper{
@@ -363,14 +365,14 @@
   }
   /* tuyau de liaison entre machines (desktop) */
   .machine .pipe{display:none}
-  @media (min-width:961px){
+  @media (min-width:1101px){
     .machine:not(:last-child) .pipe{
-      display:block;position:absolute;top:46%;right:-35px;width:36px;height:12px;
+      display:block;position:absolute;top:46%;right:-25px;width:26px;height:12px;
       transform:translateY(-50%);
       background:var(--bg-soft);border:1.5px solid var(--edge);border-radius:6px;z-index:1;
     }
     .machine .pipe::after{
-      content:"";position:absolute;top:50%;right:9px;width:7px;height:7px;
+      content:"";position:absolute;top:50%;right:6px;width:7px;height:7px;
       border-top:2px solid var(--cyan);border-right:2px solid var(--cyan);
       transform:translateY(-50%) rotate(45deg);
     }
@@ -395,6 +397,7 @@
   .machine:nth-child(2) .m-lights i:nth-child(1){animation-delay:.5s}
   .machine:nth-child(3) .m-lights i:nth-child(1){animation-delay:1s}
   .machine:nth-child(4) .m-lights i:nth-child(1){animation-delay:1.5s}
+  .machine:nth-child(5) .m-lights i:nth-child(1){animation-delay:2s}
   @keyframes blink{50%{opacity:.2}}
   /* corps de la machine : hublot-turbine + boulons */
   .m-body{position:relative;flex:1;padding:18px 18px 12px;display:flex;flex-direction:column;gap:8px}
@@ -411,6 +414,7 @@
   .machine:nth-child(2) .m-fan i{animation-duration:3.1s}
   .machine:nth-child(3) .m-fan i{animation-duration:1.8s}
   .machine:nth-child(4) .m-fan i{animation-duration:2.7s;animation-direction:reverse}
+  .machine:nth-child(5) .m-fan i{animation-duration:2.1s}
   .bolt{position:absolute;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.28)}
   .bolt::after{content:"";position:absolute;left:1px;right:1px;top:2.4px;height:1.2px;background:rgba(14,11,31,.55)}
   .bolt.tl{top:7px;left:7px}
@@ -418,7 +422,7 @@
   .bolt.bl{bottom:7px;left:7px}
   .bolt.br{bottom:7px;right:7px}
   .bolt.tr::after,.bolt.bl::after{transform:rotate(50deg)}
-  .machine h3{font-size:1.02rem;font-weight:600;padding-right:44px;color:#F1EFFB}
+  .machine h3{font-size:.98rem;font-weight:600;padding-right:40px;color:#F1EFFB}
   .machine p{font-size:.86rem;color:#BCB5DC}
   /* plaque indicateur */
   .m-plaque{
@@ -694,9 +698,10 @@
   [data-theme="light"] .scan-log .line.done .st::after{border-color:#fff}
   /* machines : échelle de bleus, contours noirs */
   [data-theme="light"] .machine:nth-child(1){--mbg:#0E1B4D}
-  [data-theme="light"] .machine:nth-child(2){--mbg:#16358F}
-  [data-theme="light"] .machine:nth-child(3){--mbg:#1E5AD0}
-  [data-theme="light"] .machine:nth-child(4){--mbg:#3D8BF5}
+  [data-theme="light"] .machine:nth-child(2){--mbg:#142C74}
+  [data-theme="light"] .machine:nth-child(3){--mbg:#1C449E}
+  [data-theme="light"] .machine:nth-child(4){--mbg:#2A63C9}
+  [data-theme="light"] .machine:nth-child(5){--mbg:#3D8BF5}
   [data-theme="light"] .m-glow{background:linear-gradient(150deg,rgba(14,61,176,.95),rgba(58,160,255,.88))}
   [data-theme="light"] .machine.on{box-shadow:0 22px 55px -18px rgba(29,116,232,.55)}
   [data-theme="light"] .m-panel{background:linear-gradient(180deg,#101B3F,#0A1128)}
