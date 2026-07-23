@@ -23,6 +23,7 @@
     --hero-violet:#A379EE;
     --hero-edge:rgba(159,174,218,.28);
     --hero-glass:rgba(4,20,80,.72);
+    --link:#6FBFFF;
   }
   :root[data-theme="light"]{
     --bg:#FFFFFF;
@@ -47,6 +48,7 @@
     --hero-violet:#0E3DB0;
     --hero-edge:rgba(11,14,26,.45);
     --hero-glass:rgba(255,255,255,.9);
+    --link:#1D74E8;
   }
 
   /* ---------- Base ---------- */
@@ -59,6 +61,7 @@
     overflow-x:hidden;
   }
   h1,h2,h3{line-height:1.12;text-wrap:balance;margin:0;letter-spacing:-.02em}
+  a{color:var(--link)}
   p{margin:0}
   .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
   :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
@@ -756,7 +759,7 @@
 .page p{color:var(--muted);margin:0 0 14px;max-width:68ch}
 .page ul{color:var(--muted);padding-left:20px;margin:0 0 14px;max-width:68ch}
 .page li{margin-bottom:6px}
-.page a:not(.btn){color:var(--cyan);text-underline-offset:3px}
+.page a:not(.btn){color:var(--link);text-underline-offset:3px}
 .page .btn{margin-top:8px}
 .prose h3{font-size:1.08rem;font-weight:600;margin:20px 0 8px}
 .prose blockquote{margin:14px 0;padding:12px 18px;border-left:3px solid var(--cyan);background:var(--bg-soft);border-radius:0 10px 10px 0;color:var(--ink);max-width:62ch}
