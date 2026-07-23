@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+
+const faq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Qui a créé la méthode 3C+2 ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "La méthode 3C+2 a été créée par Nassim Amisse, fondateur d'Eagle Eye Digital, agence toulousaine spécialisée dans le développement commercial des indépendants et TPE sur LinkedIn. C'est la méthode signature de l'agence, déposée.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Que signifie 3C+2 ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Les 3C sont les trois fondamentaux : Crédibilité (un profil et des publications qui donnent envie), Connexions (faire entrer les bonnes personnes dans son réseau) et Conquête (oser engager la conversation par message). Le +2 désigne les deux multiplicateurs : Conversion (transformer les rendez-vous en clients) et Catalyseur (automatisations et IA pour démultiplier les résultats en un minimum de temps).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "En combien de temps la méthode 3C+2 donne-t-elle des résultats ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "La méthode repose sur la qualité des relations créées, ce qui demande de la régularité : la récolte ne se fait pas la semaine où on a planté. Les premières conversations arrivent en quelques semaines ; les opportunités se construisent sur la durée.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Comment savoir quel maillon travailler en premier ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Eagle Eye Digital propose un diagnostic LinkedIn gratuit en 10 questions qui mesure la visibilité, la crédibilité et la prospection, puis indique les 3 actions prioritaires et le maillon de la méthode 3C+2 à régler en premier.",
+      },
+    },
+  ],
+};
+
+const definedTerm = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  name: "Méthode 3C+2",
+  description: "Méthode de développement commercial sur LinkedIn créée par Eagle Eye Digital : trois fondamentaux (Crédibilité, Connexions, Conquête) et deux multiplicateurs (Conversion, Catalyseur).",
+  url: "https://eagleeye.digital/methode-3c-plus-2/",
+};
+---
+<Base
+  title="La méthode 3C+2 : la méthode LinkedIn signature d'Eagle Eye Digital"
+  description="Définition de la méthode 3C+2, méthode déposée d'Eagle Eye Digital : Crédibilité, Connexions, Conquête, plus Conversion et Catalyseur. Les 5 maillons expliqués."
+>
+  <Header />
+  <main class="page">
+    <span class="eyebrow">Méthode déposée</span>
+    <h1>La méthode 3C+2, c'est quoi ?</h1>
+    <p class="lede">La méthode 3C+2 est une méthode de développement commercial sur LinkedIn, créée par Nassim Amisse et déposée par Eagle Eye Digital. Elle articule trois fondamentaux qui commencent par C, et deux multiplicateurs qui transforment l'activité en clients.</p>
+
+    <section>
+      <h2>Les 3 fondamentaux</h2>
+      <p><strong>1. Crédibilité.</strong> Un profil qui donne envie et des publications qui font penser à vous de la bonne manière. Nécessaire, mais pas suffisant : un beau CV ne trouve pas d'emploi tout seul.</p>
+      <p><strong>2. Connexions.</strong> Faire entrer proactivement les bonnes personnes dans son réseau, comme une soirée réseau dont on choisit les participants. La qualité avant la quantité.</p>
+      <p><strong>3. Conquête.</strong> Oser engager la conversation par message. C'est la conversation qui crée l'opportunité, pas la publication.</p>
+      <p>Ces trois C sont indissociables : sans crédibilité, ça ne marche pas. Sans les bonnes personnes, ça ne marche pas. Et avec les bonnes personnes sans leur parler, ça ne marche pas non plus.</p>
+
+      <h2>Les 2 multiplicateurs</h2>
+      <p><strong>4. Conversion.</strong> Les rendez-vous, c'est bien ; les transformer en clients, c'est mieux. Deux ingrédients : la posture commerciale et une offre impossible à refuser, comme une bouteille d'eau en plein désert.</p>
+      <p><strong>5. Catalyseur.</strong> Automatisations LinkedIn et IA générative pour donner à toutes ces actions un maximum de portée en un minimum de temps. Résultat type : 22 heures d'actions commerciales par semaine ramenées à 3 heures. Sans sur-complexifier : on ne plante pas des tomates avec un Airbus.</p>
+    </section>
+
+    <section>
+      <h2>Le récapitulatif</h2>
+      <ul>
+        <li><strong>Crédibilité</strong> : est-ce que mon profil donne envie ? Indicateur : vues de profil.</li>
+        <li><strong>Connexions</strong> : les bonnes personnes sont-elles dans mon réseau ? Indicateur : taux d'acceptation.</li>
+        <li><strong>Conquête</strong> : est-ce que j'engage la conversation ? Indicateur : taux de réponse.</li>
+        <li><strong>Conversion</strong> : mes rendez-vous deviennent-ils des clients ? Indicateur : clients signés.</li>
+        <li><strong>Catalyseur</strong> : mes actions sont-elles démultipliées ? Indicateur : temps investi par semaine.</li>
+      </ul>
+    </section>
+
+    <section class="faq">
+      <h2>Questions fréquentes</h2>
+      <dl>
+        <dt>Qui a créé la méthode 3C+2 ?</dt>
+        <dd>Nassim Amisse, fondateur d'<a href="/a-propos/">Eagle Eye Digital</a>, à Toulouse. C'est la méthode signature de l'agence, déposée.</dd>
+        <dt>En combien de temps a-t-on des résultats ?</dt>
+        <dd>La clé, c'est la qualité de la relation créée, et cela demande de la régularité : la récolte ne se fait pas la semaine où on a planté. Les premières conversations arrivent en quelques semaines.</dd>
+        <dt>Comment savoir quel maillon travailler en premier ?</dt>
+        <dd>Le <a href="/diagnostic-linkedin/">diagnostic gratuit</a> mesure où vous en êtes et vous indique le maillon à régler en priorité.</dd>
+        <dt>Comment est-elle appliquée concrètement ?</dt>
+        <dd>La page <a href="/methode/">notre méthode</a> détaille son application, et nos <a href="/offres/">offres</a> couvrent chaque maillon : la formation pour la Crédibilité, l'accompagnement pour Connexions, Conquête et Conversion, les campagnes multicanales pour le Catalyseur.</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Par où commencer ?</h2>
+      <a class="btn" href="/#scanner">Faire mon diagnostic gratuit</a>
+    </section>
+  </main>
+  <script type="application/ld+json" set:html={JSON.stringify(faq)} />
+  <script type="application/ld+json" set:html={JSON.stringify(definedTerm)} />
+</Base>
