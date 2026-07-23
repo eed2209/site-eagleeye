@@ -1,3 +1,9 @@
+/* ================= Configuration ================= */
+/* URL de l'outil de prise de RDV. Laisser vide tant qu'il n'est pas en ligne :
+   le bouton RDV des résultats du scanner reste alors masqué.
+   Exemple une fois déployé sur Hostinger : 'https://rdv.eagleeye.digital' */
+var RDV_URL = '';
+
 /* ================= Thème clair / sombre ================= */
 (function(){
   var root = document.documentElement;
@@ -441,6 +447,16 @@
     });
     var flight = document.querySelector('.flight');
     if (flight) flight.classList.add('has-reco');
+
+    /* bouton RDV : transmet le score et les réponses à l'outil de prise de rendez-vous */
+    var rdv = document.getElementById('rdvCta');
+    if (rdv && RDV_URL){
+      var q = 'eed_score=' + s.global + '&eed_vis=' + s.vis + '&eed_cred=' + s.cred + '&eed_pros=' + s.pros +
+              '&eed_rep=' + answers.join('-') +
+              '&utm_source=site&utm_medium=scanner&utm_campaign=diagnostic';
+      rdv.href = RDV_URL + (RDV_URL.indexOf('?') === -1 ? '?' : '&') + q;
+      rdv.style.display = 'flex';
+    }
   }
 
   /* ---- navigation ---- */

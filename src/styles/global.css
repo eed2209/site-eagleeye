@@ -764,3 +764,6 @@
 .post-card p{margin:8px 0 0;font-size:.9rem}
 .faq dt{font-weight:600;color:var(--ink);margin-top:18px}
 .faq dd{margin:6px 0 0;color:var(--muted);max-width:68ch}
+
+/* bouton RDV dans les résultats du scanner */
+.rdv-cta{justify-content:center;width:100%;margin-bottom:12px}
