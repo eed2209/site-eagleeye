@@ -1,6 +1,6 @@
 ---
-title: "Optimiser son profil LinkedIn quand on est indépendant : la checklist complète"
-description: "Titre, photo, section Infos, recommandations : la checklist en 7 points pour transformer votre profil LinkedIn en page de vente qui attire vos clients."
+title: "Optimiser son profil LinkedIn quand on est indépendant : la checklist complète"
+description: "Titre, photo, section Infos, recommandations : la checklist en 7 points pour transformer votre profil LinkedIn en page de vente qui attire vos clients."
 date: 2026-07-16
 keywords: ["optimiser profil linkedin", "profil linkedin indépendant", "titre linkedin"]
 pilier: "/offres/formation-linkedin/"
@@ -8,15 +8,15 @@ pilier: "/offres/formation-linkedin/"
 
 Votre profil LinkedIn est visité avant chaque rendez-vous, chaque réponse à un message, chaque mise en relation. S'il ressemble à un CV, il travaille contre vous. Voici la checklist que nous appliquons avec chaque client.
 
-## 1. Le titre : un bénéfice, pas un poste
+## 1. Le titre : un bénéfice, pas un poste
 
-« Consultant marketing » ne dit rien à personne. « J'aide les TPE du bâtiment à trouver 5 chantiers par mois grâce à LinkedIn » dit tout. Votre titre suit vos commentaires et vos messages partout : c'est votre slogan.
+« Consultant marketing » ne dit rien à personne. « J'aide les TPE du bâtiment à trouver 5 chantiers par mois grâce à LinkedIn » dit tout. Votre titre suit vos commentaires et vos messages partout : c'est votre slogan.
 
 ## 2. La photo et la bannière
 
 Une photo professionnelle où l'on voit vos yeux, et une bannière qui annonce votre promesse. C'est la première impression, elle se joue en une seconde.
 
-## 3. La section Infos : parlez de vos clients
+## 3. La section Infos : parlez de vos clients
 
 Racontez leur problème, votre méthode, et donnez une preuve chiffrée. Personne ne lit un parcours professionnel ; tout le monde lit la description de son propre problème.
 
@@ -28,13 +28,13 @@ Demandez-en deux ou trois à vos derniers clients satisfaits. C'est la preuve so
 
 Épinglez une étude de cas, un témoignage vidéo ou votre meilleure publication. Guidez la visite.
 
-## 6. L'expérience : des résultats, pas des missions
+## 6. L'expérience : des résultats, pas des missions
 
-Chaque expérience doit contenir au moins un chiffre : clients accompagnés, résultats obtenus, délais tenus.
+Chaque expérience doit contenir au moins un chiffre : clients accompagnés, résultats obtenus, délais tenus.
 
 ## 7. L'URL personnalisée et les coordonnées
 
-Un détail, mais un détail visible : linkedin.com/in/votre-nom, et un moyen de vous contacter accessible.
+Un détail, mais un détail visible : linkedin.com/in/votre-nom, et un moyen de vous contacter accessible.
 
 ---
 
