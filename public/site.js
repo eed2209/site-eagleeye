@@ -4,6 +4,11 @@
    Exemple une fois déployé sur Hostinger : 'https://rdv.eagleeye.digital' */
 var RDV_URL = '';
 
+/* En local (tests), on pointe automatiquement vers l'outil de RDV lancé sur la même machine */
+if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+  RDV_URL = 'http://localhost:3000';
+}
+
 /* ================= Thème clair / sombre ================= */
 (function(){
   var root = document.documentElement;
