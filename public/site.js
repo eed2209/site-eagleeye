@@ -9,9 +9,9 @@ if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
   RDV_URL = 'http://localhost:3000';
 }
 
-/* Sur le VPS Hostinger (accès par IP, avant branchement du domaine) */
-if (location.hostname === '186.240.144.188') {
-  RDV_URL = 'http://186.240.144.188:3000';
+/* Sur le VPS Hostinger (domaine de test, avant branchement du domaine définitif) */
+if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501.hstgr.cloud') {
+  RDV_URL = 'https://srv1864501.hstgr.cloud:3443';
 }
 
 /* ================= Thème clair / sombre ================= */
