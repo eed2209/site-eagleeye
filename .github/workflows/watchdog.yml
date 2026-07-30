@@ -39,7 +39,7 @@ jobs:
           username: ${{ secrets.WATCHDOG_SMTP_USER }}
           password: ${{ secrets.WATCHDOG_SMTP_PASS }}
           from: Surveillance EED <contact@eagleeye.digital>
-          to: karen.monniaers@eagleeye.digital
+          to: karen.monniaers@eagleeye.digital,karenmonniaers@gmail.com
           subject: "🚨 ALERTE : ${{ steps.probe.outputs.fail }} ne répond plus"
           body: |
             Le contrôle automatique (toutes les 10 minutes) vient d'échouer : ${{ steps.probe.outputs.fail }} ne répond plus.
@@ -60,7 +60,7 @@ jobs:
           username: ${{ secrets.WATCHDOG_SMTP_USER }}
           password: ${{ secrets.WATCHDOG_SMTP_PASS }}
           from: Surveillance EED <contact@eagleeye.digital>
-          to: karen.monniaers@eagleeye.digital
+          to: karen.monniaers@eagleeye.digital,karenmonniaers@gmail.com
           subject: "✅ Retour en ligne : tout répond de nouveau"
           body: |
             Le site et l'outil de RDV répondent de nouveau normalement.
