@@ -1,0 +1,70 @@
+name: Surveillance du serveur
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Contrôler le site et l'outil de RDV
+        id: probe
+        continue-on-error: true
+        run: |
+          fail=""
+          curl -sf -m 15 -o /dev/null https://srv1864501.hstgr.cloud/ || fail="le site"
+          curl -sf -m 15 -o /dev/null https://srv1864501.hstgr.cloud:3443/api/public/config || fail="${fail:+$fail et }l'outil de RDV"
+          echo "fail=$fail" >> "$GITHUB_OUTPUT"
+          [ -z "$fail" ]
+
+      - name: Lire le résultat du contrôle précédent
+        id: prev
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          prev=$(gh api "repos/${{ github.repository }}/actions/workflows/watchdog.yml/runs?per_page=1&status=completed" --jq '.workflow_runs[0].conclusion' 2>/dev/null || echo "unknown")
+          echo "conclusion=$prev" >> "$GITHUB_OUTPUT"
+
+      - name: Alerte de panne (uniquement au moment où ça tombe)
+        if: steps.probe.outcome == 'failure' && steps.prev.outputs.conclusion != 'failure'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.WATCHDOG_SMTP_USER }}
+          password: ${{ secrets.WATCHDOG_SMTP_PASS }}
+          from: Surveillance EED <contact@eagleeye.digital>
+          to: karen.monniaers@eagleeye.digital
+          subject: "🚨 ALERTE : ${{ steps.probe.outputs.fail }} ne répond plus"
+          body: |
+            Le contrôle automatique (toutes les 10 minutes) vient d'échouer : ${{ steps.probe.outputs.fail }} ne répond plus.
+
+            À vérifier :
+            1. Le site : https://srv1864501.hstgr.cloud
+            2. L'outil de RDV : https://srv1864501.hstgr.cloud:3443
+            3. Le panneau Hostinger (hpanel.hostinger.com) : état du VPS, bouton Redémarrer si besoin.
+
+            Un email de confirmation sera envoyé automatiquement au retour en ligne.
+
+      - name: Retour en ligne (après une panne)
+        if: steps.probe.outcome == 'success' && steps.prev.outputs.conclusion == 'failure'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.WATCHDOG_SMTP_USER }}
+          password: ${{ secrets.WATCHDOG_SMTP_PASS }}
+          from: Surveillance EED <contact@eagleeye.digital>
+          to: karen.monniaers@eagleeye.digital
+          subject: "✅ Retour en ligne : tout répond de nouveau"
+          body: |
+            Le site et l'outil de RDV répondent de nouveau normalement.
+
+      - name: Statut final du contrôle
+        if: steps.probe.outcome == 'failure'
+        run: exit 1
