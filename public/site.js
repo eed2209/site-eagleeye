@@ -9,6 +9,11 @@ if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
   RDV_URL = 'http://localhost:3000';
 }
 
+/* Sur le VPS Hostinger (accès par IP, avant branchement du domaine) */
+if (location.hostname === '186.240.144.188') {
+  RDV_URL = 'http://186.240.144.188:3000';
+}
+
 /* ================= Thème clair / sombre ================= */
 (function(){
   var root = document.documentElement;
