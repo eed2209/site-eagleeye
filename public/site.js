@@ -14,6 +14,20 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
   RDV_URL = 'https://srv1864501.hstgr.cloud:3443';
 }
 
+/* Liens directs vers la prise de RDV : tout <a data-rdv="..."> pointe vers
+   l'outil (la valeur de data-rdv sert de traceur utm_medium). Masqué si
+   l'outil n'est pas disponible (démo GitHub). */
+(function(){
+  var links = document.querySelectorAll('a[data-rdv]');
+  for (var i = 0; i < links.length; i++){
+    if (RDV_URL){
+      links[i].href = RDV_URL + '/?utm_source=site&utm_medium=' + (links[i].getAttribute('data-rdv') || 'page') + '&utm_campaign=rdv';
+    } else {
+      links[i].style.display = 'none';
+    }
+  }
+})();
+
 /* ================= Thème clair / sombre ================= */
 (function(){
   var root = document.documentElement;
