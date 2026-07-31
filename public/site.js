@@ -484,8 +484,35 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
 
   document.getElementById('reportForm').addEventListener('submit', function(e){
     e.preventDefault();
-    this.style.display = 'none';
-    document.getElementById('reportOk').style.display = 'block';
+    var form = this;
+    var ok = document.getElementById('reportOk');
+    var emailInput = form.querySelector('input[type="email"]');
+    var btn = form.querySelector('button');
+
+    /* Sans backend (démo GitHub), on garde le comportement de simulation */
+    if (!RDV_URL){
+      form.style.display = 'none';
+      ok.style.display = 'block';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours…';
+    fetch(RDV_URL + '/api/public/scanner-audit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: emailInput.value, reponses: answers.join('-') })
+    }).then(function(r){
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      form.style.display = 'none';
+      ok.textContent = '✔ Audit envoyé ! Vérifiez votre boîte mail (et les indésirables la première fois).';
+      ok.style.display = 'block';
+    }).catch(function(){
+      btn.disabled = false;
+      btn.textContent = 'Recevoir mon rapport complet';
+      ok.textContent = 'L’envoi a échoué. Réessayez dans un instant ou réservez directement un rendez-vous.';
+      ok.style.display = 'block';
+    });
   });
 
   document.getElementById('rescan').addEventListener('click', function(){
