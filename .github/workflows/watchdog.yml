@@ -16,12 +16,28 @@ jobs:
         id: probe
         continue-on-error: true
         run: |
-          # 3 tentatives espacées de 10 s avant de déclarer la panne :
-          # un hoquet réseau ponctuel ne déclenche pas de fausse alerte
+          # 3 tentatives espacées de 10 s avant de déclarer la panne,
+          # puis diagnostic précis de la cause pour l'email d'alerte
+          probe_one() {
+            local url="$1" http rc
+            http=$(curl -s -o /dev/null -m 20 --retry 2 --retry-delay 10 --retry-all-errors -w '%{http_code}' "$url"); rc=$?
+            if [ "$rc" -eq 0 ] && [ "$http" -ge 200 ] && [ "$http" -lt 400 ]; then echo "OK"; return 0; fi
+            case "$rc" in
+              6)  echo "nom de domaine introuvable (problème DNS)";;
+              7)  echo "connexion refusée : la machine répond mais ce service est arrêté";;
+              28) echo "aucune réponse : serveur éteint ou injoignable";;
+              35|53|58|60) echo "problème de certificat HTTPS";;
+              0)  echo "erreur HTTP $http : le serveur web tourne mais l'application est en panne";;
+              *)  echo "erreur réseau (code technique $rc)";;
+            esac
+            return 1
+          }
           fail=""
-          curl -sf -m 20 --retry 2 --retry-delay 10 --retry-all-errors -o /dev/null https://srv1864501.hstgr.cloud/ || fail="le site"
-          curl -sf -m 20 --retry 2 --retry-delay 10 --retry-all-errors -o /dev/null https://srv1864501.hstgr.cloud:3443/api/public/config || fail="${fail:+$fail et }l'outil de RDV"
+          site_diag=$(probe_one https://srv1864501.hstgr.cloud/) || fail="le site"
+          rdv_diag=$(probe_one https://srv1864501.hstgr.cloud:3443/api/public/config) || fail="${fail:+$fail et }l'outil de RDV"
           echo "fail=$fail" >> "$GITHUB_OUTPUT"
+          echo "site_diag=$site_diag" >> "$GITHUB_OUTPUT"
+          echo "rdv_diag=$rdv_diag" >> "$GITHUB_OUTPUT"
           [ -z "$fail" ]
 
       - name: Lire le résultat du contrôle précédent
@@ -44,12 +60,22 @@ jobs:
           to: karen.monniaers@eagleeye.digital,karenmonniaers@gmail.com
           subject: "🚨 ALERTE : ${{ steps.probe.outputs.fail }} ne répond plus"
           body: |
-            Le contrôle automatique (toutes les 10 minutes) vient d'échouer : ${{ steps.probe.outputs.fail }} ne répond plus.
+            Le contrôle automatique (toutes les 10 minutes, 3 tentatives) vient d'échouer : ${{ steps.probe.outputs.fail }} ne répond plus.
 
-            À vérifier :
+            Diagnostic automatique :
+            - Site vitrine : ${{ steps.probe.outputs.site_diag }}
+            - Outil de RDV : ${{ steps.probe.outputs.rdv_diag }}
+
+            Comment réagir selon le diagnostic :
+            - « aucune réponse » sur les deux → le serveur est probablement éteint ou bloqué : hpanel.hostinger.com → VPS → Redémarrer.
+            - « connexion refusée » ou « erreur HTTP » sur l'outil de RDV uniquement → l'application a planté ; un redémarrage du serveur via Hostinger la relance aussi.
+            - « problème de certificat HTTPS » → le site reste joignable en tapant son adresse en http, prévenez Claude pour renouveler le certificat.
+            - « problème DNS » → souci de nom de domaine, à vérifier dans le panneau Hostinger.
+
+            Liens directs :
             1. Le site : https://srv1864501.hstgr.cloud
             2. L'outil de RDV : https://srv1864501.hstgr.cloud:3443
-            3. Le panneau Hostinger (hpanel.hostinger.com) : état du VPS, bouton Redémarrer si besoin.
+            3. Panneau Hostinger : https://hpanel.hostinger.com
 
             Un email de confirmation sera envoyé automatiquement au retour en ligne.
 
