@@ -27,11 +27,25 @@ jobs:
         run: npm run build
 
       - name: Préparer la clé SSH
+        # Le réseau GitHub → Hostinger a des ratés ponctuels : on retente
+        # plusieurs fois avant de déclarer le déploiement en échec.
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -t ed25519 ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+          for i in 1 2 3 4 5; do
+            ssh-keyscan -T 10 -t ed25519 ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts && exit 0
+            echo "ssh-keyscan tentative $i échouée, nouvel essai dans 10 s…"
+            sleep 10
+          done
+          echo "Serveur injoignable après 5 tentatives"
+          exit 1
 
       - name: Envoyer sur le VPS
-        run: rsync -az --delete dist/ root@${{ secrets.VPS_HOST }}:/var/www/site/
+        run: |
+          for i in 1 2 3; do
+            rsync -az --delete dist/ root@${{ secrets.VPS_HOST }}:/var/www/site/ && exit 0
+            echo "rsync tentative $i échouée, nouvel essai dans 10 s…"
+            sleep 10
+          done
+          exit 1
