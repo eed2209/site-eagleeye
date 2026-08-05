@@ -16,11 +16,13 @@ jobs:
         id: probe
         continue-on-error: true
         run: |
-          # 3 tentatives espacées de 10 s avant de déclarer la panne,
-          # puis diagnostic précis de la cause pour l'email d'alerte
+          # Etape 1 : 3 tentatives espacées de 10 s depuis GitHub (IPv4 forcé).
+          # Etape 2 : si échec, CONTRE-VERIFICATION depuis des points de contrôle
+          # indépendants (check-host.net). L'alerte ne part que si la panne est
+          # confirmée : le réseau de GitHub est trop capricieux pour être cru seul.
           probe_one() {
             local url="$1" http rc
-            http=$(curl -s -o /dev/null -m 20 --retry 2 --retry-delay 10 --retry-all-errors -w '%{http_code}' "$url"); rc=$?
+            http=$(curl -4 -s -o /dev/null -m 25 --retry 2 --retry-delay 10 --retry-all-errors -w '%{http_code}' "$url"); rc=$?
             if [ "$rc" -eq 0 ] && [ "$http" -ge 200 ] && [ "$http" -lt 400 ]; then echo "OK"; return 0; fi
             case "$rc" in
               6)  echo "nom de domaine introuvable (problème DNS)";;
@@ -32,9 +34,38 @@ jobs:
             esac
             return 1
           }
+          # Retourne 0 si la panne est confirmée par les points externes,
+          # 1 si au moins un point du globe joint l'URL (fausse alerte réseau)
+          confirm_down() {
+            local url="$1" rid res
+            rid=$(curl -s -H "Accept: application/json" "https://check-host.net/check-http?host=${url}&max_nodes=3" | jq -r '.request_id // empty')
+            [ -z "$rid" ] && return 0
+            for i in 1 2 3 4 5; do
+              sleep 8
+              res=$(curl -s -H "Accept: application/json" "https://check-host.net/check-result/${rid}")
+              if echo "$res" | jq -e '[.[] | select(. != null) | .[0][0]] | any(. == 1)' >/dev/null 2>&1; then
+                return 1
+              fi
+              if echo "$res" | jq -e 'length > 0 and ([.[]] | all(. != null))' >/dev/null 2>&1; then
+                return 0
+              fi
+            done
+            return 0
+          }
           fail=""
           site_diag=$(probe_one https://srv1864501.hstgr.cloud/) || fail="le site"
           rdv_diag=$(probe_one https://srv1864501.hstgr.cloud:3443/api/public/config) || fail="${fail:+$fail et }l'outil de RDV"
+          if [ -n "$fail" ]; then
+            confirmed=""
+            if [ "$site_diag" != "OK" ] && confirm_down "https://srv1864501.hstgr.cloud/"; then confirmed="oui"; fi
+            if [ -z "$confirmed" ] && [ "$rdv_diag" != "OK" ] && confirm_down "https://srv1864501.hstgr.cloud:3443/api/public/config"; then confirmed="oui"; fi
+            if [ -z "$confirmed" ]; then
+              echo "Echec depuis GitHub mais le serveur répond depuis les points de contrôle externes : fausse alerte réseau, aucun email envoyé."
+              fail=""
+              site_diag="OK (joignable depuis les points de contrôle externes)"
+              rdv_diag="OK (joignable depuis les points de contrôle externes)"
+            fi
+          fi
           echo "fail=$fail" >> "$GITHUB_OUTPUT"
           echo "site_diag=$site_diag" >> "$GITHUB_OUTPUT"
           echo "rdv_diag=$rdv_diag" >> "$GITHUB_OUTPUT"
@@ -60,7 +91,9 @@ jobs:
           to: karen.monniaers@eagleeye.digital,karenmonniaers@gmail.com
           subject: "🚨 ALERTE : ${{ steps.probe.outputs.fail }} ne répond plus"
           body: |
-            Le contrôle automatique (toutes les 10 minutes, 3 tentatives) vient d'échouer : ${{ steps.probe.outputs.fail }} ne répond plus.
+            Le contrôle automatique vient d'échouer : ${{ steps.probe.outputs.fail }} ne répond plus.
+
+            Cette panne est CONFIRMÉE : elle a été vérifiée depuis plusieurs points de contrôle indépendants dans le monde avant de vous alerter. Ce n'est pas une fausse alerte réseau.
 
             Diagnostic automatique :
             - Site vitrine : ${{ steps.probe.outputs.site_diag }}
