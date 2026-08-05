@@ -30,6 +30,12 @@ const organization = {
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
+    <!-- Thème appliqué avant la première peinture : clair par défaut,
+         sombre si l'utilisateur l'a choisi (pas de flash au chargement) -->
+    <script is:inline>
+      try { document.documentElement.setAttribute('data-theme', localStorage.getItem('eed-theme') === 'dark' ? 'dark' : 'light'); }
+      catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />

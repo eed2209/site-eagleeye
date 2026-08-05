@@ -41,7 +41,7 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
   }
   var saved = null;
   try{ saved = localStorage.getItem('eed-theme'); }catch(e){}
-  apply(saved === 'light' ? 'light' : 'dark');   // sombre par défaut
+  apply(saved === 'dark' ? 'dark' : 'light');    // clair par défaut
   btn.addEventListener('click', function(){
     apply(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
   });
