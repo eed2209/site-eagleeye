@@ -475,12 +475,6 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
       done.textContent = 'Voir mon score';
       done.addEventListener('click', function(){ openNote = ta.value.trim().slice(0, 300); next(); });
       opts.appendChild(done);
-      var skip = document.createElement('button');
-      skip.type = 'button';
-      skip.className = 'quiz-opt';
-      skip.textContent = 'Passer';
-      skip.addEventListener('click', function(){ openNote = ''; next(); });
-      opts.appendChild(skip);
     }
 
     if (!reduced){
