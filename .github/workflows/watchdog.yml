@@ -34,15 +34,26 @@ jobs:
             esac
             return 1
           }
-          # Retourne 0 si la panne est confirmée par les points externes,
-          # 1 si au moins un point du globe joint l'URL (fausse alerte réseau)
+          # Retourne 0 UNIQUEMENT si la panne est positivement confirmée par les
+          # points externes. Dans tous les autres cas (vérificateur injoignable,
+          # limite de débit, réponse incomplète) : pas d'alerte — le contrôle
+          # suivant, 10 minutes plus tard, retentera. Une alerte envoyée = une
+          # panne réellement constatée depuis l'extérieur, jamais un doute.
           confirm_down() {
             local url="$1" rid res
-            rid=$(curl -s -H "Accept: application/json" "https://check-host.net/check-http?host=${url}&max_nodes=3" | jq -r '.request_id // empty')
-            [ -z "$rid" ] && return 0
-            for i in 1 2 3 4 5; do
+            for a in 1 2 3; do
+              rid=$(curl -s -m 20 -H "Accept: application/json" "https://check-host.net/check-http?host=${url}&max_nodes=3" | jq -r '.request_id // empty')
+              [ -n "$rid" ] && break
+              sleep 10
+            done
+            if [ -z "$rid" ]; then
+              echo "Contre-vérification indisponible pour ${url} : pas d'alerte (prochain contrôle dans 10 min)" >&2
+              return 1
+            fi
+            for i in 1 2 3 4 5 6 7 8; do
               sleep 8
-              res=$(curl -s -H "Accept: application/json" "https://check-host.net/check-result/${rid}")
+              res=$(curl -s -m 20 -H "Accept: application/json" "https://check-host.net/check-result/${rid}")
+              echo "check-host ${url} (lecture $i) : ${res}" >&2
               if echo "$res" | jq -e '[.[] | select(. != null) | .[0][0]] | any(. == 1)' >/dev/null 2>&1; then
                 return 1
               fi
@@ -50,7 +61,8 @@ jobs:
                 return 0
               fi
             done
-            return 0
+            echo "Contre-vérification restée incomplète pour ${url} : pas d'alerte" >&2
+            return 1
           }
           fail=""
           site_diag=$(probe_one https://srv1864501.hstgr.cloud/) || fail="le site"
