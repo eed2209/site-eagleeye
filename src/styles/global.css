@@ -186,6 +186,7 @@
     .hero-note{margin-top:32px}
   }
   .scan-title{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .scan-title .li-logo{height:1.06em;width:1.06em;vertical-align:-.14em;margin-left:.08em}
   .scan-title .pulse-dot{width:9px;height:9px;border-radius:50%;background:var(--hero-cyan);
     box-shadow:0 0 0 0 rgba(71,207,230,.5);animation:ring 2.4s ease-out infinite}
   @keyframes ring{0%{box-shadow:0 0 0 0 rgba(71,207,230,.45)}70%{box-shadow:0 0 0 11px rgba(71,207,230,0)}100%{box-shadow:0 0 0 0 rgba(71,207,230,0)}}
