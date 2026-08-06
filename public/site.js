@@ -260,61 +260,99 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
   var results = document.getElementById('results');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Barème réel : 3 questions Visibilité, 3 Crédibilité, 4 Prospection.
-     Chaque réponse vaut des points ; le score d'un axe = points / max × 100. */
+  /* Barème v2 — les 5 piliers de la méthode 3C+2 : Crédibilité, Connexions,
+     Conquête (30 pts chacun), Conversion, Catalyse (20 pts chacun).
+     Score d'un pilier = points / max × 100 ; global = moyenne des 5.
+     Synchronisé avec backend/services/scanner.js (serveur) et l'admin. */
   var QUESTIONS = [
-    { axis: 'vis', q: 'Que dit le titre de votre profil LinkedIn ?',
-      opts: [['Mon intitulé de poste (« Consultant », « Coach »…)', 0],
-             ['Mon métier et ma cible', 5],
-             ['Le bénéfice concret que j’apporte à mes clients', 10]],
+    /* — Crédibilité — */
+    { axis: 'cred', q: 'Tapez votre nom dans Google : que découvre un prospect ?',
+      opts: [['Pas grand-chose, ou des homonymes', 0],
+             ['Mon profil LinkedIn, avec mon intitulé de poste', 5],
+             ['Mon profil, avec le bénéfice concret que j’apporte à mes clients', 10]],
       reco: 'Réécrivez votre titre : le bénéfice que vous apportez à vos clients, pas votre intitulé de poste.' },
-    { axis: 'vis', q: 'À quelle fréquence publiez-vous du contenu ?',
+    { axis: 'cred', q: 'À quelle fréquence publiez-vous, et avec quelle variété ?',
       opts: [['Jamais ou presque', 0],
-             ['Moins d’une fois par mois', 3],
-             ['Environ une fois par semaine', 7],
-             ['Plusieurs fois par semaine', 10]],
-      reco: 'Publiez au moins une fois par semaine : un conseil concret pour votre cible suffit.' },
-    { axis: 'vis', q: 'Photo professionnelle et bannière personnalisée ?',
-      opts: [['Ni l’un ni l’autre', 0],
-             ['Photo pro, mais bannière par défaut', 5],
-             ['Les deux, alignées avec mon offre', 10]],
-      reco: 'Ajoutez une photo pro et une bannière qui annonce votre promesse. C’est la première chose qu’on voit.' },
-    { axis: 'cred', q: 'Combien de recommandations clients sont visibles sur votre profil ?',
-      opts: [['Aucune', 0],
-             ['Une ou deux', 5],
-             ['Trois ou plus, récentes', 10]],
-      reco: 'Demandez 2-3 recommandations à vos derniers clients satisfaits. C’est la preuve sociale n°1 sur LinkedIn.' },
-    { axis: 'cred', q: 'Votre section « Infos » (le résumé en haut du profil)…',
-      opts: [['Est vide ou presque', 0],
-             ['Raconte mon parcours, comme un CV', 4],
-             ['Parle des problèmes de mes clients et de mes résultats', 10]],
-      reco: 'Réécrivez votre section Infos côté client : leur problème, votre méthode, une preuve chiffrée.' },
-    { axis: 'cred', q: 'Partagez-vous des preuves de résultats (études de cas, chiffres, témoignages) ?',
-      opts: [['Jamais', 0],
-             ['Rarement', 5],
-             ['Régulièrement', 10]],
-      reco: 'Publiez une étude de cas chiffrée par mois : rien ne convainc plus qu’un résultat client réel.' },
-    { axis: 'pros', q: 'Quelle est la taille de votre réseau ?',
+             ['De temps en temps, quand l’inspiration vient', 3],
+             ['Chaque semaine, mais souvent le même type de post', 7],
+             ['Chaque semaine, en variant les angles (conseil, preuve, avis…)', 10]],
+      reco: 'Publiez chaque semaine en variant les angles : un conseil, une preuve client, un avis tranché. Le même post en boucle lasse votre réseau.' },
+    { axis: 'cred', q: 'Un visiteur de votre profil y trouve-t-il des preuves (recommandations, résultats chiffrés) ?',
+      opts: [['Aucune preuve visible', 0],
+             ['Quelques recommandations, anciennes', 5],
+             ['Des recommandations récentes et des résultats chiffrés', 10]],
+      reco: 'Affichez vos preuves : 2-3 recommandations récentes et un résultat client chiffré. C’est ce qui fait basculer la décision.' },
+    /* — Connexions — */
+    { axis: 'conn', q: 'Quelle est la taille de votre réseau ?',
       opts: [['Moins de 500 relations', 2],
              ['500 à 2 000', 6],
              ['2 000 à 5 000', 8],
              ['Plus de 5 000', 10]],
       reco: 'Élargissez votre réseau avec des profils qui ressemblent à vos clients. La portée de vos posts en dépend.' },
-    { axis: 'pros', q: 'Envoyez-vous des demandes de connexion ciblées ?',
-      opts: [['Jamais', 0],
-             ['De temps en temps, sans message', 4],
-             ['Régulièrement, avec un message personnalisé', 10]],
-      reco: 'Envoyez 10 demandes ciblées par jour avec un message d’ouverture personnalisé, sans pitch.' },
-    { axis: 'pros', q: 'Vos premiers messages aux nouveaux contacts parlent…',
+    { axis: 'conn', q: 'Combien de demandes de connexion ciblées envoyez-vous par mois ?',
+      opts: [['Aucune, ou au hasard', 0],
+             ['Quelques-unes, sans message', 4],
+             ['Plusieurs dizaines, avec un message personnalisé', 8],
+             ['Plus de 100, à la main ou avec un outil, toujours ciblées', 10]],
+      reco: 'Envoyez des invitations ciblées chaque jour, avec un message personnalisé, sans pitch.' },
+    { axis: 'conn', q: 'Votre réseau ressemble-t-il à vos clients idéaux ?',
+      opts: [['Surtout des confrères et des connaissances', 0],
+             ['Un mélange, sans logique particulière', 5],
+             ['Majoritairement des profils qui ressemblent à mes clients', 10]],
+      reco: 'Reconstruisez votre réseau autour de vos cibles : un réseau de confrères ne produit aucune opportunité.' },
+    /* — Conquête — */
+    { axis: 'conq', q: 'Vos premiers messages aux nouveaux contacts parlent…',
       opts: [['Je n’envoie pas de message', 0],
              ['De mon offre et de mes services', 4],
              ['De leur activité et de leurs enjeux', 10]],
       reco: 'Ouvrez la conversation sur leurs enjeux, jamais sur votre offre. Le pitch vient plus tard.' },
-    { axis: 'pros', q: 'Relancez-vous les contacts restés silencieux ?',
+    { axis: 'conq', q: 'Combien de vraies conversations de prospection démarrez-vous chaque semaine ?',
+      opts: [['Aucune, ou presque', 0],
+             ['Une ou deux', 4],
+             ['Cinq à dix', 8],
+             ['Plus de dix', 10]],
+      reco: 'Visez 10 nouvelles conversations par semaine : souvent le message est bon, il n’est simplement pas assez envoyé.' },
+    { axis: 'conq', q: 'Relancez-vous les contacts restés silencieux ?',
       opts: [['Jamais', 0],
              ['Parfois, au feeling', 5],
              ['Oui, avec un processus de relance', 10]],
-      reco: 'Mettez en place 2 relances espacées : la majorité des réponses arrivent après la première relance.' }
+      reco: 'Mettez en place 2 relances espacées : la majorité des réponses arrivent après la première relance.' },
+    /* — Conversion — */
+    { axis: 'conv', q: 'Sur 10 rendez-vous, combien deviennent des clients ?',
+      opts: [['Je ne mesure pas', 0],
+             ['Moins de 2', 4],
+             ['Entre 2 et 5', 7],
+             ['Plus de 5', 10]],
+      reco: 'Mesurez votre taux de transformation rendez-vous → clients : on ne règle pas ce qu’on ne mesure pas.' },
+    { axis: 'conv', q: 'Votre offre : un prospect peut-il facilement la refuser ?',
+      opts: [['Je vends surtout du temps (jours, séances…)', 0],
+             ['J’ai une offre structurée, mais comparable à d’autres', 5],
+             ['Ma promesse et mes garanties ne se trouvent pas ailleurs', 10]],
+      reco: 'Rendez votre offre difficile à refuser : promesse claire, résultat mesurable, garantie. À nombre de rendez-vous égal, c’est le levier n°1.' },
+    /* — Catalyse — */
+    { axis: 'cata', q: 'Combien de temps votre prospection vous coûte-t-elle chaque jour ?',
+      opts: [['Aucun : je ne prospecte pas', 0],
+             ['Plus d’une heure, par à-coups', 4],
+             ['Environ une heure, régulière', 7],
+             ['Moins de 30 minutes, avec un système rodé', 10]],
+      reco: 'Structurez une routine de prospection de 25 minutes par jour : régulière, outillée, tenable dans la durée.' },
+    { axis: 'cata', q: 'Quelle place occupe l’intelligence artificielle dans votre prospection ?',
+      opts: [['Aucune', 0],
+             ['Elle m’aide à rédiger des posts ou des messages', 5],
+             ['C’est un vrai collaborateur : ciblage, messages, relances, suivi', 10]],
+      reco: 'Faites de l’IA un collaborateur : ciblage, préparation des messages, relances et suivi — pas seulement la rédaction de posts.' }
+  ];
+
+  /* Questions de qualification : jamais notées, elles préparent le rendez-vous */
+  var QUALIF = [
+    { q: 'Votre situation aujourd’hui ?',
+      opts: ['Indépendant / solo', 'Dirigeant de TPE (2-10 personnes)', 'Salarié, en transition ou en lancement', 'Autre'] },
+    { q: 'Votre objectif prioritaire à 90 jours ?',
+      opts: ['Obtenir mes premiers clients via LinkedIn', 'Des rendez-vous plus réguliers', 'Mieux convertir mes rendez-vous', 'Déléguer et gagner du temps'] },
+    { q: 'Votre principal obstacle aujourd’hui ?',
+      opts: ['Le manque de temps', 'Je ne sais pas quoi dire ou publier', 'Peu de réponses à mes messages', 'Des rendez-vous qui ne signent pas'] },
+    { q: 'Comment préférez-vous avancer ?',
+      opts: ['Me former et avancer en autonomie', 'Être accompagné pas à pas', 'Déléguer un maximum', 'Je ne sais pas encore'] }
   ];
 
   var FALLBACK_RECOS = [
@@ -325,30 +363,40 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
 
   var STEPS = [
     'Analyse de vos réponses…',
-    'Évaluation de votre visibilité…',
-    'Évaluation de votre crédibilité…',
-    'Calcul de votre potentiel de prospection…',
-    'Comparaison avec les profils qui performent…',
+    'Crédibilité : votre profil vend-il pour vous ?',
+    'Connexions : votre réseau contient-il vos clients ?',
+    'Conquête : vos conversations démarrent-elles ?',
+    'Conversion et catalyse : combien signent, à quel coût en temps ?',
     'Rapport généré.'
   ];
 
+  var PILLARS = ['cred', 'conn', 'conq', 'conv', 'cata'];
+  var TOTAL_STEPS = QUESTIONS.length + QUALIF.length + 1; // + question ouverte
+
   var current = 0;
   var answers = [];
+  var qualifAnswers = [];
+  var openNote = '';
 
   function maxPts(q){
     return q.opts.reduce(function(m, o){ return Math.max(m, o[1]); }, 0);
   }
 
   function computeScores(){
-    var sum = { vis: 0, cred: 0, pros: 0 }, max = { vis: 0, cred: 0, pros: 0 };
+    var sum = {}, max = {};
+    PILLARS.forEach(function(p){ sum[p] = 0; max[p] = 0; });
     QUESTIONS.forEach(function(q, i){
       sum[q.axis] += q.opts[answers[i]][1];
       max[q.axis] += maxPts(q);
     });
-    var vis = Math.round(sum.vis / max.vis * 100);
-    var cred = Math.round(sum.cred / max.cred * 100);
-    var pros = Math.round(sum.pros / max.pros * 100);
-    return { vis: vis, cred: cred, pros: pros, global: Math.round((vis + cred + pros) / 3) };
+    var s = { global: 0 };
+    var total = 0;
+    PILLARS.forEach(function(p){
+      s[p] = Math.round(sum[p] / max[p] * 100);
+      total += s[p];
+    });
+    s.global = Math.round(total / PILLARS.length);
+    return s;
   }
 
   function computeRecos(){
@@ -366,27 +414,74 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
     if (g < 40) return '<b>Fondations à poser.</b> Bonne nouvelle : c’est ici que la progression est la plus rapide.';
     if (g < 60) return '<b>Potentiel sous-exploité.</b> Les bases sont là, mais votre prospection ne convertit pas à la hauteur de votre expertise.';
     if (g < 75) return '<b>Bonne machine, mal réglée.</b> Quelques ajustements ciblés peuvent doubler vos rendez-vous.';
-    return '<b>Profil solide.</b> Vous êtes prêt à passer à l’échelle avec une approche multicanale.';
+    return '<b>Machine en place.</b> Vous êtes prêt à passer à l’échelle sans y passer plus de temps.';
   }
 
-  /* ---- rendu du questionnaire ---- */
+  /* Texte du bloc rendez-vous selon la tranche de score : l'argument varie,
+     la destination est toujours la même — la conversation. */
+  function rdvPitchFor(g){
+    if (g < 40) return 'Vous n’avez pas besoin d’un grand programme, vous avez besoin de savoir par où commencer. 30 minutes pour poser votre feuille de route, avec votre diagnostic sous les yeux.';
+    if (g < 75) return 'Votre machine existe, elle est mal réglée. On regarde ensemble les deux réglages qui débloqueront le plus de rendez-vous chez vous. 30 minutes, avec votre diagnostic sous les yeux.';
+    return 'Votre socle est solide. La question devient le volume et la délégation : comment aller plus loin sans y passer plus de temps. 30 minutes pour en parler.';
+  }
+
+  /* ---- rendu du questionnaire : 13 notées, 4 qualification, 1 ouverte ---- */
   function renderQuestion(){
-    var q = QUESTIONS[current];
-    document.getElementById('quizProgress').textContent = (current + 1) + '/' + QUESTIONS.length;
-    document.getElementById('quizBarFill').style.width = Math.round(current / QUESTIONS.length * 100) + '%';
+    document.getElementById('quizProgress').textContent = (current + 1) + '/' + TOTAL_STEPS;
+    document.getElementById('quizBarFill').style.width = Math.round(current / TOTAL_STEPS * 100) + '%';
     document.getElementById('quizBack').disabled = current === 0;
-    document.getElementById('quizQ').textContent = q.q;
 
     var opts = document.getElementById('quizOpts');
     opts.innerHTML = '';
-    q.opts.forEach(function(o, i){
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'quiz-opt';
-      b.textContent = o[0];
-      b.addEventListener('click', function(){ answer(i); });
-      opts.appendChild(b);
-    });
+
+    if (current < QUESTIONS.length){
+      /* question notée */
+      var q = QUESTIONS[current];
+      document.getElementById('quizQ').textContent = q.q;
+      q.opts.forEach(function(o, i){
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'quiz-opt';
+        b.textContent = o[0];
+        b.addEventListener('click', function(){ answers[current] = i; next(); });
+        opts.appendChild(b);
+      });
+    } else if (current < QUESTIONS.length + QUALIF.length){
+      /* question de qualification (non notée) */
+      var k = current - QUESTIONS.length;
+      var qq = QUALIF[k];
+      document.getElementById('quizQ').textContent = qq.q;
+      qq.opts.forEach(function(label, i){
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'quiz-opt';
+        b.textContent = label;
+        b.addEventListener('click', function(){ qualifAnswers[k] = i; next(); });
+        opts.appendChild(b);
+      });
+    } else {
+      /* question ouverte facultative */
+      document.getElementById('quizQ').textContent = 'Un mot sur votre activité ? (facultatif)';
+      var ta = document.createElement('textarea');
+      ta.className = 'quiz-open';
+      ta.rows = 3;
+      ta.maxLength = 300;
+      ta.placeholder = 'Votre métier, vos clients, ce qui vous amène…';
+      ta.value = openNote;
+      opts.appendChild(ta);
+      var done = document.createElement('button');
+      done.type = 'button';
+      done.className = 'quiz-opt quiz-opt-main';
+      done.textContent = 'Voir mon score';
+      done.addEventListener('click', function(){ openNote = ta.value.trim().slice(0, 300); next(); });
+      opts.appendChild(done);
+      var skip = document.createElement('button');
+      skip.type = 'button';
+      skip.className = 'quiz-opt';
+      skip.textContent = 'Passer';
+      skip.addEventListener('click', function(){ openNote = ''; next(); });
+      opts.appendChild(skip);
+    }
 
     if (!reduced){
       var step = document.getElementById('quizStep');
@@ -396,9 +491,8 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
     }
   }
 
-  function answer(i){
-    answers[current] = i;
-    if (current < QUESTIONS.length - 1){
+  function next(){
+    if (current < TOTAL_STEPS - 1){
       current++;
       renderQuestion();
     } else {
@@ -457,7 +551,7 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
 
     var bars = document.getElementById('bars');
     bars.innerHTML = '';
-    [['Visibilité', s.vis], ['Crédibilité', s.cred], ['Prospection', s.pros]].forEach(function(pair){
+    [['Crédibilité', s.cred], ['Connexions', s.conn], ['Conquête', s.conq], ['Conversion', s.conv], ['Catalyse', s.cata]].forEach(function(pair){
       var row = document.createElement('div');
       row.className = 'bar-row';
       row.innerHTML = '<span class="lab">' + pair[0] + '</span>' +
@@ -485,17 +579,30 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
     var flight = document.querySelector('.flight');
     if (flight) flight.classList.add('has-reco');
 
-    /* bouton RDV : transmet le score et les réponses à l'outil de prise de rendez-vous */
+    /* Une seule porte de sortie : le rendez-vous, avec l'argument de la tranche.
+       Exception : score faible + envie d'avancer en autonomie = pas de RDV
+       poussé, le rapport par email suffit (protège l'agenda sans rien perdre). */
+    var autonomy = s.global < 40 && qualifAnswers[3] === 0;
+    var pitch = document.getElementById('rdvPitch');
+    if (pitch){
+      pitch.textContent = rdvPitchFor(s.global);
+      pitch.style.display = autonomy ? 'none' : 'block';
+    }
+
+    /* bouton RDV : transmet le score, les réponses et la qualification */
     var rdv = document.getElementById('rdvCta');
-    if (rdv && RDV_URL){
+    if (rdv && RDV_URL && !autonomy){
       var u = pageUtm();
-      var q = 'eed_score=' + s.global + '&eed_vis=' + s.vis + '&eed_cred=' + s.cred + '&eed_pros=' + s.pros +
+      var q = 'eed_score=' + s.global + '&eed_v=2' +
               '&eed_rep=' + answers.join('-') +
+              '&eed_qual=' + qualifAnswers.join('-') +
               '&utm_source=' + encodeURIComponent(u.utm_source || 'site') +
               '&utm_medium=scanner' +
               '&utm_campaign=' + encodeURIComponent(u.utm_campaign || 'diagnostic');
       rdv.href = RDV_URL + (RDV_URL.indexOf('?') === -1 ? '?' : '&') + q;
       rdv.style.display = 'flex';
+    } else if (rdv) {
+      rdv.style.display = 'none';
     }
   }
 
@@ -505,6 +612,8 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
     quiz.style.display = 'flex';
     current = 0;
     answers = [];
+    qualifAnswers = [];
+    openNote = '';
     renderQuestion();
   });
 
@@ -531,7 +640,12 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
     fetch(RDV_URL + '/api/public/scanner-audit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(Object.assign({ email: emailInput.value, reponses: answers.join('-') }, pageUtm()))
+      body: JSON.stringify(Object.assign({
+        email: emailInput.value,
+        reponses: answers.join('-'),
+        qualif: qualifAnswers.join('-'),
+        note: openNote
+      }, pageUtm()))
     }).then(function(r){
       if (!r.ok) throw new Error('HTTP ' + r.status);
       form.style.display = 'none';

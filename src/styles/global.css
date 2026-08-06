@@ -776,3 +776,14 @@
 
 /* bouton RDV dans les résultats du scanner */
 .rdv-cta{justify-content:center;width:100%;margin-bottom:12px}
+.rdv-pitch{
+  margin:6px 0 14px;padding:12px 16px;border-left:3px solid var(--hero-cyan);
+  font-size:.9rem;line-height:1.5;color:var(--hero-muted);
+}
+.quiz-open{
+  width:100%;background:rgba(1,10,45,.55);border:1px solid var(--hero-edge);border-radius:12px;
+  color:var(--hero-ink);font:inherit;font-size:.88rem;padding:12px 16px;resize:vertical;
+  margin-bottom:10px;
+}
+[data-theme="light"] .quiz-open{background:#fff;border:1.5px solid rgba(11,14,26,.55);color:var(--hero-ink)}
+.quiz-opt-main{border-color:var(--hero-cyan);font-weight:600}
