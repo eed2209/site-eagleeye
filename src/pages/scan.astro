@@ -12,6 +12,18 @@ import Base from '../layouts/Base.astro';
   <Fragment slot="head">
     <!-- Landing pubs : ne pas indexer (pas de concurrence SEO avec l'accueil) -->
     <meta name="robots" content="noindex, nofollow" />
+    <!-- A/B test : une chance sur deux d'être envoyé sur la variante B (orange).
+         Le tirage est mémorisé : un visiteur qui revient garde sa variante. -->
+    <script is:inline>
+      window.EED_VARIANT = 'A';
+      (function(){
+        try {
+          var v = localStorage.getItem('eed-ab-scan');
+          if (!v){ v = Math.random() < 0.5 ? 'A' : 'B'; localStorage.setItem('eed-ab-scan', v); }
+          if (v === 'B'){ location.replace('/scan-b/' + location.search); }
+        } catch(e){}
+      })();
+    </script>
     <!-- ===== Pixel Meta =====
          Renseigner l'ID du pixel (Gestionnaire d'événements Meta) ci-dessous.
          Tant qu'il est vide, rien n'est chargé. Événements envoyés :

@@ -596,6 +596,7 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
       var q = 'eed_score=' + s.global + '&eed_v=2' +
               '&eed_rep=' + answers.join('-') +
               '&eed_qual=' + qualifAnswers.join('-') +
+              (window.EED_VARIANT ? '&eed_var=' + window.EED_VARIANT : '') +
               '&utm_source=' + encodeURIComponent(u.utm_source || 'site') +
               '&utm_medium=scanner' +
               '&utm_campaign=' + encodeURIComponent(u.utm_campaign || 'diagnostic');
@@ -644,7 +645,8 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
         email: emailInput.value,
         reponses: answers.join('-'),
         qualif: qualifAnswers.join('-'),
-        note: openNote
+        note: openNote,
+        variant: window.EED_VARIANT || undefined
       }, pageUtm()))
     }).then(function(r){
       if (!r.ok) throw new Error('HTTP ' + r.status);
