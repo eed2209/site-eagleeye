@@ -647,7 +647,7 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
       ok.style.display = 'block';
     }).catch(function(){
       btn.disabled = false;
-      btn.textContent = 'Recevoir mon rapport complet';
+      btn.textContent = 'Recevoir mon plan d’action pour les 30 prochains jours';
       ok.textContent = 'L’envoi a échoué. Réessayez dans un instant ou réservez directement un rendez-vous.';
       ok.style.display = 'block';
     });
