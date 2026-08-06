@@ -15,6 +15,7 @@ import Base from '../layouts/Base.astro';
     <!-- A/B test : une chance sur deux d'être envoyé sur la variante B (orange).
          Le tirage est mémorisé : un visiteur qui revient garde sa variante. -->
     <script is:inline>
+      window.EED_SCANNER_VERSION = 2; /* audit complet : 18 questions, 5 piliers */
       window.EED_VARIANT = 'A';
       (function(){
         try {
