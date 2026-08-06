@@ -238,7 +238,9 @@
   .quiz-progress{font-variant-numeric:tabular-nums}
   .quiz-bar{height:5px;background:rgba(167,159,198,.15);border-radius:99px;overflow:hidden}
   .quiz-bar i{display:block;height:100%;width:0;background:var(--grad);border-radius:99px;transition:width .35s ease}
-  .quiz-step{display:flex;flex-direction:column;gap:14px;animation:qfade .3s ease}
+  /* l'étape occupe l'espace restant et s'y centre : les questions à 3
+     réponses ne laissent plus tout le vide en bas */
+  .quiz-step{display:flex;flex-direction:column;gap:14px;flex:1;justify-content:center;animation:qfade .3s ease}
   @keyframes qfade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
   .quiz-q{font-size:1.02rem;font-weight:600;color:var(--hero-ink);line-height:1.45}
   .quiz-opts{display:flex;flex-direction:column;gap:10px}
