@@ -242,6 +242,19 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
 (function(){
   var intro = document.getElementById('quizIntro');
   if (!intro) return;
+
+  /* UTM de la page (pubs Meta…) : suivent le prospect jusqu'à l'admin */
+  function pageUtm(){
+    var out = {};
+    try {
+      var p = new URLSearchParams(location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function(k){
+        var v = p.get(k);
+        if (v) out[k] = String(v).slice(0, 100);
+      });
+    } catch(e){}
+    return out;
+  }
   var quiz = document.getElementById('quiz');
   var log = document.getElementById('scanLog');
   var results = document.getElementById('results');
@@ -475,9 +488,12 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
     /* bouton RDV : transmet le score et les réponses à l'outil de prise de rendez-vous */
     var rdv = document.getElementById('rdvCta');
     if (rdv && RDV_URL){
+      var u = pageUtm();
       var q = 'eed_score=' + s.global + '&eed_vis=' + s.vis + '&eed_cred=' + s.cred + '&eed_pros=' + s.pros +
               '&eed_rep=' + answers.join('-') +
-              '&utm_source=site&utm_medium=scanner&utm_campaign=diagnostic';
+              '&utm_source=' + encodeURIComponent(u.utm_source || 'site') +
+              '&utm_medium=scanner' +
+              '&utm_campaign=' + encodeURIComponent(u.utm_campaign || 'diagnostic');
       rdv.href = RDV_URL + (RDV_URL.indexOf('?') === -1 ? '?' : '&') + q;
       rdv.style.display = 'flex';
     }
@@ -515,7 +531,7 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
     fetch(RDV_URL + '/api/public/scanner-audit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: emailInput.value, reponses: answers.join('-') })
+      body: JSON.stringify(Object.assign({ email: emailInput.value, reponses: answers.join('-') }, pageUtm()))
     }).then(function(r){
       if (!r.ok) throw new Error('HTTP ' + r.status);
       form.style.display = 'none';

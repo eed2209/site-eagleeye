@@ -1,0 +1,159 @@
+---
+/* Landing page pour les publicités Meta : zéro navigation, un seul objectif —
+   lancer le scanner. Le scanner est le même que sur l'accueil (mêmes IDs,
+   piloté par site.js) ; les UTM des pubs suivent le prospect jusqu'à l'admin. */
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Diagnostic LinkedIn gratuit en 2 minutes — Eagle Eye Digital"
+  description="Découvrez ce que votre profil LinkedIn vous coûte : score sur 100, 3 actions prioritaires, audit complet par email. Gratuit, sans connexion à votre compte."
+  bare
+>
+  <Fragment slot="head">
+    <!-- Landing pubs : ne pas indexer (pas de concurrence SEO avec l'accueil) -->
+    <meta name="robots" content="noindex, nofollow" />
+    <!-- ===== Pixel Meta =====
+         Renseigner l'ID du pixel (Gestionnaire d'événements Meta) ci-dessous.
+         Tant qu'il est vide, rien n'est chargé. Événements envoyés :
+         PageView (auto), Lead (audit demandé), Schedule (clic RDV). -->
+    <script is:inline>
+      window.EED_META_PIXEL_ID = ''; /* ← ID du pixel Meta à coller ici */
+      (function(){
+        if (!window.EED_META_PIXEL_ID) return;
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', window.EED_META_PIXEL_ID);
+        fbq('track', 'PageView');
+      })();
+    </script>
+  </Fragment>
+
+  <div class="scanl">
+    <header class="scanl-head">
+      <a class="brand" href="/" aria-label="Eagle Eye Digital">
+        <img class="logo-dark" src="/images/logo-blanc.webp" alt="Eagle Eye Digital">
+        <img class="logo-light" src="/images/logo-couleur.png" alt="Eagle Eye Digital">
+      </a>
+    </header>
+
+    <main class="scanl-main">
+      <span class="eyebrow">Diagnostic LinkedIn gratuit · 2 minutes</span>
+      <h1>97 % des entrepreneurs passent trop de temps sur LinkedIn pour trop peu de résultats.</h1>
+      <p class="scanl-lede">Répondez à 10 questions et découvrez ce que votre profil vous coûte :
+        votre <b>score sur 100</b>, vos <b>3 actions prioritaires</b> et votre
+        <b>audit complet par email</b>. Sans connexion à votre compte LinkedIn.</p>
+
+      <ul class="scanl-proof" aria-label="Preuves">
+        <li><b>+1 200</b> profils analysés</li>
+        <li><b>+300</b> indépendants accompagnés</li>
+        <li><b>6 ans</b> d'expertise LinkedIn</li>
+      </ul>
+
+      <div class="scanl-scanner">
+        <div class="scanner" id="scanner">
+          <div class="scanner-in">
+            <div class="scan-title">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              <h2>Scanner sur-mesure</h2>
+              <span class="scan-badge">Gratuit</span>
+            </div>
+            <p class="scan-sub">Diagnostic de votre profil et de votre potentiel de prospection.</p>
+
+            <div class="quiz-intro" id="quizIntro">
+              <div class="scan-tiles">
+                <div class="scan-tile"><b>10</b><span>questions</span></div>
+                <div class="scan-tile"><b>2 min</b><span>chrono</span></div>
+                <div class="scan-tile"><b>100 %</b><span>anonyme</span></div>
+              </div>
+              <div class="scan-preview">
+                <span class="ghost-ring" aria-hidden="true">?</span>
+                <span class="ghost-txt">Votre <b>score sur 100</b> vous attend,<br>avec vos <b>3 actions prioritaires</b>.</span>
+              </div>
+              <button class="btn" id="startQuiz" type="button">Commencer le diagnostic</button>
+              <p class="scan-foot">Sans connexion à votre compte LinkedIn</p>
+            </div>
+
+            <div class="quiz" id="quiz">
+              <div class="quiz-head">
+                <button class="quiz-back" id="quizBack" type="button">← Précédent</button>
+                <span class="quiz-progress" id="quizProgress">1/10</span>
+              </div>
+              <div class="quiz-bar"><i id="quizBarFill"></i></div>
+              <div class="quiz-step" id="quizStep">
+                <p class="quiz-q" id="quizQ"></p>
+                <div class="quiz-opts" id="quizOpts"></div>
+              </div>
+            </div>
+
+            <div class="scan-log" id="scanLog" role="status" aria-live="polite"></div>
+
+            <div class="scan-results" id="results">
+              <div class="score-top">
+                <div class="score-ring" id="scoreRing">
+                  <span class="val" id="scoreVal">0</span>
+                </div>
+                <p class="score-verdict" id="verdict"></p>
+              </div>
+              <div class="bars" id="bars"></div>
+              <ol class="recos" id="recos"></ol>
+              <a class="btn rdv-cta" id="rdvCta" style="display:none" target="_blank" rel="noopener">Réserver mon rendez-vous avec ce score</a>
+              <form class="report-form" id="reportForm">
+                <input type="email" placeholder="votre@email.pro" required aria-label="Votre email professionnel">
+                <button class="btn" type="submit">Recevoir mon rapport complet</button>
+              </form>
+              <p class="report-ok" id="reportOk">✔ Audit envoyé ! Vérifiez votre boîte mail.</p>
+              <button class="rescan" id="rescan" type="button">Refaire le diagnostic</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="scanl-foot">
+      <p>Eagle Eye Digital · Toulouse &amp; partout en France</p>
+    </footer>
+  </div>
+
+  <!-- Événements Meta : envoyés seulement si le pixel est actif -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function(){
+      if (typeof window.fbq !== 'function') return;
+      var form = document.getElementById('reportForm');
+      if (form) form.addEventListener('submit', function(){ fbq('track', 'Lead'); });
+      var rdv = document.getElementById('rdvCta');
+      if (rdv) rdv.addEventListener('click', function(){ fbq('track', 'Schedule'); });
+    });
+  </script>
+</Base>
+
+<style>
+  .scanl{
+    min-height:100vh;display:flex;flex-direction:column;
+    background:radial-gradient(1200px 640px at 78% -12%,var(--hero-bg2) 0%,var(--hero-bg) 62%);
+    color:var(--hero-ink);
+  }
+  .scanl-head{display:flex;justify-content:center;padding:26px 20px 0}
+  .scanl-main{
+    width:100%;max-width:680px;margin:0 auto;padding:34px 20px 70px;
+    display:flex;flex-direction:column;align-items:center;text-align:center;
+  }
+  .scanl-main h1{
+    font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:700;margin:16px 0 18px;max-width:24ch;
+  }
+  .scanl-lede{color:var(--hero-muted);font-size:1.04rem;max-width:52ch;margin-bottom:22px}
+  .scanl-proof{
+    list-style:none;display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:center;
+    margin:0 0 34px;padding:0;font-size:.88rem;color:var(--hero-muted);
+  }
+  .scanl-proof b{color:var(--hero-ink)}
+  .scanl-scanner{width:100%;max-width:560px}
+  /* le scanner de l'accueil « déborde » vers le bas : ici on le pose à plat */
+  .scanl-scanner :global(.scanner){transform:none}
+  .scanl-foot{
+    margin-top:auto;padding:26px 20px;text-align:center;
+    font-size:.78rem;color:var(--hero-muted);
+  }
+</style>

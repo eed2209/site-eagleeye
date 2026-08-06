@@ -5,11 +5,14 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  /* Page « nue » (landing pubs) : pas de footer, la page gère tout */
+  bare?: boolean;
 }
 
 const {
   title,
   description = "Eagle Eye Digital aide les indépendants et les TPE à trouver des clients grâce à LinkedIn : diagnostic gratuit, formation, prospection accompagnée et campagnes multicanales.",
+  bare = false,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -49,10 +52,11 @@ const organization = {
     <link rel="icon" href="/images/logo-couleur.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <script type="application/ld+json" set:html={JSON.stringify(organization)} />
+    <slot name="head" />
   </head>
   <body>
     <slot />
-    <Footer />
+    {!bare && <Footer />}
 
     <div class="wipe" id="wipe" aria-hidden="true">
       <div class="wipe-curtain">
