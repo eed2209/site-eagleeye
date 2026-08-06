@@ -1,0 +1,203 @@
+---
+/* Variante B de la landing /scan pour l'A/B test des publicités Meta :
+   même page, thème accent ORANGE ÉLECTRIQUE au lieu du bleu.
+   Ne modifier le contenu que d'un côté à la fois pour garder le test propre. */
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Diagnostic LinkedIn gratuit en 2 minutes — Eagle Eye Digital"
+  description="Découvrez ce que votre profil LinkedIn vous coûte : score sur 100, 3 actions prioritaires, audit complet par email. Gratuit, sans connexion à votre compte."
+  bare
+>
+  <Fragment slot="head">
+    <!-- Landing pubs : ne pas indexer (pas de concurrence SEO avec l'accueil) -->
+    <meta name="robots" content="noindex, nofollow" />
+    <script is:inline>
+      /* Fond animé : particules orange sur cette variante */
+      window.EED_NET_PALETTE = 'orange';
+    </script>
+    <!-- ===== Pixel Meta ===== même pixel que /scan ; les campagnes
+         distinguent A et B par l'URL et les UTM. -->
+    <script is:inline>
+      window.EED_META_PIXEL_ID = ''; /* ← ID du pixel Meta à coller ici */
+      (function(){
+        if (!window.EED_META_PIXEL_ID) return;
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', window.EED_META_PIXEL_ID);
+        fbq('track', 'PageView');
+      })();
+    </script>
+  </Fragment>
+
+  <div class="scanl scanl--orange">
+    <canvas id="net" aria-hidden="true"></canvas>
+    <header class="scanl-head">
+      <a class="brand" href="/" aria-label="Eagle Eye Digital">
+        <img class="logo-dark" src="/images/logo-blanc.webp" alt="Eagle Eye Digital">
+        <img class="logo-light" src="/images/logo-couleur.png" alt="Eagle Eye Digital">
+      </a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Changer de thème" title="Changer de thème">☀️</button>
+    </header>
+
+    <main class="scanl-main">
+      <span class="eyebrow">Diagnostic LinkedIn gratuit · 2 minutes</span>
+      <h1>97 % des entrepreneurs passent trop de temps sur LinkedIn pour trop peu de résultats.</h1>
+      <p class="scanl-lede">Répondez à 18 questions et découvrez ce que votre profil vous coûte :
+        votre <b>score sur 100</b>, vos <b>3 actions prioritaires</b> et votre
+        <b>audit complet par email</b>. Sans connexion à votre compte LinkedIn.</p>
+
+      <ul class="scanl-proof" aria-label="Preuves">
+        <li><b>+1 200</b> profils analysés</li>
+        <li><b>+300</b> indépendants accompagnés</li>
+        <li><b>6 ans</b> d'expertise LinkedIn</li>
+      </ul>
+
+      <div class="scanl-scanner">
+        <div class="scanner" id="scanner">
+          <div class="scanner-in">
+            <div class="scan-title">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              <h2>Votre Mini-Audit <svg class="li-logo" viewBox="0 0 24 24" role="img" aria-label="LinkedIn"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.2H4.6V19h2.5V9.2zM5.85 8.1a1.45 1.45 0 1 0 0-2.9 1.45 1.45 0 0 0 0 2.9zM19.4 13.6c0-2.6-1.4-3.9-3.3-3.9-1.5 0-2.2.8-2.6 1.4V9.2H11c.03.7 0 9.8 0 9.8h2.5v-5.5c0-.3 0-.6.1-.8.3-.6.7-1.2 1.6-1.2 1.1 0 1.6.9 1.6 2.1V19h2.6v-5.4z"/></svg></h2>
+              <span class="scan-badge">Gratuit</span>
+            </div>
+            <p class="scan-sub">Diagnostic de votre profil et de votre potentiel de prospection.</p>
+
+            <div class="quiz-intro" id="quizIntro">
+              <div class="scan-tiles">
+                <div class="scan-tile"><b>18</b><span>questions</span></div>
+                <div class="scan-tile"><b>2 min</b><span>chrono</span></div>
+                <div class="scan-tile"><b>100 %</b><span>anonyme</span></div>
+              </div>
+              <div class="scan-preview">
+                <span class="ghost-ring" aria-hidden="true">?</span>
+                <span class="ghost-txt">Votre <b>score sur 100</b> vous attend,<br>avec vos <b>3 actions prioritaires</b>.</span>
+              </div>
+              <button class="btn" id="startQuiz" type="button">Commencer le diagnostic</button>
+              <p class="scan-foot">Sans connexion à votre compte LinkedIn</p>
+            </div>
+
+            <div class="quiz" id="quiz">
+              <div class="quiz-head">
+                <button class="quiz-back" id="quizBack" type="button">← Précédent</button>
+                <span class="quiz-progress" id="quizProgress">1/18</span>
+              </div>
+              <div class="quiz-bar"><i id="quizBarFill"></i></div>
+              <div class="quiz-step" id="quizStep">
+                <p class="quiz-q" id="quizQ"></p>
+                <div class="quiz-opts" id="quizOpts"></div>
+              </div>
+            </div>
+
+            <div class="scan-log" id="scanLog" role="status" aria-live="polite"></div>
+
+            <div class="scan-results" id="results">
+              <div class="score-top">
+                <div class="score-ring" id="scoreRing">
+                  <span class="val" id="scoreVal">0</span>
+                </div>
+                <p class="score-verdict" id="verdict"></p>
+              </div>
+              <div class="bars" id="bars"></div>
+              <ol class="recos" id="recos"></ol>
+              <p class="rdv-pitch" id="rdvPitch" style="display:none"></p>
+              <a class="btn rdv-cta" id="rdvCta" style="display:none" target="_blank" rel="noopener">Réserver mon rendez-vous avec ce score</a>
+              <form class="report-form" id="reportForm">
+                <input type="email" placeholder="votre@email.pro" required aria-label="Votre email professionnel">
+                <button class="btn" type="submit">Recevoir mon plan d’action pour les 30 prochains jours</button>
+              </form>
+              <p class="report-ok" id="reportOk">✔ Audit envoyé ! Vérifiez votre boîte mail.</p>
+              <button class="rescan" id="rescan" type="button">Refaire le diagnostic</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="scanl-foot">
+      <p>Eagle Eye Digital · Toulouse &amp; partout en France</p>
+    </footer>
+  </div>
+
+  <!-- Événements Meta : envoyés seulement si le pixel est actif -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function(){
+      if (typeof window.fbq !== 'function') return;
+      var form = document.getElementById('reportForm');
+      if (form) form.addEventListener('submit', function(){ fbq('track', 'Lead'); });
+      var rdv = document.getElementById('rdvCta');
+      if (rdv) rdv.addEventListener('click', function(){ fbq('track', 'Schedule'); });
+    });
+  </script>
+</Base>
+
+<style>
+  .scanl{
+    position:relative;overflow:hidden;
+    min-height:100vh;display:flex;flex-direction:column;
+    background:radial-gradient(1200px 640px at 78% -12%,var(--hero-bg2) 0%,var(--hero-bg) 62%);
+    color:var(--hero-ink);
+  }
+
+  /* ===== Thème ORANGE ÉLECTRIQUE (variante B) =====
+     On surcharge les variables d'accent sur toute la page : boutons,
+     jauges, anneau du score, badges et halos passent à l'orange. */
+  .scanl--orange{
+    --grad:linear-gradient(100deg,#FF5F00,#FFB347);
+    --g1:#FF5F00;
+    --g2:#FFB347;
+    --hero-cyan:#FF7A1A;
+    --hero-violet:#FF9A3D;
+    --hero-bg2:#4A2004;
+  }
+  :global([data-theme="light"]) .scanl--orange{
+    --grad:linear-gradient(100deg,#E05500,#FF8A2B);
+    --g1:#E05500;
+    --g2:#FF8A2B;
+    --hero-cyan:#E86A00;
+    --hero-violet:#C24E00;
+    --hero-bg2:#FFE9D6;
+  }
+  /* détails bleus codés en dur dans le thème clair, repeints en orange */
+  :global([data-theme="light"]) .scanl--orange :global(.scan-badge){background:rgba(255,106,0,.12);color:#B34700;border-color:rgba(224,85,0,.4)}
+  :global([data-theme="light"]) .scanl--orange :global(.quiz-opt:hover){border-color:#FF6A00}
+  :global([data-theme="light"]) .scanl--orange :global(.recos){background:#FFF4EC}
+  :global([data-theme="light"]) .scanl--orange :global(.recos .n){background:rgba(255,106,0,.14);color:#B34700}
+  :global([data-theme="light"]) .scanl--orange :global(.scan-log .line.on .st){border-color:#FF6A00;border-top-color:transparent}
+  :global([data-theme="light"]) .scanl--orange :global(.scan-log .line.done .st){border-color:#FF6A00;background:#FF6A00}
+  .scanl--orange :global(.scanner){
+    background:linear-gradient(140deg,rgba(255,95,0,.7),rgba(255,179,71,.55) 55%,rgba(255,95,0,.25));
+    box-shadow:0 30px 70px -32px rgba(255,95,0,.4);
+  }
+
+  /* le réseau de points animé du site, derrière le contenu */
+  .scanl :global(#net){position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+  .scanl-head, .scanl-main, .scanl-foot{position:relative;z-index:2}
+  /* logo + bouton de thème groupés et centrés, pensé mobile d'abord */
+  .scanl-head{display:flex;justify-content:center;align-items:center;gap:136px;padding:26px 20px 0}
+  @media (max-width:520px){.scanl-head{gap:56px}}
+  .scanl-head :global(.theme-btn){margin-left:0}
+  .scanl-main{
+    width:100%;max-width:680px;margin:0 auto;padding:34px 20px 70px;
+    display:flex;flex-direction:column;align-items:center;text-align:center;
+  }
+  .scanl-main h1{
+    font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:700;margin:16px 0 18px;max-width:24ch;
+  }
+  .scanl-lede{color:var(--hero-muted);font-size:1.04rem;max-width:52ch;margin-bottom:22px}
+  .scanl-proof{
+    list-style:none;display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:center;
+    margin:0 0 34px;padding:0;font-size:.88rem;color:var(--hero-muted);
+  }
+  .scanl-proof b{color:var(--hero-ink)}
+  .scanl-scanner{width:100%;max-width:560px}
+  /* le scanner de l'accueil « déborde » vers le bas : ici on le pose à plat */
+  .scanl-scanner :global(.scanner){transform:none}
+  .scanl-foot{
+    margin-top:auto;padding:26px 20px;text-align:center;
+    font-size:.78rem;color:var(--hero-muted);
+  }
+</style>

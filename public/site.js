@@ -119,14 +119,20 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
   var hero = canvas.parentElement;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* palettes de particules selon le thème */
+  /* palettes de particules selon le thème ; une page peut imposer la
+     variante orange (A/B test) via window.EED_NET_PALETTE = 'orange' */
   var PALETTES = {
     dark:  { link: '142,110,220', hot: '71,207,230',  node: '163,121,238' },
     light: { link: '14,61,176',   hot: '29,116,232',  node: '22,83,216' }
   };
+  var PALETTES_ORANGE = {
+    dark:  { link: '255,140,60', hot: '255,122,0',  node: '255,166,77' },
+    light: { link: '224,90,0',   hot: '255,106,0',  node: '234,88,12' }
+  };
   function pal(){
+    var set = window.EED_NET_PALETTE === 'orange' ? PALETTES_ORANGE : PALETTES;
     return document.documentElement.getAttribute('data-theme') === 'light'
-      ? PALETTES.light : PALETTES.dark;
+      ? set.light : set.dark;
   }
   var C = pal();
   window.addEventListener('eedtheme', function(){ C = pal(); if (reduced) step(); });
