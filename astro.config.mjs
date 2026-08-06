@@ -3,5 +3,8 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://eagleeye.digital',
-  integrations: [sitemap()],
+  integrations: [
+    // /scan est la landing des publicités : noindex, et hors du sitemap
+    sitemap({ filter: (page) => !page.includes('/scan/') }),
+  ],
 });
