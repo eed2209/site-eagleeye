@@ -179,11 +179,14 @@
     border-radius:20.5px;background:var(--hero-glass);backdrop-filter:blur(16px);
     padding:30px 28px 28px;
   }
+  /* Ancre CTA #scanner : atterrir à la hauteur du titre héro (remonte en haut) */
+  #scanner{scroll-margin-top:248px}
   @media (max-width:980px){
     .hero-inner{grid-template-columns:1fr;padding-top:72px}
     .hero-copy{padding-right:0}
     .scanner{transform:translateY(24px)}
     .hero-note{margin-top:32px}
+    #scanner{scroll-margin-top:90px}
   }
   .scan-title{display:flex;align-items:center;gap:12px;margin-bottom:6px}
   .scan-title .li-logo{height:1.06em;width:1.06em;vertical-align:-.14em;margin-left:.08em}
