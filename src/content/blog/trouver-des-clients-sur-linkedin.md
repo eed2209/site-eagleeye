@@ -16,11 +16,15 @@ Voici les 7 leviers qui fonctionnent pour une TPE ou un indépendant. Classés d
 
 Avant toute action, votre profil doit convertir la visite en intérêt.
 
+<video src="/videos/profil-convertit.mp4" autoplay loop muted playsinline preload="metadata" style="width:320px;max-width:100%;height:auto;border-radius:8px;"></video>
+
 C'est le socle : titre orienté bénéfice client, section Infos qui parle de leurs problèmes, preuves sociales. Notre [checklist complète du profil](/blog/optimiser-profil-linkedin-independant/) prend 2 heures à appliquer.
 
 ## ➪ 2. Les recommandations clients
 
 Deux ou trois recommandations récentes rassurent plus que n'importe quel argumentaire.
+
+![Les recommandations clients rassurent sur LinkedIn](/images/reco-clients.gif)
 
 Demandez-les à la fin de chaque mission réussie. C'est le meilleur moment.
 
@@ -33,6 +37,8 @@ La régularité bat le génie. C'est celui qui publie chaque semaine qu'on retie
 ## ➪ 4. Les commentaires stratégiques
 
 Commenter les publications de vos cibles et des comptes qu'elles suivent vous rend visible sans rien vendre.
+
+![Commenter pour être visible sur LinkedIn](/images/commentaires-strategiques.gif)
 
 Quinze minutes par jour de commentaires pertinents génèrent souvent plus de visites de profil que vos propres posts.
 
@@ -47,6 +53,8 @@ Nous avons détaillé la mécanique complète dans [comment prospecter sur Linke
 LinkedIn amplifie le réel.
 
 Un salon, une conférence, un afterwork : chaque rencontre physique devient une connexion en ligne qui se souvient de vous. C'est toute la logique de l'Indépendance Day que nous organisons à Toulouse : 300 indépendants dans une salle, des centaines de connexions qualifiées ensuite.
+
+<video src="/videos/evenements-reseau.mp4" autoplay loop muted playsinline preload="metadata" style="width:480px;max-width:100%;height:auto;border-radius:8px;"></video>
 
 ## ➪ 7. Le webinaire : le levier le plus puissant
 
