@@ -820,7 +820,8 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
     section.addEventListener('mouseleave', start);
   }
 
-  show(0);
+  /* slide de départ (data-start) : Nassim au centre, puis Doriane, puis Karen */
+  show(parseInt(wrap.getAttribute('data-start'), 10) || 0);
   start();
 })();
 
