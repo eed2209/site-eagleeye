@@ -785,6 +785,45 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
   })(slots[i]);
 })();
 
+/* ================= Carrousel équipe : un cran à la fois ================= */
+(function(){
+  var wrap = document.querySelector('.founder-slides');
+  if (!wrap) return;
+  var slides = wrap.querySelectorAll('.founder-slide');
+  var dots = document.querySelectorAll('.founder-dot');
+  if (slides.length < 2) return;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var idx = 0, timer = null;
+
+  function show(i){
+    idx = (i + slides.length) % slides.length;
+    for (var k = 0; k < slides.length; k++){
+      slides[k].classList.toggle('on', k === idx);
+      if (dots[k]) dots[k].classList.toggle('on', k === idx);
+    }
+  }
+  function stop(){ if (timer){ clearInterval(timer); timer = null; } }
+  function start(){
+    if (reduced) return; // pas de rotation auto si l'utilisateur préfère moins d'animations
+    stop();
+    timer = setInterval(function(){ show(idx + 1); }, 7500);
+  }
+
+  for (var d = 0; d < dots.length; d++)(function(i){
+    dots[i].addEventListener('click', function(){ show(i); start(); });
+  })(d);
+
+  /* pause pendant la lecture : le survol fige la slide en cours */
+  var section = document.querySelector('.founder');
+  if (section){
+    section.addEventListener('mouseenter', stop);
+    section.addEventListener('mouseleave', start);
+  }
+
+  show(0);
+  start();
+})();
+
 /* ================= Chaîne d'usine : étape active en cycle ================= */
 (function(){
   var machines = document.querySelectorAll('.machine');
