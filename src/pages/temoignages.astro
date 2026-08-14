@@ -1,26 +1,59 @@
 ---
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
+
+/* Témoignages clients des programmes EED, hébergés sur le Viméo de Nassim.
+   Lecture au clic via le player Viméo en mode sans pistage (dnt=1) : aucun
+   cookie tant que la vidéo n'est pas lancée, aucun cookie de suivi ensuite.
+   h = code d'accès des vidéos non répertoriées (vide si vidéo publique). */
+const temoignages = [
+  { id: '1174799252', h: 'f763e4c002', name: 'Robson Richers',    portrait: false, thumb: '2135468752-611f685af2c4a3ea842cc146ede1c170c099e420ae292093a380c64a13ab10e8-d' },
+  { id: '1097519133', h: 'f1ddad3479', name: 'Barbara Vincent',   portrait: false, thumb: '2031891123-922dab21198e1d9da977739130dd0afe403026717fecae3d8f7c83dcdce57211-d' },
+  { id: '765655770',  h: '',           name: 'David Beck',        portrait: false, thumb: '1537552906-54c7ea86b4723309cdddd7a0e3d35330118f85fa347f24d91d6a8d89562cfb69-d' },
+  { id: '1174799841', h: 'ed399967e4', name: 'Olivier Chaudron',  portrait: false, thumb: '2135472885-ade6e3780adc1ff5086ab5d6da51e18a987d3d9a7265b5bd38b94d7c6087fdf0-d' },
+  { id: '1175539799', h: 'be9d2d7ae8', name: 'Patricia Foillard', portrait: false, thumb: '2136400741-35bc4d15a60789a5a666044b63fd16d7489d170aec847d2912f5a3b10baa78b4-d' },
+  { id: '765721516',  h: '',           name: 'Philippe Griffol',  portrait: true,  thumb: '1537669637-5cadc02b4e509ae9d2b8a5c4918e0cd87d6c6f4a423049a5b744d051f94ccd18-d' },
+  { id: '1073908146', h: 'fe6dbe82c8', name: 'Florence Tosi',     portrait: true,  thumb: '2003151290-5de3a83cf496e92273060992e408007d35281287894eccf92a41269a84e8a460-d' },
+  { id: '1097531379', h: 'ab3645ce11', name: 'Corinne Carlier',   portrait: true,  thumb: '2031902986-abfabdacc4f8181d749c7b88c28e296d58684987cbe9013251c8e87f94a1d095-d' },
+  { id: '1174799131', h: '5974830dcb', name: 'Stéphanie Moillic', portrait: true,  thumb: '2135467946-1e5ad59ee3f505e8a4b86af049ab12b4be97d791b531363701a7d245e02f62be-d' },
+  { id: '1174799090', h: 'fe66f5c6a0', name: 'Gwladys Cren',      portrait: true,  thumb: '2135467757-6ac0aacc33658d9a1261334bb6b96e95a0c020d5c5fe5afa9a65b0789739eb90-d' },
+];
+const paysage = temoignages.filter(t => !t.portrait);
+const portrait = temoignages.filter(t => t.portrait);
+const thumbUrl = (t) => `https://i.vimeocdn.com/video/${t.thumb}_640`;
 ---
 <Base
   title="Témoignages clients : ils ont confié leur LinkedIn à Eagle Eye Digital"
-  description="Consultants, dirigeants de TPE, formateurs : leurs résultats après avoir confié leur prospection LinkedIn à Eagle Eye Digital."
+  description="Consultants, dirigeants de TPE, formateurs : leurs témoignages en vidéo après avoir suivi les programmes Eagle Eye Digital."
 >
   <Header />
   <main class="page">
     <span class="eyebrow">Témoignages</span>
     <h1>Ils ont confié leur LinkedIn à Eagle Eye Digital.</h1>
-    <p class="lede">Des indépendants et des TPE, avant et après la méthode.</p>
+    <p class="lede">Des indépendants et des dirigeants de TPE, en vidéo et dans leurs mots.</p>
 
     <section>
-      <h2>C. M., consultante indépendante à Toulouse</h2>
-      <p>« Je publiais dans le vide depuis deux ans. En trois mois d'accompagnement, mon agenda s'est rempli de rendez-vous qualifiés, sans publicité et sans forcer. »</p>
+      <div class="video-temos">
+        {paysage.map(t => (
+          <figure class="vt-card">
+            <button class="video-temo" type="button" data-vimeo-id={t.id} data-vimeo-h={t.h} style={`background-image:url('${thumbUrl(t)}')`} aria-label={`Lire le témoignage de ${t.name}`}>
+              <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+            </button>
+            <figcaption>{t.name}</figcaption>
+          </figure>
+        ))}
+      </div>
 
-      <h2>J. R., dirigeant de TPE, secteur BTP</h2>
-      <p>« Le diagnostic a mis le doigt exactement là où ça bloquait : mon titre de profil. Une correction, et le taux de réponse a doublé. »</p>
-
-      <h2>S. B., formatrice indépendante en Occitanie</h2>
-      <p>« Tout est mesuré. Je sais ce que chaque euro et chaque heure investis me rapportent en rendez-vous. »</p>
+      <div class="video-temos video-temos-portrait">
+        {portrait.map(t => (
+          <figure class="vt-card vt-portrait">
+            <button class="video-temo" type="button" data-vimeo-id={t.id} data-vimeo-h={t.h} style={`background-image:url('${thumbUrl(t)}')`} aria-label={`Lire le témoignage de ${t.name}`}>
+              <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+            </button>
+            <figcaption>{t.name}</figcaption>
+          </figure>
+        ))}
+      </div>
     </section>
 
     <section>

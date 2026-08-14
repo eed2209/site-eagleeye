@@ -598,6 +598,38 @@
   }
   .temo-layout{display:grid;grid-template-columns:1.3fr 1fr;gap:20px 28px;align-items:start}
   @media (max-width:880px){.temo-layout{grid-template-columns:1fr}}
+
+  /* ---- Témoignages vidéo Viméo (accueil + page /temoignages) ---- */
+  .video-temos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 22px}
+  .video-temos + .video-temos{margin-top:26px}
+  .video-temos-portrait{grid-template-columns:repeat(5,1fr)}
+  @media (max-width:880px){
+    .video-temos{grid-template-columns:1fr}
+    .video-temos-portrait{grid-template-columns:repeat(2,1fr)}
+  }
+  .vt-card{margin:0}
+  .video-temo{
+    position:relative;display:flex;align-items:center;justify-content:center;
+    width:100%;aspect-ratio:16/9;border:0;padding:0;cursor:pointer;border-radius:16px;overflow:hidden;
+    background-color:var(--panel);background-size:cover;background-position:center;
+    box-shadow:var(--shadow);transition:transform .2s;
+  }
+  .vt-portrait .video-temo{aspect-ratio:9/16}
+  .video-temo:hover{transform:translateY(-2px)}
+  .video-temo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,6,30,.05),rgba(1,6,30,.45));transition:background .2s}
+  .video-temo:hover::before{background:linear-gradient(180deg,rgba(1,6,30,.15),rgba(1,6,30,.6))}
+  .video-temo.playing::before{display:none}
+  .vt-play{
+    position:relative;z-index:2;width:58px;height:58px;border-radius:50%;
+    border:2px solid #fff;background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;
+    backdrop-filter:blur(4px);transition:transform .2s,background .2s;
+  }
+  .video-temo:hover .vt-play{transform:scale(1.1);background:rgba(0,0,0,.55)}
+  .vt-play svg{width:24px;height:24px;margin-left:3px;fill:#fff}
+  .video-temo.playing .vt-play{display:none}
+  .video-temo iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3}
+  .vt-card figcaption{margin-top:9px;text-align:center;font-size:.88rem;color:var(--muted)}
+  .temo-more{margin-top:22px;text-align:center;font-size:.95rem}
   .quote-big{
     grid-row:span 2;position:relative;
     background:var(--panel);border:1px solid var(--edge);border-radius:24px;box-shadow:var(--shadow);

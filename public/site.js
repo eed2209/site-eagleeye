@@ -753,6 +753,38 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
   });
 })();
 
+/* ================= Témoignages vidéo Viméo : lecture au clic =================
+   dnt=1 : mode « ne pas suivre » de Viméo, aucun cookie de pistage. */
+(function(){
+  var slots = document.querySelectorAll('.video-temo');
+  if (!slots.length) return;
+  var current = null;
+
+  function stop(slot){
+    var f = slot.querySelector('iframe');
+    if (f) f.remove();
+    slot.classList.remove('playing');
+  }
+
+  for (var i = 0; i < slots.length; i++)(function(slot){
+    slot.addEventListener('click', function(){
+      if (slot.classList.contains('playing')) return; // le player Viméo a la main
+      if (current && current !== slot) stop(current); // une seule vidéo à la fois
+      current = slot;
+      var id = slot.getAttribute('data-vimeo-id');
+      var h = slot.getAttribute('data-vimeo-h');
+      var f = document.createElement('iframe');
+      f.src = 'https://player.vimeo.com/video/' + id + '?' + (h ? 'h=' + h + '&' : '') +
+              'autoplay=1&dnt=1&byline=0&title=0&portrait=0';
+      f.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+      f.setAttribute('allowfullscreen', '');
+      f.setAttribute('title', slot.getAttribute('aria-label') || 'Témoignage vidéo');
+      slot.appendChild(f);
+      slot.classList.add('playing');
+    });
+  })(slots[i]);
+})();
+
 /* ================= Chaîne d'usine : étape active en cycle ================= */
 (function(){
   var machines = document.querySelectorAll('.machine');
