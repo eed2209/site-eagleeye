@@ -753,39 +753,6 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
   });
 })();
 
-/* ================= Témoignages vidéo : lecture au clic ================= */
-(function(){
-  var slots = document.querySelectorAll('.video-temo');
-  if (!slots.length) return;
-  var current = null;
-
-  function stop(slot){
-    var v = slot.querySelector('video');
-    if (v){ v.pause(); v.remove(); }
-    slot.classList.remove('playing');
-  }
-
-  for (var i = 0; i < slots.length; i++)(function(slot){
-    slot.addEventListener('click', function(){
-      if (slot.classList.contains('playing')) return; // les contrôles natifs prennent la main
-      if (current && current !== slot) stop(current); // une seule vidéo à la fois
-      current = slot;
-      var v = document.createElement('video');
-      v.src = slot.getAttribute('data-video');
-      v.controls = true;
-      v.autoplay = true;
-      v.playsInline = true;
-      v.preload = 'metadata';
-      slot.appendChild(v);
-      slot.classList.add('playing');
-      v.addEventListener('ended', function(){
-        stop(slot);
-        if (current === slot) current = null;
-      });
-    });
-  })(slots[i]);
-})();
-
 /* ================= Chaîne d'usine : étape active en cycle ================= */
 (function(){
   var machines = document.querySelectorAll('.machine');
