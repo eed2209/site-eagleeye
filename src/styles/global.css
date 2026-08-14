@@ -599,15 +599,17 @@
   .temo-layout{display:grid;grid-template-columns:1.3fr 1fr;gap:20px 28px;align-items:start}
   @media (max-width:880px){.temo-layout{grid-template-columns:1fr}}
 
-  /* ---- Témoignages vidéo Viméo (accueil + page /temoignages) ---- */
-  .video-temos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 22px}
+  /* ---- Témoignages vidéo Viméo (accueil + page /temoignages) ----
+     Flex + centrage : une rangée incomplète (2 vidéos pour 3 places)
+     se centre au lieu de laisser un trou à droite. */
+  .video-temos{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 22px}
   .video-temos + .video-temos{margin-top:26px}
-  .video-temos-portrait{grid-template-columns:repeat(5,1fr)}
+  .vt-card{margin:0;width:calc((100% - 44px)/3)}
+  .video-temos-portrait .vt-card{width:calc((100% - 88px)/5)}
   @media (max-width:880px){
-    .video-temos{grid-template-columns:1fr}
-    .video-temos-portrait{grid-template-columns:repeat(2,1fr)}
+    .vt-card{width:100%}
+    .video-temos-portrait .vt-card{width:calc((100% - 22px)/2)}
   }
-  .vt-card{margin:0}
   .video-temo{
     position:relative;display:flex;align-items:center;justify-content:center;
     width:100%;aspect-ratio:16/9;border:0;padding:0;cursor:pointer;border-radius:16px;overflow:hidden;
