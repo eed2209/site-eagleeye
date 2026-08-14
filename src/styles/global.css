@@ -689,8 +689,24 @@
   }
   .founder-txt .founder-quote{color:var(--ink)}
 
-  /* ---- Carrousel équipe : une personne à la fois, fondu doux ---- */
-  .founder-slides{display:grid}
+  /* ---- Carrousel équipe : une personne à la fois, navigation manuelle ---- */
+  .founder-slides{display:grid;position:relative}
+  .founder-arrow{
+    position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+    width:44px;height:44px;border-radius:50%;border:1.5px solid var(--edge);
+    background:color-mix(in srgb,var(--bg) 65%,transparent);backdrop-filter:blur(6px);
+    color:var(--ink);cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:border-color .15s,color .15s,transform .15s;
+  }
+  .founder-arrow svg{width:22px;height:22px}
+  .founder-arrow:hover{border-color:var(--cyan);color:var(--cyan)}
+  .founder-arrow.prev{left:-8px}
+  .founder-arrow.next{right:-8px}
+  @media (max-width:880px){
+    .founder-arrow.prev{left:2px}
+    .founder-arrow.next{right:2px}
+  }
   .founder-slide{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .7s ease;pointer-events:none}
   .founder-slide.on{opacity:1;visibility:visible;pointer-events:auto}
   .founder-mono{
