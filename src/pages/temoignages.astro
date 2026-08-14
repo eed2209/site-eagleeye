@@ -1,26 +1,30 @@
 ---
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
+
+/* Les vidéos sont servies par nginx depuis /var/www/media/temoignages/ sur le
+   VPS (hors du repo et du rsync de déploiement — trop lourdes pour git).
+   Source d'origine : témoignages filmés à l'Indépendance Day (page ID3). */
+const videos = ['01', '02', '04', '05', '06', '09', '10', '11', '12', '14', '15', '16'];
 ---
 <Base
   title="Témoignages clients : ils ont confié leur LinkedIn à Eagle Eye Digital"
-  description="Consultants, dirigeants de TPE, formateurs : leurs résultats après avoir confié leur prospection LinkedIn à Eagle Eye Digital."
+  description="Consultants, dirigeants de TPE, formateurs : leurs témoignages en vidéo après avoir confié leur prospection LinkedIn à Eagle Eye Digital."
 >
   <Header />
   <main class="page">
     <span class="eyebrow">Témoignages</span>
     <h1>Ils ont confié leur LinkedIn à Eagle Eye Digital.</h1>
-    <p class="lede">Des indépendants et des TPE, avant et après la méthode.</p>
+    <p class="lede">Des indépendants et des dirigeants de TPE, en vidéo et dans leurs mots.</p>
 
     <section>
-      <h2>C. M., consultante indépendante à Toulouse</h2>
-      <p>« Je publiais dans le vide depuis deux ans. En trois mois d'accompagnement, mon agenda s'est rempli de rendez-vous qualifiés, sans publicité et sans forcer. »</p>
-
-      <h2>J. R., dirigeant de TPE, secteur BTP</h2>
-      <p>« Le diagnostic a mis le doigt exactement là où ça bloquait : mon titre de profil. Une correction, et le taux de réponse a doublé. »</p>
-
-      <h2>S. B., formatrice indépendante en Occitanie</h2>
-      <p>« Tout est mesuré. Je sais ce que chaque euro et chaque heure investis me rapportent en rendez-vous. »</p>
+      <div class="video-temos video-temos-grid">
+        {videos.map((id, i) => (
+          <button class="video-temo" type="button" data-video={`/media/temoignages/temoignage-${id}.mp4`} style={`background-image:url('/media/temoignages/temoignage-${id}.webp')`} aria-label={`Lire le témoignage vidéo ${i + 1}`}>
+            <span class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+          </button>
+        ))}
+      </div>
     </section>
 
     <section>
