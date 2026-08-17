@@ -744,10 +744,10 @@
   .ev-meta{display:flex;gap:30px;margin-top:26px;font-size:.82rem;color:#A79FC6;flex-wrap:wrap}
   .ev-meta b{display:block;color:#F1EFFB;font-size:1rem}
 
-  /* mini carrousel photos de l'événement, à droite au-dessus du bouton */
-  .ev-side{display:flex;flex-direction:column;gap:20px;align-items:center;align-self:center}
+  /* carrousel photos de l'événement, à droite, CTA posé sur les images */
+  .ev-side{display:flex;flex-direction:column;align-items:center;align-self:center}
   .ev-carousel{
-    position:relative;width:360px;max-width:100%;aspect-ratio:3/2;
+    position:relative;width:720px;max-width:100%;aspect-ratio:3/2;
     border-radius:14px;overflow:hidden;
     box-shadow:0 24px 60px -24px rgba(0,0,0,.65);
   }
@@ -756,6 +756,12 @@
     opacity:0;transition:opacity 1s ease;
   }
   .ev-carousel img.on{opacity:1}
+  /* voile sombre en bas pour la lisibilité du bouton */
+  .ev-carousel::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:38%;
+    background:linear-gradient(transparent,rgba(5,3,20,.62));pointer-events:none;
+  }
+  .ev-cta{position:absolute;left:0;right:0;bottom:20px;display:flex;justify-content:center;z-index:2}
   @media (max-width:880px){.ev-side{align-self:stretch}.ev-carousel{width:100%}}
 
   /* ---------- Final — aligné gauche ---------- */
