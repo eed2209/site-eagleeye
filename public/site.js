@@ -790,6 +790,21 @@ if (location.hostname === 'eagleeye.digital' || location.hostname === 'www.eagle
   })(slots[i]);
 })();
 
+/* ========== Mini carrousel photos de l'événement : fondu doux auto ========== */
+(function(){
+  var wrap = document.querySelector('.ev-carousel');
+  if (!wrap) return;
+  var imgs = wrap.querySelectorAll('img');
+  if (imgs.length < 2) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var idx = 0;
+  setInterval(function(){
+    imgs[idx].classList.remove('on');
+    idx = (idx + 1) % imgs.length;
+    imgs[idx].classList.add('on');
+  }, 4000);
+})();
+
 /* ================= Carrousel équipe : navigation manuelle =================
    Pas de rotation automatique : flèches et points, le visiteur décide. */
 (function(){
