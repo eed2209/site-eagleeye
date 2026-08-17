@@ -14,6 +14,11 @@ if (location.hostname === '186.240.144.188' || location.hostname === 'srv1864501
   RDV_URL = 'https://srv1864501.hstgr.cloud:3443';
 }
 
+/* Domaine définitif */
+if (location.hostname === 'eagleeye.digital' || location.hostname === 'www.eagleeye.digital') {
+  RDV_URL = 'https://rdv.eagleeye.digital';
+}
+
 /* Liens directs vers la prise de RDV : tout <a data-rdv="..."> pointe vers
    l'outil (la valeur de data-rdv sert de traceur utm_medium). Masqué si
    l'outil n'est pas disponible (démo GitHub). */
