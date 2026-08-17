@@ -762,7 +762,8 @@
     content:"";position:absolute;left:0;right:0;bottom:0;height:38%;
     background:linear-gradient(transparent,rgba(5,3,20,.62));pointer-events:none;
   }
-  .ev-cta{position:absolute;left:0;right:0;bottom:20px;display:flex;justify-content:center;z-index:2}
+  .ev-cta{position:absolute;left:0;right:0;bottom:22px;display:flex;justify-content:center;z-index:2}
+  .ev-cta .btn{font-size:1.15rem;padding:17px 40px}
   @media (max-width:880px){.ev-side{align-self:stretch;margin-right:0}.ev-carousel{width:100%}}
 
   /* ---------- Final — aligné gauche ---------- */
