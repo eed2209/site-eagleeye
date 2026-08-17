@@ -65,12 +65,12 @@ jobs:
             return 1
           }
           fail=""
-          site_diag=$(probe_one https://srv1864501.hstgr.cloud/) || fail="le site"
-          rdv_diag=$(probe_one https://srv1864501.hstgr.cloud:3443/api/public/config) || fail="${fail:+$fail et }l'outil de RDV"
+          site_diag=$(probe_one https://eagleeye.digital/) || fail="le site"
+          rdv_diag=$(probe_one https://rdv.eagleeye.digital/api/public/config) || fail="${fail:+$fail et }l'outil de RDV"
           if [ -n "$fail" ]; then
             confirmed=""
-            if [ "$site_diag" != "OK" ] && confirm_down "https://srv1864501.hstgr.cloud/"; then confirmed="oui"; fi
-            if [ -z "$confirmed" ] && [ "$rdv_diag" != "OK" ] && confirm_down "https://srv1864501.hstgr.cloud:3443/api/public/config"; then confirmed="oui"; fi
+            if [ "$site_diag" != "OK" ] && confirm_down "https://eagleeye.digital/"; then confirmed="oui"; fi
+            if [ -z "$confirmed" ] && [ "$rdv_diag" != "OK" ] && confirm_down "https://rdv.eagleeye.digital/api/public/config"; then confirmed="oui"; fi
             if [ -z "$confirmed" ]; then
               echo "Echec depuis GitHub mais le serveur répond depuis les points de contrôle externes : fausse alerte réseau, aucun email envoyé."
               fail=""
@@ -118,8 +118,8 @@ jobs:
             - « problème DNS » → souci de nom de domaine, à vérifier dans le panneau Hostinger.
 
             Liens directs :
-            1. Le site : https://srv1864501.hstgr.cloud
-            2. L'outil de RDV : https://srv1864501.hstgr.cloud:3443
+            1. Le site : https://eagleeye.digital
+            2. L'outil de RDV : https://rdv.eagleeye.digital
             3. Panneau Hostinger : https://hpanel.hostinger.com
 
             Un email de confirmation sera envoyé automatiquement au retour en ligne.
