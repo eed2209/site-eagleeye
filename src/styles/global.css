@@ -738,7 +738,7 @@
   @media (max-width:880px){.event .wrap{grid-template-columns:1fr}}
   .event .eyebrow{color:#C9A961}
   .event .eyebrow::before{background:#C9A961}
-  .event h2{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:700;margin:16px 0 12px;max-width:18ch}
+  .event h2{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:700;margin:16px 0 12px;max-width:24ch}
   .event p{color:#A79FC6;max-width:50ch}
   .event .btn{background:#C9A961;color:#181405;box-shadow:0 10px 26px -12px rgba(201,169,97,.5)}
   .ev-meta{display:flex;gap:30px;margin-top:26px;font-size:.82rem;color:#A79FC6;flex-wrap:wrap}
