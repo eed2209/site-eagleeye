@@ -684,12 +684,13 @@ if (location.hostname === 'eagleeye.digital' || location.hostname === 'www.eagle
         rdv.style.display = 'none';
       }
     } else {
-      /* v1 (accueil) : bouton RDV avec le score et les 3 axes, comme à l'origine */
+      /* v1 (accueil) : bouton RDV avec le score et les 3 axes, comme à l'origine.
+         utm_source=site toujours : ce CTA vit sur le site. */
       if (pitch) pitch.style.display = 'none';
       if (rdv && RDV_URL){
         var q1 = 'eed_score=' + s.global + '&eed_vis=' + s.vis + '&eed_cred=' + s.cred + '&eed_pros=' + s.pros +
                 '&eed_rep=' + answers.join('-') +
-                '&utm_source=' + encodeURIComponent(u.utm_source || 'site') +
+                '&utm_source=site' +
                 '&utm_medium=scanner' +
                 '&utm_campaign=' + encodeURIComponent(u.utm_campaign || 'diagnostic');
         rdv.href = RDV_URL + (RDV_URL.indexOf('?') === -1 ? '?' : '&') + q1;
