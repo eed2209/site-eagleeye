@@ -899,6 +899,7 @@
 }
 .cc-title{font-size:1.05rem;font-weight:700;margin:0 0 6px;color:var(--ink)}
 .cc-text{font-size:.9rem;line-height:1.55;color:var(--muted);margin:0;max-width:none}
+.cc-text strong{color:var(--ink);font-weight:700}
 .cc-text a{color:var(--link);text-underline-offset:3px}
 .cc-prefs{margin:16px 0 4px;display:flex;flex-direction:column;gap:12px}
 .cc-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
@@ -921,21 +922,20 @@
      bords de l'écran -> aucun débordement possible) et hauteur qui épouse le
      contenu (pas de plafond). Refuser/Accepter côte à côte, « Personnaliser »
      en lien discret. */
-  .cc{padding:0 8px calc(8px + env(safe-area-inset-bottom, 0px))}
+  .cc{padding:0 8px calc(6px + env(safe-area-inset-bottom, 0px))}
   .cc-card{
     width:100%;max-width:100%;
-    padding:12px 14px;
+    padding:10px 12px;
     border-radius:14px;
     overflow:hidden;
   }
-  .cc-title{font-size:.9rem;margin-bottom:2px}
-  .cc-text{font-size:.8rem;line-height:1.35}
-  .cc-prefs{margin:9px 0 2px;gap:8px}
+  .cc-text{font-size:.78rem;line-height:1.3}
+  .cc-prefs{margin:8px 0 2px;gap:8px}
   .cc-row{padding:8px 10px;gap:10px}
   .cc-row span{font-size:.78rem}
   .cc-row small{font-size:.7rem}
-  .cc-actions{gap:8px;margin-top:10px}
-  .cc-actions .cc-btn{flex:1 1 0;min-width:0;padding:10px;font-size:.85rem}
+  .cc-actions{gap:8px;margin-top:8px}
+  .cc-actions .cc-btn{flex:1 1 0;min-width:0;padding:9px 10px;font-size:.85rem}
   .cc-actions [data-cc="refuse"]{order:1}
   .cc-actions [data-cc="accept"]{order:2}
   .cc-actions [data-cc="custom"]{

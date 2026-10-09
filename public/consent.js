@@ -149,8 +149,7 @@
     root.innerHTML =
       '<div class="cc-card">' +
         '<div class="cc-main">' +
-          '<h2 class="cc-title">Cookies</h2>' +
-          '<p class="cc-text">Nous utilisons des cookies pour mesurer l\'audience et l\'efficacité de nos campagnes. ' +
+          '<p class="cc-text"><strong>Cookies.</strong> Mesure d\'audience et efficacité de nos campagnes. ' +
             '<a href="/politique-de-confidentialite/">En savoir plus</a>.</p>' +
         '</div>' +
         '<div class="cc-prefs" hidden>' +
