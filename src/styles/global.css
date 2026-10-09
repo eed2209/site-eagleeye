@@ -914,7 +914,43 @@
 .cc-primary{border:0;color:#fff;background:var(--grad)}
 .cc-primary:hover{filter:brightness(1.07)}
 @media (max-width:560px){
-  .cc{padding:10px}
-  .cc-card{padding:18px}
-  .cc-btn{flex:1 1 100%}
+  /* « bottom sheet » : collé au bas, pleine largeur, hauteur plafonnée ->
+     impossible de déborder en largeur, et ne mange plus tout l'écran. */
+  .cc{padding:0}
+  .cc-card{
+    max-width:none;width:100%;
+    padding:16px;
+    border-left:0;border-right:0;border-bottom:0;
+    border-radius:16px 16px 0 0;
+    max-height:82vh;overflow-y:auto;
+  }
+  .cc-title{font-size:1rem;margin-bottom:4px}
+  .cc-text{font-size:.82rem;line-height:1.45}
+  .cc-prefs{margin:12px 0 2px;gap:10px}
+  .cc-row{padding:10px 12px;gap:12px}
+  .cc-row span{font-size:.82rem}
+  .cc-row small{font-size:.74rem}
+  .cc-actions{gap:8px;margin-top:14px}
+  .cc-btn{flex:1 1 100%;min-width:0;padding:11px 14px}
+}
+
+/* ---------- Apparition latérale des cartes « plan de vol » (#offres) ----------
+   Au scroll, chaque carte glisse depuis le côté : droite, gauche, droite.
+   Déclenché par site.js (IntersectionObserver) qui pose .cards-reveal sur
+   .flight puis .in sur chaque carte entrée dans l'écran.
+   L'état masqué n'est appliqué QUE si .cards-reveal est posé -> sans JS ou en
+   « prefers-reduced-motion: reduce », les cartes restent visibles normalement. */
+@media (prefers-reduced-motion: no-preference){
+  .offres .flight.cards-reveal .stage{
+    opacity:0;
+    transform:translateX(var(--dx,60px));
+    transition:opacity .7s ease, transform .75s cubic-bezier(.22,.61,.36,1);
+    will-change:opacity,transform;
+  }
+  .offres .flight.cards-reveal .stage:nth-child(1){ --dx:64px; }   /* entre par la droite */
+  .offres .flight.cards-reveal .stage:nth-child(2){ --dx:-64px; }  /* entre par la gauche */
+  .offres .flight.cards-reveal .stage:nth-child(3){ --dx:64px; }   /* entre par la droite */
+  .offres .flight.cards-reveal .stage.in{ opacity:1; transform:translateX(0); }
+  /* une fois en place, le survol reprend son petit soulèvement */
+  .offres .flight.cards-reveal .stage.in:hover{ transform:translateY(-6px); }
 }

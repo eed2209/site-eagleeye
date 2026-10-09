@@ -871,3 +871,36 @@ if (location.hostname === 'eagleeye.digital' || location.hostname === 'www.eagle
     }, STEP_MS);
   }
 })();
+
+/* ================= Apparition latérale des cartes « plan de vol » (#offres) =========
+   Au scroll, chaque carte glisse depuis le côté (droite, gauche, droite) quand
+   elle entre dans l'écran. On pose .cards-reveal sur .flight (ce qui active
+   l'état masqué défini en CSS), puis .in sur chaque carte au moment où elle
+   devient visible. Respecte prefers-reduced-motion (on ne masque rien alors). */
+(function(){
+  var flight = document.querySelector('.offres .flight');
+  if (!flight) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var cards = flight.querySelectorAll('.stage');
+  if (!cards.length) return;
+
+  /* pas d'IntersectionObserver (vieux navigateur) : on laisse les cartes visibles */
+  if (!('IntersectionObserver' in window)){
+    for (var k = 0; k < cards.length; k++) cards[k].classList.add('in');
+    return;
+  }
+
+  flight.classList.add('cards-reveal'); // déclenche l'état masqué (CSS)
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target); // une seule fois
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+
+  for (var i = 0; i < cards.length; i++) io.observe(cards[i]);
+})();
