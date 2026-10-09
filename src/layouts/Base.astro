@@ -71,6 +71,14 @@ const organization = {
       </div>
     </div>
 
+    <!-- ===== Consentement cookies (RGPD / CNIL) =====
+         GA4 et le pixel Meta ne se chargent qu'après acceptation.
+         >>> Collez ici votre identifiant Google Analytics 4 (format G-XXXXXXXXXX,
+         Google Analytics → Admin → Flux de données). Tant qu'il est vide,
+         la catégorie « Mesure d'audience » est proposée mais ne charge rien. -->
+    <script is:inline>window.EED_GA4_ID = 'G-YEF95L5PYL';</script>
+    <script is:inline src="/consent.js" defer></script>
+
     <script is:inline src="/site.js" defer></script>
   </body>
 </html>
