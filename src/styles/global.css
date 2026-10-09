@@ -914,24 +914,32 @@
 .cc-primary{border:0;color:#fff;background:var(--grad)}
 .cc-primary:hover{filter:brightness(1.07)}
 @media (max-width:560px){
-  /* « bottom sheet » : collé au bas, pleine largeur, hauteur plafonnée ->
-     impossible de déborder en largeur, et ne mange plus tout l'écran. */
+  /* « bottom sheet » compact : collé au bas, pleine largeur. Refuser/Accepter
+     côte à côte, « Personnaliser » en lien discret -> hauteur réduite. */
   .cc{padding:0}
   .cc-card{
     max-width:none;width:100%;
-    padding:16px;
+    padding:14px 16px calc(14px + env(safe-area-inset-bottom, 0px));
     border-left:0;border-right:0;border-bottom:0;
     border-radius:16px 16px 0 0;
-    max-height:82vh;overflow-y:auto;
+    max-height:88vh;overflow-y:auto;
   }
-  .cc-title{font-size:1rem;margin-bottom:4px}
-  .cc-text{font-size:.82rem;line-height:1.45}
-  .cc-prefs{margin:12px 0 2px;gap:10px}
-  .cc-row{padding:10px 12px;gap:12px}
-  .cc-row span{font-size:.82rem}
-  .cc-row small{font-size:.74rem}
-  .cc-actions{gap:8px;margin-top:14px}
-  .cc-btn{flex:1 1 100%;min-width:0;padding:11px 14px}
+  .cc-title{font-size:.95rem;margin-bottom:3px}
+  .cc-text{font-size:.82rem;line-height:1.4}
+  .cc-prefs{margin:10px 0 2px;gap:8px}
+  .cc-row{padding:9px 11px;gap:10px}
+  .cc-row span{font-size:.8rem}
+  .cc-row small{font-size:.72rem}
+  .cc-actions{gap:8px;margin-top:12px}
+  .cc-actions .cc-btn{flex:1 1 0;min-width:0;padding:11px 12px;font-size:.88rem}
+  .cc-actions [data-cc="refuse"]{order:1}
+  .cc-actions [data-cc="accept"]{order:2}
+  .cc-actions [data-cc="custom"]{
+    order:3;flex:1 1 100%;border:0;background:none;color:var(--muted);
+    text-decoration:underline;padding:6px;font-weight:500;font-size:.82rem;
+  }
+  .cc-actions [data-cc="custom"]:hover{transform:none;background:none}
+  .cc-actions [data-cc="save"]{order:4;flex:1 1 100%}
 }
 
 /* ---------- Apparition latérale des cartes « plan de vol » (#offres) ----------

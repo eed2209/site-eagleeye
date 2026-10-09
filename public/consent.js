@@ -150,9 +150,7 @@
       '<div class="cc-card">' +
         '<div class="cc-main">' +
           '<h2 class="cc-title">🍪 Cookies</h2>' +
-          '<p class="cc-text">Nous utilisons des cookies pour mesurer l\'audience du site ' +
-            'et, sur nos pages publicitaires, pour mesurer l\'efficacité de nos campagnes. ' +
-            'Vous pouvez tout accepter, tout refuser, ou choisir. ' +
+          '<p class="cc-text">Nous utilisons des cookies pour mesurer l\'audience et l\'efficacité de nos campagnes. ' +
             '<a href="/politique-de-confidentialite/">En savoir plus</a>.</p>' +
         '</div>' +
         '<div class="cc-prefs" hidden>' +
