@@ -914,29 +914,30 @@
 .cc-primary{border:0;color:#fff;background:var(--grad)}
 .cc-primary:hover{filter:brightness(1.07)}
 @media (max-width:560px){
-  /* « bottom sheet » compact : collé au bas, pleine largeur. Refuser/Accepter
-     côte à côte, « Personnaliser » en lien discret -> hauteur réduite. */
-  .cc{padding:0}
+  /* barre flottante compacte : petites marges latérales (ne touche jamais les
+     bords de l'écran -> aucun débordement possible) et hauteur qui épouse le
+     contenu (pas de plafond). Refuser/Accepter côte à côte, « Personnaliser »
+     en lien discret. */
+  .cc{padding:0 8px calc(8px + env(safe-area-inset-bottom, 0px))}
   .cc-card{
-    max-width:none;width:100%;
-    padding:14px 16px calc(14px + env(safe-area-inset-bottom, 0px));
-    border-left:0;border-right:0;border-bottom:0;
-    border-radius:16px 16px 0 0;
-    max-height:88vh;overflow-y:auto;
+    width:100%;max-width:100%;
+    padding:12px 14px;
+    border-radius:14px;
+    overflow:hidden;
   }
-  .cc-title{font-size:.95rem;margin-bottom:3px}
-  .cc-text{font-size:.82rem;line-height:1.4}
-  .cc-prefs{margin:10px 0 2px;gap:8px}
-  .cc-row{padding:9px 11px;gap:10px}
-  .cc-row span{font-size:.8rem}
-  .cc-row small{font-size:.72rem}
-  .cc-actions{gap:8px;margin-top:12px}
-  .cc-actions .cc-btn{flex:1 1 0;min-width:0;padding:11px 12px;font-size:.88rem}
+  .cc-title{font-size:.9rem;margin-bottom:2px}
+  .cc-text{font-size:.8rem;line-height:1.35}
+  .cc-prefs{margin:9px 0 2px;gap:8px}
+  .cc-row{padding:8px 10px;gap:10px}
+  .cc-row span{font-size:.78rem}
+  .cc-row small{font-size:.7rem}
+  .cc-actions{gap:8px;margin-top:10px}
+  .cc-actions .cc-btn{flex:1 1 0;min-width:0;padding:10px;font-size:.85rem}
   .cc-actions [data-cc="refuse"]{order:1}
   .cc-actions [data-cc="accept"]{order:2}
   .cc-actions [data-cc="custom"]{
     order:3;flex:1 1 100%;border:0;background:none;color:var(--muted);
-    text-decoration:underline;padding:6px;font-weight:500;font-size:.82rem;
+    text-decoration:underline;padding:4px;font-weight:500;font-size:.8rem;
   }
   .cc-actions [data-cc="custom"]:hover{transform:none;background:none}
   .cc-actions [data-cc="save"]{order:4;flex:1 1 100%}
