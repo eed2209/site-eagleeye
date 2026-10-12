@@ -115,6 +115,9 @@
   .theme-btn:hover{border-color:var(--hero-cyan);transform:rotate(20deg)}
   .nav-links + .theme-btn{margin-left:0}
   @media (max-width:880px){.nav-links{display:none}.nav-links + .theme-btn{margin-left:auto}}
+  /* Mobile : le bouton « Scanner mon profil » reste sur une seule ligne dans la
+     barre du haut (texte un peu plus compact, pas de retour à la ligne). */
+  @media (max-width:560px){.nav .btn{font-size:.8rem;padding:9px 16px;white-space:nowrap}}
 
   /* ---------- Hero — asymétrique, scanner incliné qui déborde ---------- */
   .hero{
