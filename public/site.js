@@ -52,6 +52,32 @@ if (location.hostname === 'eagleeye.digital' || location.hostname === 'www.eagle
   });
 })();
 
+/* ================= Menu hamburger (mobile) ================= */
+(function(){
+  var toggle = document.getElementById('navToggle');
+  var links  = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+  function close(){
+    links.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Ouvrir le menu');
+  }
+  function open(){
+    links.classList.add('open');
+    toggle.classList.add('open');
+    toggle.setAttribute('aria-expanded','true');
+    toggle.setAttribute('aria-label','Fermer le menu');
+  }
+  toggle.addEventListener('click', function(){
+    if (links.classList.contains('open')) close(); else open();
+  });
+  // Fermer quand on clique un lien, qu'on repasse en desktop ou qu'on presse Echap
+  links.addEventListener('click', function(e){ if (e.target.tagName === 'A') close(); });
+  window.addEventListener('resize', function(){ if (window.innerWidth > 880) close(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+})();
+
 /* ================= Transition "rapace" entre les pages ================= */
 (function(){
   var wipe = document.getElementById('wipe');
