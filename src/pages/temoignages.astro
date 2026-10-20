@@ -198,10 +198,14 @@ const piliers = [
     .mc-page strong{color:#fff}
 
     /* surligné jaune incliné, repris tel quel du funnel */
-    .mc-hl{position:relative;display:inline-block;color:var(--navy);z-index:0;padding:0 8px}
+    /* Surligné plein : sur fond bleu nuit, le texte doit reposer entièrement
+       sur le jaune (sinon la partie des lettres hors de la barre jaune serait
+       bleu nuit sur bleu nuit, donc invisible). Bloc jaune incliné derrière
+       tout le mot, texte bleu nuit lisible par-dessus. */
+    .mc-hl{position:relative;display:inline-block;color:var(--navy);z-index:0;padding:.08em 10px;line-height:1.1}
     .mc-hl::before{
-      content:"";position:absolute;left:0;right:0;bottom:.06em;height:.46em;
-      background:var(--yellow);transform:skewX(-6deg);z-index:-1;border-radius:2px;
+      content:"";position:absolute;inset:0;
+      background:var(--yellow);transform:skewX(-6deg);z-index:-1;border-radius:3px;
     }
 
     .mc-eyebrow{
