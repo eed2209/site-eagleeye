@@ -39,6 +39,38 @@ const piliers = [
   { c: 'C', t: 'Conquête',    d: 'Faire le premier pas, au bon moment, avec le bon message — et savoir transformer les conversations en clients.' },
   { c: '2', t: 'Catalyse',    d: 'Les bons outils, les bons templates, l’IA en coulisses et un environnement qui vous garde en mouvement.' },
 ];
+
+/* Avis Google clients (fiche Eagle Eye Digital, 4,8/5). Transcrits à la main
+   depuis la fiche Google — tous en 5/5 sauf Bernard Quidarré (4/5). Dédoublonnés.
+   Affichés tels quels ; le bouton renvoie vers la fiche pour l'intégralité. */
+const avis = [
+  { n: 'Anne Guillaume',     note: 5, t: "Le programme LinkedIn Business Accelerator est un outil précieux pour quiconque souhaite accroître sa visibilité et développer un réseau solide sur LinkedIn. Au-delà des modules très pratiques et des webinaires gratuits proposés sur divers sujets pertinents, la véritable valeur ajoutée de Nassim réside dans son engagement à vous accompagner à votre rythme, toujours avec respect et des conseils avisés. Merci." },
+  { n: 'Pierre Petruzzelli', note: 5, t: "J'ai triplé ma visibilité sur LinkedIn grâce à un accompagnement précis, personnalisé et extrêmement efficace en seulement un mois. Les échanges avec l'équipe ont été très enrichissants ; les réponses à mes questions étaient précises et immédiatement applicables. Nassim et son équipe mettent tout en œuvre pour répondre à nos besoins et à nos attentes. Merci !" },
+  { n: 'David Beck',         note: 5, t: "J'ai eu l'opportunité de participer au programme LinkedIn Sales Accelerator, qui offre de nombreuses clés pour optimiser ses opportunités et son temps. Je recommande vivement ce programme aux freelances comme moi, ou à toute personne en pleine croissance. Vous recherchez un professionnel compétent et attentif pour vous accompagner dans le développement de votre réseau et l'augmentation de votre chiffre d'affaires ? Ne cherchez plus ! Faites confiance à Eagle Eye Digital : vous ne le regretterez pas !" },
+  { n: 'Cynthia Roulez',     note: 5, t: "J'ai rencontré Nassim lors d'un de ses webinaires et j'ai eu l'opportunité de bénéficier d'un coaching sur les avantages d'une présence active et régulière sur LinkedIn. J'ai pris note de ses conseils, astuces et encouragements, et je compte remédier à mon silence numérique au plus vite. Je recommande vivement Nassim à toute personne souhaitant développer sa présence sur LinkedIn et accroître sa visibilité." },
+  { n: 'Laure Demerson',     note: 5, t: "J'ai intégré le programme LinkedIn Business Accelerator ! Cela me semblait être un excellent moyen de maîtriser LinkedIn comme canal d'acquisition de clients. Ce que j'apprécie particulièrement : la flexibilité des modules en ligne, qui me permet de progresser à mon rythme ; les séances de coaching de groupe qui favorisent les échanges et le partage d'expériences ; et l'opportunité de bénéficier de conseils d'experts." },
+  { n: 'Christine Kraus',    note: 5, t: "Nassim Amisse a parfaitement cerné les besoins spécifiques de mon activité, un peu atypique, de courtier en chevaux. Grâce à l'accompagnement d'Eagle Eye Digital, j'ai pu optimiser ma communication sur LinkedIn. J'ai gagné du temps et, surtout, une visibilité accrue. Mais ce n'est pas tout : Nassim m'a prodigué de nombreux conseils pour développer mon profil, et mon réseau s'est considérablement agrandi. Un grand merci à Nassim et à son équipe formidable !" },
+  { n: 'Emmanuel Hunter',    note: 5, t: "J'apprécie tout particulièrement le soutien et le coaching de Nassim pour développer mes compétences sur LinkedIn. Je partais de zéro et j'avais pas mal d'appréhensions, mais ses conseils m'ont permis de me lancer et m'ont donné envie d'explorer davantage ce système vaste et complexe, le tout dans une approche humaine et sans pression commerciale. Merci, Nassim." },
+  { n: 'Aurélie Malochet',   note: 5, t: "J'ai rencontré Nassim sur LinkedIn et j'ai eu le plaisir d'assister à quelques webinaires. Après plusieurs échanges, j'ai bénéficié d'un accompagnement en prospection, notamment sur LinkedIn. Eagle Eye Digital a mis en place une solution pour optimiser ma prospection, ce qui a permis d'élargir considérablement mon réseau et d'accroître mon nombre de contacts et d'abonnés. Leur équipe est très sympathique, disponible et accueillante." },
+  { n: 'Stéphanie Scrocco',  note: 5, t: "En tant que coach en orientation professionnelle et transition de carrière, j'ai intégré le programme LinkedIn Sales Accelerator et j'en suis extrêmement satisfaite. Les modules sont exceptionnellement bien conçus et complets. J'ai pu affiner ma stratégie de contenu et découvrir de nouveaux outils et méthodes de prospection. Je recommande vivement ce programme très pratique, riche en conseils et ressources. De plus, l'équipe est fantastique !" },
+  { n: 'Alex Rouillard',     note: 5, t: "En tant que conseillère en gestion de patrimoine, j'ai eu l'opportunité de tester le programme LinkedIn Sales Accelerator et j'en suis ravie. Les modules sont très clairs et complets, et surtout, ils conviennent à tous les niveaux de maîtrise de LinkedIn. J'ai optimisé ma présence en ligne et découvert de nouveaux outils et méthodes de prospection. Je recommande vivement ce programme résolument pratique, efficace et concret. L'équipe est très accessible et le temps passe vite lorsqu'on travaille avec elle !" },
+  { n: 'Patricia Foillard',  note: 5, t: "J'ai eu le privilège de lire « La Méthode 3C » de Nassim Amisse, et je dois dire que ce livre est une véritable pépite. Il offre une perspective unique sur la manière de réussir sur LinkedIn, une plateforme souvent complexe à maîtriser. L'auteur a su condenser les meilleures pratiques dans un guide accessible, adapté aussi bien aux débutants qu'aux experts. Je recommande vivement ce livre, qui m'a offert une vision novatrice de LinkedIn." },
+  { n: 'Céline Bouleau',     note: 5, t: "J'ai eu l'opportunité de faire la connaissance de Nassim en participant à l'un de ses webinaires, puis à d'autres ! Nous avons discuté à plusieurs reprises des services d'Eagle Eye Digital, et j'ai pu bénéficier d'un mois d'essai gratuit pour développer mon réseau LinkedIn et nouer des contacts prometteurs. Son équipe m'a apporté un soutien précieux. Tout le monde est accessible et sympathique ; c'est un vrai plaisir de travailler avec eux !" },
+  { n: 'Alexandre Bébé',     note: 5, t: "L'équipe d'Eagle Eye Digital, et Nassim en particulier, m'a prodigué des conseils et des recommandations précieuses pour optimiser mes publications LinkedIn. Le résultat a été indéniable : de nombreuses réactions positives et, surtout, des demandes de devis inattendues. Un grand merci à Eagle Eye Digital !" },
+  { n: 'Céline Di Venuto',   note: 5, t: "J'ai suivi les conseils de Nassim pour organiser mon webinaire sur le référencement Google et j'ai non seulement obtenu plus d'inscriptions que pour les webinaires précédents, mais aussi un plus grand nombre de participants. Beaucoup ont souhaité poursuivre la discussion, ce qui prouve que nous avons attiré le bon public." },
+  { n: 'Mathieu Quidarré',   note: 5, t: "Nassim m'a été recommandé, et je dois dire qu'il est extrêmement compétent dans son domaine. Il est très à l'écoute des problématiques du secteur et propose des suggestions pertinentes. Je le recommande sans hésiter à tout professionnel souhaitant accroître sa visibilité grâce à des stratégies de communication ciblées sur les réseaux sociaux." },
+  { n: 'Lamia Amrane',       note: 5, t: "En tant que rédactrice web, j'ai grandement bénéficié du programme LinkedIn Sales Accelerator, conçu et réalisé par l'équipe d'Eagle Eye Digital. J'y ai trouvé des conseils et des astuces à la fois pertinents et extrêmement utiles. Nassim et son équipe ont cerné nos difficultés et trouvé des solutions qui nous permettent de développer notre activité. Un grand merci à toute l'équipe !" },
+  { n: 'Alexis Desjardins',  note: 5, t: "Je recommande vivement les services d'Eagle Eye Digital. Leurs conseils avisés et précieux m'ont permis de définir clairement ma stratégie LinkedIn. Je remercie tout particulièrement Julie pour la qualité de nos échanges et Nassim pour son soutien indéfectible." },
+  { n: 'Philippe Griffol',   note: 5, t: "Une expérience formidable. La stratégie a été définie après mûre réflexion avec Nassim. Apprendre a été d'autant plus précieux que je suis complètement novice. Résultat : 1200 abonnés LinkedIn en 3 mois, un blog lié à LinkedIn, et un niveau d'autonomie que je n'aurais jamais imaginé atteindre. Nassim, avec sa gentillesse, sa décontraction et sa disponibilité, a été un véritable guide. Mon objectif de partager mes compétences avec un public ciblé a été atteint, et j'en suis extrêmement satisfait. Merci à Nassim et à son équipe." },
+  { n: 'Lucrèce Grimaud',    note: 5, t: "L'excellente compréhension des relations clients dont fait preuve Eagle Eye Digital, alliée à une disponibilité sans faille, en fait le partenaire idéal pour notre gestion des réseaux sociaux. L'expertise de Nassim sur LinkedIn est un atout majeur pour l'expérience client. Cette agence est en pleine expansion." },
+  { n: 'Marie Ambert',       note: 5, t: "Merci, Nassim, de m'avoir écoutée, d'avoir été si bienveillant, d'avoir donné de précieux conseils et de m'avoir encouragée. Je craignais que tu te comportes comme un simple vendeur, alors j'ai été agréablement surprise. Je sais que si je rencontre des difficultés, je peux toujours compter sur toi." },
+  { n: 'Anne Favarcq',       note: 5, t: "J'ai découvert Nassim grâce à BNI et depuis je le suis sur LinkedIn et je participe à ses webinaires. Ses conseils sont toujours pertinents ! Par ailleurs, c'est une personne inspirante qui vous donne envie de l'écouter. Merci Nassim." },
+  { n: 'Mélie M.',           note: 5, t: "J'ai récemment suivi une formation LinkedIn proposée par Nassim, et je suis extrêmement satisfaite de l'expérience. L'approche pédagogique est engageante et approfondie ! Merci." },
+  { n: 'Catherine Meyss',    note: 5, t: "J'ai été coachée et accompagnée par Nassim et son équipe pour améliorer mon marketing digital sur LinkedIn et cette expérience m'a été ultra bénéfique. Je vous recommande pleinement Eagle Eye Digital !" },
+  { n: 'Émilie P.',          note: 5, t: "Un immense merci à Nassim pour sa gentillesse, son efficacité et son excellent réseau. Attentif, dynamique et réactif ! J'ai participé au programme de formation Business Accelerator et j'en suis ravie." },
+  { n: 'Lucette Couderc',    note: 5, t: "Nassim donne des conseils précieux et ouvre le champ des possibles pour aider à la publication et à la prospection sur LinkedIn. Et il paraît qu'à la rentrée il y aura du nouveau qui va en intéresser plus d'un ! Merci Nassim !" },
+  { n: 'Bernard Quidarré',   note: 4, t: "Je recommande vivement cette personne, qui a une solide expérience en matière de satisfaction client. Son offre est claire : il explique simplement ce qu'il peut vous apporter. Il reste à l'écoute de vos besoins spécifiques et fait de cette flexibilité un atout majeur. L'an dernier, il m'a aidé à élaborer une stratégie de prospection qui a abouti à la signature de cinq contrats. Contactez-le, vous ne le regretterez pas." },
+];
 ---
 <Base
   title="Témoignages clients : ils ont confié leur LinkedIn à Eagle Eye Digital"
@@ -84,6 +116,40 @@ const piliers = [
               <figcaption>{t.name}</figcaption>
             </figure>
           ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- AVIS GOOGLE -->
+    <section class="mc-section mc-avis">
+      <div class="mc-wrap">
+        <div class="mc-avis-head">
+          <span class="mc-eyebrow">Ils en parlent</span>
+          <h2>Nos avis <span class="mc-hl">Google</span></h2>
+          <div class="av-score">
+            <span class="av-score-g" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23.52 12.27c0-.82-.07-1.6-.2-2.36H12v4.47h6.47a5.53 5.53 0 0 1-2.4 3.63v3h3.88c2.27-2.09 3.57-5.17 3.57-8.74z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.08 7.95-2.9l-3.88-3c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.26v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.27 14.29a7.2 7.2 0 0 1 0-4.58v-3.1H1.26a12 12 0 0 0 0 10.78l4.01-3.1z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.44-3.44A11.97 11.97 0 0 0 12 0 12 12 0 0 0 1.26 6.61l4.01 3.1C6.22 6.86 8.87 4.75 12 4.75z"/></svg>
+            </span>
+            <span class="av-score-num">4,8</span>
+            <span class="av-score-stars" aria-hidden="true">★★★★★</span>
+            <span class="av-score-count">sur&nbsp;47 avis Google</span>
+          </div>
+        </div>
+
+        <div class="av-grid">
+          {avis.map(a => (
+            <figure class="av-card">
+              <span class="av-stars" aria-label={`Note : ${a.note} sur 5`}>
+                <span class="av-full">{'★'.repeat(a.note)}</span><span class="av-empty">{'★'.repeat(5 - a.note)}</span>
+              </span>
+              <blockquote>{a.t}</blockquote>
+              <figcaption>{a.n}</figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div class="mc-center">
+          <a class="mc-cta mc-cta-ghost" href="https://share.google/cp6QTGVTk94meNpk0" target="_blank" rel="noopener">Voir tous les avis sur Google →</a>
         </div>
       </div>
     </section>
@@ -313,10 +379,41 @@ const piliers = [
     .mc-final{border-top:1px solid var(--line);margin-top:10px}
     .mc-final .mc-text{margin-bottom:26px}
 
+    /* ===== Avis Google ===== */
+    .mc-avis-head{text-align:center;margin-bottom:34px}
+    .mc-avis-head h2{margin-bottom:18px}
+    .av-score{
+      display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;
+      background:var(--navy-2);border:1px solid var(--line);border-radius:999px;padding:10px 22px;
+    }
+    .av-score-g{display:inline-flex;width:22px;height:22px}
+    .av-score-g svg{width:100%;height:100%}
+    .av-score-num{font-size:1.4rem;font-weight:800;color:#fff;line-height:1}
+    .av-score-stars{color:var(--yellow);letter-spacing:1px;font-size:1.05rem}
+    .av-score-count{color:var(--muted);font-size:.9rem;font-weight:600}
+
+    /* mur « masonry » : colonnes CSS, cartes de hauteur variable qui s'imbriquent */
+    .av-grid{column-count:3;column-gap:20px}
+    .av-card{
+      break-inside:avoid;width:100%;margin:0 0 20px;display:inline-block;
+      background:var(--navy-2);border:1px solid var(--line);border-radius:16px;padding:24px 24px 20px;
+    }
+    .av-stars{display:block;font-size:1.02rem;letter-spacing:1px;margin-bottom:12px}
+    .av-stars .av-full{color:var(--yellow)}
+    .av-stars .av-empty{color:rgba(255,255,255,.22)}
+    .av-card blockquote{margin:0 0 16px;color:var(--ink);font-size:.95rem;line-height:1.6}
+    .av-card figcaption{color:#fff;font-weight:700;font-size:.92rem}
+
     /* ===== Responsive ===== */
+    @media (max-width:980px){
+      .av-grid{column-count:2}
+    }
     @media (max-width:880px){
       .mc-piliers{grid-template-columns:repeat(2,1fr)}
       .mc-cards{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .av-grid{column-count:1}
     }
     @media (max-width:600px){
       .mc-section{padding:38px 0}
