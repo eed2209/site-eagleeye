@@ -56,10 +56,80 @@ const thumbUrl = (t) => `https://i.vimeocdn.com/video/${t.thumb}_640`;
       </div>
     </section>
 
+    <!-- Le programme que les personnes ci-dessus ont suivi : le LinkedIn
+         Business Accelerator. Bloc repris aux couleurs du funnel
+         masterclass.eagleeye.digital (bleu nuit, bleu vif, surligné jaune)
+         pour le détacher visuellement du reste de la page. -->
+    <section class="lba-bloc">
+      <div class="lba-card">
+        <span class="lba-kicker">Le programme qu'ils ont suivi</span>
+        <h2>Tous passés par le <span class="lba-hl">LinkedIn&nbsp;Business&nbsp;Accelerator</span>.</h2>
+        <p class="lba-lede">Nos témoins n'ont pas « fait du LinkedIn » tout seuls dans leur coin. Ils ont installé un système avec notre équipe : la méthode 3C+2, des actions mises en place pour eux dès le premier mois, puis un accompagnement qui tient sur la durée.</p>
+        <ul class="lba-points">
+          <li>Diagnostic &amp; roadmap, revue de profil, de posts et d'offre — mis en place par l'équipe</li>
+          <li>Des résultats concrets et mesurables dès les 30 premiers jours</li>
+          <li>Coaching collectif 3 fois par semaine et communauté privée</li>
+          <li>Satisfait ou remboursé · finançable (organisme de formation Qualiopi)</li>
+        </ul>
+        <a class="lba-cta" href="/offres/accompagnement-prospection/">Découvrir le LinkedIn Business Accelerator →</a>
+        <p class="lba-note">Une dizaine de places par mois. Sans engagement.</p>
+      </div>
+    </section>
+
     <section>
       <h2>Et vous, où en êtes-vous ?</h2>
       <p>Commencez comme eux : par le <a href="/diagnostic-linkedin/">diagnostic gratuit</a>.</p>
       <a class="btn" href="/#scanner">Faire mon diagnostic gratuit</a>
     </section>
   </main>
+
+  <style>
+    /* Bloc LBA aux couleurs du funnel masterclass (navy #0B1B33, bleu #1B6EF3,
+       jaune #FFD400). Couleurs fixes, indépendantes du thème clair/sombre du
+       site : c'est un panneau autonome, comme la section « événement ». */
+    .lba-bloc{padding-top:46px}
+    .lba-card{
+      position:relative;overflow:hidden;
+      background:linear-gradient(160deg,#122744 0%,#0B1B33 62%);
+      border:1px solid rgba(27,110,243,.35);
+      border-radius:24px;padding:52px 48px;
+      box-shadow:0 30px 70px -30px rgba(0,0,0,.6);
+      color:#EAF1FF;
+    }
+    .lba-card .lba-kicker{
+      display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.16em;
+      text-transform:uppercase;color:#FFD400;margin-bottom:16px;
+    }
+    .lba-card h2{
+      font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#fff;
+      line-height:1.18;margin:0 0 18px;max-width:24ch;
+    }
+    .lba-hl{position:relative;display:inline-block;color:#0B1B33;z-index:0;padding:0 8px}
+    .lba-hl::before{
+      content:"";position:absolute;left:0;right:0;bottom:.06em;height:.46em;
+      background:#FFD400;transform:skewX(-6deg);z-index:-1;border-radius:2px;
+    }
+    .lba-card .lba-lede{color:#B9C8DE;max-width:62ch;margin:0 0 24px;font-size:1.02rem;line-height:1.65}
+    .lba-card .lba-points{list-style:none;margin:0 0 30px;padding:0;display:grid;gap:12px;max-width:64ch}
+    .lba-card .lba-points li{position:relative;padding-left:30px;color:#DCE4F0;font-size:.96rem;margin:0}
+    .lba-card .lba-points li::before{
+      content:"✓";position:absolute;left:0;top:0;color:#FFD400;font-weight:800;font-size:1.05rem;
+    }
+    .lba-card .lba-cta{
+      display:inline-block;text-decoration:none;
+      background:linear-gradient(180deg,#1B6EF3 0%,#0F52C4 100%);
+      color:#fff;font-weight:800;font-size:1.02rem;letter-spacing:.4px;
+      padding:17px 34px;border-radius:12px;
+      box-shadow:0 6px 0 #0A3F96, 0 12px 24px rgba(15,82,196,.35);
+      transition:transform .12s ease,box-shadow .12s ease;
+    }
+    .lba-card .lba-cta:hover{transform:translateY(3px);box-shadow:0 3px 0 #0A3F96, 0 8px 18px rgba(15,82,196,.35)}
+    .lba-card .lba-cta:active{transform:translateY(6px);box-shadow:0 0 0 #0A3F96}
+    .lba-card .lba-cta:focus-visible{outline:3px solid #FFD400;outline-offset:3px}
+    .lba-card .lba-note{margin:16px 0 0;color:#8A99AE;font-size:.84rem;max-width:none}
+    @media (max-width:600px){
+      .lba-card{padding:34px 24px;border-radius:18px}
+      .lba-card .lba-cta{display:block;text-align:center}
+    }
+  </style>
 </Base>
