@@ -902,6 +902,14 @@
 .prose blockquote{margin:14px 0;padding:12px 18px;border-left:3px solid var(--cyan);background:var(--bg-soft);border-radius:0 10px 10px 0;color:var(--ink);max-width:62ch}
 .prose blockquote p{margin:0;color:var(--ink)}
 .prose hr{border:0;border-top:1px dashed var(--edge);margin:28px 0}
+/* Images d'article : responsives et centrees par defaut (ne depassent jamais
+   la largeur du texte). Pour fixer une taille, voir les classes/width ci-dessous. */
+.prose img{display:block;height:auto;max-width:100%;margin:24px auto;border-radius:12px;box-shadow:var(--shadow)}
+/* Tailles rapides : ajouter une classe sur l'image dans le board.
+   Ex : <img src="/images/photo.jpg" alt="..." class="img-s"> */
+.prose img.img-s{max-width:300px}
+.prose img.img-m{max-width:520px}
+.prose img.img-l{max-width:760px}
 .post-meta{font-size:.8rem;color:var(--muted);margin-bottom:26px}
 .post-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:18px;max-width:none}
 .post-card{background:var(--panel);border:1px solid var(--edge);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow)}
