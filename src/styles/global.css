@@ -927,9 +927,13 @@
 .callout{margin:24px 0;padding:22px 26px;background:var(--bg-soft);border:1px solid var(--edge);border-radius:16px}
 .callout h2{margin:0 0 8px}
 .callout p{margin:0 0 14px}
-/* Galerie Independance Day : images au ratio naturel (non rognees) */
-.id-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0 0 10px}
-.id-gallery img{width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow)}
+/* Carrousel Independance Day : defilement continu, pause au survol, bords en fondu */
+.id-carousel{overflow:hidden;margin:6px 0 12px;--id-fade:46px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 var(--id-fade),#000 calc(100% - var(--id-fade)),transparent);mask-image:linear-gradient(90deg,transparent,#000 var(--id-fade),#000 calc(100% - var(--id-fade)),transparent)}
+.id-carousel-track{display:flex;gap:14px;width:max-content;animation:id-scroll 70s linear infinite}
+.id-carousel:hover .id-carousel-track{animation-play-state:paused}
+.id-carousel img{height:260px;width:auto;border-radius:12px;display:block;box-shadow:var(--shadow)}
+@keyframes id-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.id-carousel-track{animation:none}.id-carousel{overflow-x:auto}}
 /* Page Independance Day : CTA en bordeaux */
 .id-page .btn{background:linear-gradient(100deg,#6E1423,#9B1C31);color:#fff;box-shadow:0 10px 26px -12px rgba(110,20,35,.6)}
 .id-page .btn:hover{filter:brightness(1.08)}
