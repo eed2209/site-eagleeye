@@ -2,6 +2,7 @@
 title: "Trouver des clients sur LinkedIn : 7 leviers concrets pour les TPE et indépendants"
 description: "Profil, contenu, prospection directe, recommandations, groupes, événements, webinaires : les 7 leviers qui génèrent réellement des clients sur LinkedIn."
 date: 2026-07-16
+draft: false
 keywords: ["trouver des clients sur linkedin", "trouver des clients indépendant", "linkedin tpe"]
 pilier: "/offres/accompagnement-prospection/"
 ---

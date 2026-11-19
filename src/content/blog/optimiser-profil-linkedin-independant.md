@@ -2,6 +2,7 @@
 title: "Optimiser son profil LinkedIn quand on est indépendant : la checklist complète"
 description: "Titre, photo, section Infos, recommandations : la checklist en 7 points pour transformer votre profil LinkedIn en page de vente qui attire vos clients."
 date: 2026-07-16
+draft: false
 keywords: ["optimiser profil linkedin", "profil linkedin indépendant", "titre linkedin"]
 pilier: "/offres/formation-linkedin/"
 ---

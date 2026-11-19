@@ -2,6 +2,7 @@
 title: "Comment prospecter sur LinkedIn quand on est indépendant : la méthode en 5 étapes"
 description: "Ciblage, connexion, conversation, relance, rendez-vous : la méthode complète pour prospecter sur LinkedIn sans harceler personne, avec les chiffres à suivre."
 date: 2026-07-16
+draft: false
 keywords: ["comment prospecter sur linkedin", "prospection linkedin", "prospection linkedin indépendant"]
 pilier: "/offres/accompagnement-prospection/"
 titleBreak: true

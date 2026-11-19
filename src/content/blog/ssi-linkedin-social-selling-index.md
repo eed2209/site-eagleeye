@@ -2,6 +2,7 @@
 title: "Le SSI LinkedIn (Social Selling Index) : à quoi il sert vraiment"
 description: "Le SSI LinkedIn mesure votre activité, pas vos résultats. Voici comment le consulter gratuitement, ce qu'il veut dire, et les chiffres qui comptent davantage."
 date: 2026-07-16
+draft: false
 keywords: ["ssi linkedin", "social selling index", "score linkedin"]
 pilier: "/diagnostic-linkedin/"
 ---

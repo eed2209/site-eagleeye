@@ -21,6 +21,10 @@ local_backend: true
 # Interface en français.
 locale: fr
 
+# URL du site en production : active le lien « voir en ligne » depuis le board.
+site_url: https://eagleeye.digital
+display_url: https://eagleeye.digital
+
 # Les images uploadées depuis le board atterrissent dans public/images,
 # et sont référencées dans les articles par /images/...
 media_folder: "public/images"
@@ -40,7 +44,7 @@ collections:
     preview_path: "blog/{{slug}}"
     # Affiche le statut devant chaque titre dans la liste du board :
     # 🟠 BROUILLON pour les non publiés, ✅ pour les publiés.
-    summary: "{{fields.draft | ternary('🟠 BROUILLON — ','✅ ')}}{{title}}"
+    summary: "{{fields.draft | ternary('🟠 BROUILLON — ','✅ ')}}{{title}}   ·   https://eagleeye.digital/blog/{{slug}}/"
     sortable_fields: [date, title]
     # Regroupe la liste par statut (brouillon / publié).
     view_groups:

@@ -2,6 +2,7 @@
 title: "Message de prospection LinkedIn : 5 exemples qui obtiennent des réponses"
 description: "5 modèles de messages de prospection LinkedIn commentés, et les 3 erreurs qui envoient votre message à la corbeille. Basé sur des campagnes réelles."
 date: 2026-07-16
+draft: false
 keywords: ["message prospection linkedin", "exemple message linkedin", "prospection linkedin"]
 pilier: "/offres/accompagnement-prospection/"
 titleBreak: true
