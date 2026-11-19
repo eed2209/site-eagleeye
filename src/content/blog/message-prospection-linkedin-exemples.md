@@ -8,7 +8,7 @@ pilier: "/offres/accompagnement-prospection/"
 titleBreak: true
 ---
 
-La plupart des messages de prospection LinkedIn sont supprimés en trois secondes.
+La plupart des messages de prospection LinkedIn sont supprimés en 3 secondes.
 
 Pas parce que la prospection ne marche pas. Parce qu'ils parlent du vendeur au lieu de parler du prospect.
 
@@ -20,7 +20,7 @@ Voici ce qui fonctionne réellement.
 
 1. **Pitcher dès le premier message.** La demande de connexion n'est pas un argumentaire.
 2. **Parler de soi.** « Nous sommes une agence spécialisée en… » : personne n'a demandé.
-3. **Le pavé.** Plus de quatre lignes, c'est un email, pas un message LinkedIn.
+3. **Le pavé.** Plus de 4 lignes, c'est un email, pas un message LinkedIn.
 
 ## ➪ Exemple 1 : l'ouverture sur un point commun
 

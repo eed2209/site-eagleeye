@@ -37,7 +37,7 @@ Personne ne lit un parcours professionnel. Tout le monde lit la description de s
 
 ## ➪ 4. Les recommandations
 
-Demandez-en deux ou trois à vos derniers clients satisfaits.
+Demandez-en 2 ou 3 à vos derniers clients satisfaits.
 
 C'est la preuve sociale la plus puissante de LinkedIn. Et la plus négligée.
 

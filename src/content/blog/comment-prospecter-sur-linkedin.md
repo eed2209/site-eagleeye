@@ -52,13 +52,13 @@ Une fois la connexion acceptée, ouvrez une conversation sur leurs enjeux. Jamai
 
 Posez une vraie question. Écoutez. Le pitch vient plus tard, quand la personne a compris que vous connaissez son problème.
 
-Et relancez. La majorité des réponses arrivent après la première relance. Deux relances espacées d'une semaine, puis on passe au contact suivant.
+Et relancez. La majorité des réponses arrivent après la première relance. 2 relances espacées d'une semaine, puis on passe au contact suivant.
 
 ## ➪ Étape 5 : mesurer chaque semaine
 
 ![Suivre ses chiffres de prospection LinkedIn](/images/prospection-mesure.gif)
 
-La prospection se pilote avec quatre chiffres :
+La prospection se pilote avec 4 chiffres :
 
 1. **Demandes envoyées** : votre volume d'activité.
 2. **Taux d'acceptation** : la qualité de votre ciblage (visez 30 % et plus).
@@ -69,7 +69,7 @@ Un chiffre décroche ? 👉 Vous savez quel étage de la machine régler. C'est 
 
 ## ➪ Combien de temps ça prend ?
 
-Comptez 30 minutes par jour ouvré : 10 demandes, les réponses du jour, deux ou trois relances.
+Comptez 30 minutes par jour ouvré : 10 demandes, les réponses du jour, 2 ou 3 relances.
 
 Les premiers rendez-vous arrivent en général sous 3 à 6 semaines.
 

@@ -27,7 +27,7 @@ Un bon titre répond en une phrase à la seule question que se pose le visiteur 
 
 ![defunès, la zizanie référence](/images/maxresdefault.png)
 
-Un titre qui accroche tient en trois morceaux :
+Un titre qui accroche tient en 3 morceaux :
 
 1. **Pour qui** vous travaillez (votre client idéal).
 2. **Quel résultat** vous lui apportez (concret, si possible chiffré).
@@ -35,7 +35,7 @@ Un titre qui accroche tient en trois morceaux :
 
 Exemple : _J'aide les TPE du bâtiment (pour qui) à trouver 5 chantiers par mois (résultat) grâce à LinkedIn (comment)_.
 
-Vous n'êtes pas obligé de caser les trois à chaque fois. Mais si votre titre n'a ni « pour qui » ni « résultat », il ne sert à rien.
+Vous n'êtes pas obligé de caser les 3 à chaque fois. Mais si votre titre n'a ni « pour qui » ni « résultat », il ne sert à rien.
 
 ## ➪ 15 exemples de titres LinkedIn
 
@@ -45,7 +45,7 @@ Vous n'êtes pas obligé de caser les trois à chaque fois. Mais si votre titre 
 
    Le modèle complet : cible, résultat chiffré, levier. Impossible de faire plus clair.
 
-2. > Consultante RH pour PME | je divise par deux vos délais de recrutement
+2. > Consultante RH pour PME | je divise par 2 vos délais de recrutement
 
    Un chiffre, une cible précise. Le dirigeant qui galère à recruter s'arrête.
 
@@ -67,7 +67,7 @@ Vous n'êtes pas obligé de caser les trois à chaque fois. Mais si votre titre 
 
 6. > Coach pour dirigeants débordés | retrouvez 10 h par semaine en 90 jours
 
-   Un avant, un après, un délai. Le dirigeant se reconnaît en trois mots.
+   Un avant, un après, un délai. Le dirigeant se reconnaît en 3 mots.
 
 7. > Formatrice LinkedIn | vos commerciaux signent plus, sans publicité
 
@@ -101,7 +101,7 @@ Vous n'êtes pas obligé de caser les trois à chaque fois. Mais si votre titre 
 
 13. > Expert-comptable des indépendants | je rends vos chiffres enfin clairs
 
-    La spécialisation « des indépendants » vaut mille fois « expert-comptable ».
+    La spécialisation « des indépendants » vaut 1000 fois « expert-comptable ».
 
 14. > Avocate en droit du travail | je sécurise vos contrats avant le litige
 
@@ -131,7 +131,7 @@ Vous n'êtes pas obligé de caser les trois à chaque fois. Mais si votre titre 
 ## ➪ Questions fréquentes
 
 **Combien de caractères pour un titre LinkedIn ?**
-Jusqu'à 220 caractères, mais seule une quarantaine s'affiche sur mobile avant la coupure. Placez l'essentiel (cible et résultat) au tout début.
+Jusqu'à 220 caractères, mais seuls 40 environ s'affichent sur mobile avant la coupure. Placez l'essentiel (cible et résultat) au tout début.
 
 **Le titre LinkedIn compte-t-il pour le référencement ?**
 Oui. LinkedIn comme Google s'appuient fortement sur le titre pour vous faire remonter dans les recherches. Y faire figurer votre métier et votre cible améliore nettement votre visibilité.

@@ -11,7 +11,7 @@ pilier: "/diagnostic-linkedin/"
 
 Le Social Selling Index, ou SSI, est le score officiel que LinkedIn attribue à votre activité commerciale sur le réseau.
 
-Gratuit. Accessible en deux clics. Et souvent mal interprété.
+Gratuit. Accessible en 2 clics. Et souvent mal interprété.
 
 Voici ce qu'il mesure vraiment. Et ce qu'il ne mesure pas.
 
@@ -19,7 +19,7 @@ Voici ce qu'il mesure vraiment. Et ce qu'il ne mesure pas.
 
 Rendez-vous sur linkedin.com/sales/ssi en étant connecté à votre compte.
 
-Le score s'affiche immédiatement, sur 100, découpé en quatre piliers de 25 points.
+Le score s'affiche immédiatement, sur 100, découpé en 4 piliers de 25 points.
 
 ## ➪ Ce que mesurent les 4 piliers
 
@@ -32,7 +32,7 @@ Le score s'affiche immédiatement, sur 100, découpé en quatre piliers de 25 po
 
 Le SSI mesure votre **activité**. Pas vos **résultats**.
 
-Vous pouvez avoir un SSI de 75 et zéro client. Il suffit d'être très actif auprès des mauvaises personnes, avec un profil qui ne convertit pas.
+Vous pouvez avoir un SSI de 75 et 0 client. Il suffit d'être très actif auprès des mauvaises personnes, avec un profil qui ne convertit pas.
 
 À l'inverse, des indépendants au SSI moyen remplissent leur agenda. Parce que leur ciblage et leurs messages sont excellents.
 
@@ -40,7 +40,7 @@ Autre limite : le SSI est pensé pour les commerciaux équipés de Sales Navigat
 
 ## ➪ Les chiffres qui comptent davantage
 
-Pour un indépendant ou une TPE, quatre indicateurs disent la vérité :
+Pour un indépendant ou une TPE, 4 indicateurs disent la vérité :
 
 - **Les vues de profil** : votre visibilité réelle auprès de votre cible.
 - **Le taux d'acceptation** de vos demandes de connexion : la qualité de votre ciblage.

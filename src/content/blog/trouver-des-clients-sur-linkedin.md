@@ -23,7 +23,7 @@ C'est le socle : titre orienté bénéfice client, section Infos qui parle de le
 
 ## ➪ 2. Les recommandations clients
 
-Deux ou trois recommandations récentes rassurent plus que n'importe quel argumentaire.
+2 ou 3 recommandations récentes rassurent plus que n'importe quel argumentaire.
 
 ![Les recommandations clients rassurent sur LinkedIn](/images/reco-clients.gif)
 
@@ -33,7 +33,7 @@ Demandez-les à la fin de chaque mission réussie. C'est le meilleur moment.
 
 Un post par semaine suffit, s'il est utile à votre cible. Un conseil applicable, un retour d'expérience chiffré, une erreur courante à éviter.
 
-La régularité bat le génie. C'est celui qui publie chaque semaine qu'on retient. Pas celui qui a publié un très bon post il y a six mois.
+La régularité bat le génie. C'est celui qui publie chaque semaine qu'on retient. Pas celui qui a publié un très bon post il y a 6 mois.
 
 ## ➪ 4. Les commentaires stratégiques
 
@@ -41,7 +41,7 @@ Commenter les publications de vos cibles et des comptes qu'elles suivent vous re
 
 ![Commenter pour être visible sur LinkedIn](/images/commentaires-strategiques.gif)
 
-Quinze minutes par jour de commentaires pertinents génèrent souvent plus de visites de profil que vos propres posts.
+15 minutes par jour de commentaires pertinents génèrent souvent plus de visites de profil que vos propres posts.
 
 ## ➪ 5. La prospection directe
 
@@ -65,7 +65,7 @@ Ils vous voient travailler pendant 45 minutes avant de vous acheter quoi que ce 
 
 ## ➪ Par où commencer ?
 
-Pas par les sept en même temps.
+Pas par les 7 en même temps.
 
 Faites le [diagnostic gratuit](/diagnostic-linkedin/) : il mesure où vous en êtes sur la visibilité, la crédibilité et la prospection, et vous donne vos 3 actions prioritaires.
 
