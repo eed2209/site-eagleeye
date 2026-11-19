@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+
+const eventSchema = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: "Indépendance Day 4",
+  startDate: "2027-10-12",
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventStatus: "https://schema.org/EventScheduled",
+  location: {
+    "@type": "Place",
+    name: "Espace Diagora",
+    address: { "@type": "PostalAddress", addressLocality: "Toulouse", addressCountry: "FR" },
+  },
+  organizer: { "@type": "Organization", name: "Eagle Eye Digital", url: "https://eagleeye.digital" },
+  description: "La journée toulousaine des indépendants, freelances et dirigeants de TPE : conférences, ateliers et networking à l'Espace Diagora.",
+  url: "https://independance-day.com",
+  image: "https://eagleeye.digital/images/id3/ev-01.jpg",
+};
+
+const photos = ['ev-01', 'ev-02', 'ev-03', 'ev-04', 'ev-05'];
+---
+<Base
+  title="L'Indépendance Day : l'événement des indépendants à Toulouse | Eagle Eye Digital"
+  description="L'Indépendance Day, la journée toulousaine des indépendants, freelances et dirigeants de TPE : conférences, ateliers et networking à l'Espace Diagora. Prochaine édition le 12 octobre 2027."
+>
+  <Header />
+  <main class="page">
+    <span class="eyebrow">Événement</span>
+    <h1>L'Indépendance Day</h1>
+    <p class="lede">La journée toulousaine qui réunit les indépendants, freelances et dirigeants de TPE pour une journée de conférences, d'ateliers et de networking. Créé et animé par Nassim Amisse, fondateur d'Eagle Eye Digital.</p>
+    <p class="post-meta">12 octobre 2027 · Espace Diagora, Toulouse · 4e édition</p>
+    <a class="btn" href="https://independance-day.com" target="_blank" rel="noopener">Rejoindre la liste prioritaire</a>
+
+    <section>
+      <h2>C'est quoi ?</h2>
+      <p>L'Indépendance Day, c'est une journée entière dédiée aux travailleurs indépendants : se former, s'inspirer et rencontrer d'autres entrepreneurs de la région. Une parenthèse hors du quotidien pour prendre de la hauteur sur son activité et repartir avec des idées concrètes et un réseau élargi.</p>
+      <p>L'événement en est à sa 4e édition et se tient chaque année à Toulouse, à l'Espace Diagora.</p>
+    </section>
+
+    <section>
+      <h2>Au programme</h2>
+      <ul>
+        <li><strong>Conférences</strong> : des intervenants qui partagent des méthodes applicables tout de suite.</li>
+        <li><strong>Ateliers</strong> : des formats pratiques pour travailler sur sa propre activité.</li>
+        <li><strong>Networking</strong> : rencontrer des indépendants et des dirigeants de la région, dans un cadre convivial.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Pour qui ?</h2>
+      <p>Pour les indépendants, freelances, solopreneurs et dirigeants de TPE d'Occitanie et au-delà, quel que soit leur secteur. Que vous débutiez ou que vous soyez installé depuis des années, vous y trouverez des idées et des contacts utiles.</p>
+    </section>
+
+    <section>
+      <h2>En images</h2>
+      <div class="book-proof">
+        {photos.map((p) => (
+          <img src={`/images/id3/${p}.jpg`} alt="Ambiance de l'Indépendance Day à Toulouse" loading="lazy" />
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h2>Qui l'organise ?</h2>
+      <p>L'Indépendance Day est créé et animé par Nassim Amisse, fondateur d'<a href="/a-propos/">Eagle Eye Digital</a>, l'agence toulousaine spécialisée dans le développement commercial des indépendants et TPE sur LinkedIn.</p>
+    </section>
+
+    <section>
+      <h2>Participer à la prochaine édition</h2>
+      <p>Les inscriptions ne sont pas encore ouvertes. Rejoignez la liste prioritaire pour être prévenu·e en avant-première, au meilleur tarif et sans engagement.</p>
+      <a class="btn" href="https://independance-day.com" target="_blank" rel="noopener">Rejoindre la liste prioritaire</a>
+    </section>
+  </main>
+  <script type="application/ld+json" set:html={JSON.stringify(eventSchema)} />
+</Base>
