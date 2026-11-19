@@ -41,6 +41,13 @@ collections:
     summary: "{{title}}"
     sortable_fields: [date, title]
     fields:
+      - name: draft
+        label: "Brouillon (ne pas publier)"
+        widget: boolean
+        default: true
+        required: false
+        hint: "Coché = l'article reste en brouillon, invisible sur le site. Décochez puis Enregistrer pour le publier."
+
       - name: title
         label: "Titre (sert de H1 et de balise <title>)"
         widget: string
