@@ -33,10 +33,19 @@ const photos = Array.from({ length: 18 }, (_, i) => 'id-' + String(i + 1).padSta
     <p class="lede">La journée toulousaine qui réunit les indépendants, freelances et dirigeants de TPE pour une journée de conférences, d'ateliers et de networking. Créé et animé par Nassim Amisse, fondateur d'Eagle Eye Digital.</p>
     <p class="post-meta">12 octobre 2027 · Espace Diagora, Toulouse · 4e édition</p>
     <div class="id-carousel" aria-label="Photos de l'Indépendance Day">
-      <div class="id-carousel-track">
-        {photos.concat(photos).map((p) => (
-          <img src={`/images/id3/${p}.jpg`} alt="Ambiance de l'Indépendance Day à Toulouse" loading="lazy" />
-        ))}
+      <div class="id-row">
+        <div class="id-track id-track-left">
+          {photos.concat(photos).map((p) => (
+            <img src={`/images/id3/${p}.jpg`} alt="Ambiance de l'Indépendance Day à Toulouse" loading="lazy" />
+          ))}
+        </div>
+      </div>
+      <div class="id-row">
+        <div class="id-track id-track-right">
+          {photos.slice().reverse().concat(photos.slice().reverse()).map((p) => (
+            <img src={`/images/id3/${p}.jpg`} alt="Ambiance de l'Indépendance Day à Toulouse" loading="lazy" />
+          ))}
+        </div>
       </div>
     </div>
     <a class="btn" href="https://independance-day.com" target="_blank" rel="noopener">Rejoindre la liste prioritaire</a>
