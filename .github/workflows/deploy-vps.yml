@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # Reconstruit le site chaque jour pour publier les articles programmés
+    # (date de parution future) une fois leur date atteinte. Heure en UTC.
+    - cron: '0 5 * * *'
 
 concurrency:
   group: deploy-vps

@@ -44,7 +44,7 @@ collections:
     preview_path: "blog/{{slug}}"
     # Affiche le statut devant chaque titre dans la liste du board :
     # 🟠 BROUILLON pour les non publiés, ✅ pour les publiés.
-    summary: "{{fields.draft | ternary('🟠 BROUILLON — ','✅ ')}}{{title}}   ·   https://eagleeye.digital/blog/{{slug}}/"
+    summary: "{{fields.draft | ternary('🟠 BROUILLON — ','✅ ')}}{{fields.date | date('DD/MM/YYYY')}} — {{title}}   ·   https://eagleeye.digital/blog/{{slug}}/"
     sortable_fields: [date, title]
     # Regroupe la liste par statut (brouillon / publié).
     view_groups:
@@ -82,6 +82,7 @@ collections:
         date_format: "YYYY-MM-DD"
         time_format: false
         picker_utc: false
+        hint: "Une date future = parution programmée : l'article se publiera tout seul à cette date (le site se reconstruit chaque jour). Laissez « Brouillon » décoché pour qu'il soit programmé."
 
       - name: keywords
         label: "Mots-clés SEO"
