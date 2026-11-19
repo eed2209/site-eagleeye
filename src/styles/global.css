@@ -910,6 +910,16 @@
 .prose img.img-s{max-width:300px}
 .prose img.img-m{max-width:520px}
 .prose img.img-l{max-width:760px}
+/* Bloc livre (page methode) : couverture + pitch + bouton d'achat */
+.book{display:flex;gap:28px;align-items:center;flex-wrap:wrap;margin:18px 0;padding:24px;background:var(--bg-soft);border:1px solid var(--edge);border-radius:16px}
+.book-cover{flex:0 0 auto;width:200px;max-width:42%}
+.book-cover img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:var(--shadow)}
+.book-body{flex:1 1 280px;min-width:240px}
+.book-body h2{margin:0 0 6px}
+.book-body .book-author{color:var(--muted);margin:0 0 12px}
+/* Galerie "ils l'ont adopte" */
+.book-proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:12px 0}
+.book-proof img{width:100%;height:230px;object-fit:cover;border-radius:12px;box-shadow:var(--shadow)}
 .post-meta{font-size:.8rem;color:var(--muted);margin-bottom:26px}
 .post-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:18px;max-width:none}
 .post-card{background:var(--panel);border:1px solid var(--edge);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow)}
