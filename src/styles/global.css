@@ -822,6 +822,8 @@
 
   /* ---------- Thème clair : blanc, bleu, contours noirs ---------- */
   [data-theme="light"] header{background:color-mix(in srgb,#FFFFFF 88%,transparent);border-bottom:1.5px solid rgba(11,14,26,.15)}
+  /* Hero d'accueil : meme bleu clair uni que le reste du site (pas de degrade) */
+  [data-theme="light"] .hero{background:var(--bg)}
   /* scanner : carte blanche cerclée de noir */
   [data-theme="light"] .scanner{background:#0B0E1A;box-shadow:0 30px 70px -32px rgba(14,61,176,.45)}
   [data-theme="light"] .scanner-in{background:var(--hero-glass)}
