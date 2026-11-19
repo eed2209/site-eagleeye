@@ -1,6 +1,6 @@
 ---
 draft: false
-title: 'Votre titre sur LinkedIn : 15 exemples pour indépendants (et la formule qui marche)'
+title: 'Votre titre sur LinkedIn : //15 exemples pour indépendants (et la formule qui marche)'
 description: 15 exemples de titres de profil sur LinkedIn pour indépendants et TPE, la formule en 3 blocs pour écrire le vôtre, et les erreurs à éviter. Faites de votre titre votre meilleure accroche.
 date: 2026-11-19
 keywords:
