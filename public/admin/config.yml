@@ -10,10 +10,9 @@ backend:
   name: github
   repo: eed2209/site-eagleeye
   branch: main
-  # URL du relais d'authentification GitHub (worker Sveltia / service VPS).
-  # À remplir une fois le relais déployé (voir les instructions fournies).
-  # Exemple : https://sveltia-cms-auth.mon-compte.workers.dev
-  base_url: https://REMPLACER-PAR-URL-DU-RELAIS-OAUTH
+  # Relais d'authentification GitHub : service Node (pm2 "eed-oauth") sur le VPS,
+  # exposé par nginx. Endpoints : /oauth/auth et /oauth/callback.
+  base_url: https://eagleeye.digital/oauth
 
 # Permet d'éditer en local (sur http://localhost) sans passer par GitHub, via
 # `npx @sveltia/cms-proxy-server`. Sans aucun effet en production.
