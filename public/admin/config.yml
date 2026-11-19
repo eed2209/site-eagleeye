@@ -38,8 +38,22 @@ collections:
     format: frontmatter
     slug: "{{slug}}"
     preview_path: "blog/{{slug}}"
-    summary: "{{title}}"
+    # Affiche le statut devant chaque titre dans la liste du board :
+    # 🟠 BROUILLON pour les non publiés, ✅ pour les publiés.
+    summary: "{{fields.draft | ternary('🟠 BROUILLON — ','✅ ')}}{{title}}"
     sortable_fields: [date, title]
+    # Regroupe la liste par statut (brouillon / publié).
+    view_groups:
+      - label: "Statut"
+        field: draft
+    # Boutons de filtre en haut de la liste.
+    view_filters:
+      - label: "Publiés"
+        field: draft
+        pattern: false
+      - label: "Brouillons"
+        field: draft
+        pattern: true
     fields:
       - name: draft
         label: "Brouillon (ne pas publier)"
