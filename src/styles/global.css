@@ -927,13 +927,13 @@
 .callout{margin:24px 0;padding:22px 26px;background:var(--bg-soft);border:1px solid var(--edge);border-radius:16px}
 .callout h2{margin:0 0 8px}
 .callout p{margin:0 0 14px}
-/* Carrousel Independance Day : 2 rangees inclinees qui defilent en sens opposes */
-.id-carousel{overflow:hidden;padding:20px 0;margin:4px 0 16px;transform:rotate(-5deg) scale(1.08);transform-origin:center}
-.id-row{overflow:hidden;margin:7px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+/* Carrousel Independance Day : 2 rangees droites qui defilent en sens opposes */
+.id-carousel{overflow:hidden;padding:6px 0;margin:4px 0 16px}
+.id-row{overflow:hidden;margin:8px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .id-track{display:flex;gap:12px;width:max-content}
-.id-track img{height:170px;width:auto;border-radius:10px;display:block;box-shadow:var(--shadow)}
-.id-track-left{animation:id-scroll 60s linear infinite}
-.id-track-right{animation:id-scroll 60s linear infinite reverse}
+.id-track img{height:185px;width:auto;border-radius:10px;display:block;box-shadow:var(--shadow)}
+.id-track-left{animation:id-scroll 90s linear infinite}
+.id-track-right{animation:id-scroll 90s linear infinite reverse}
 .id-carousel:hover .id-track{animation-play-state:paused}
 @keyframes id-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.id-track{animation:none}.id-row{overflow-x:auto}}
