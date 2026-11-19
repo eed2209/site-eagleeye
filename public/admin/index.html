@@ -13,5 +13,56 @@
          ce qui déclenche l'auto-déploiement. La configuration (collection, champs,
          authentification GitHub) est dans config.yml, juste à côté. -->
     <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js" type="module"></script>
+
+    <!-- Amélioration maison : rend cliquable l'URL d'article affichée dans la
+         liste (le résumé contient l'adresse ; on la transforme en lien « ↗ ouvrir »
+         qui ouvre la page publiée dans un nouvel onglet). Fonctionne que Sveltia
+         rende en DOM clair ou en shadow DOM. -->
+    <script>
+      (function () {
+        var RX = /https:\/\/eagleeye\.digital\/blog\/[A-Za-z0-9._~\-\/]+\//;
+        function roots(node, acc) {
+          acc.push(node);
+          var els = node.querySelectorAll ? node.querySelectorAll('*') : [];
+          for (var i = 0; i < els.length; i++) {
+            if (els[i].shadowRoot) roots(els[i].shadowRoot, acc);
+          }
+          return acc;
+        }
+        function linkifyRoot(root) {
+          var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+          var hits = [], n;
+          while ((n = walker.nextNode())) {
+            if (n.parentNode && n.parentNode.nodeName !== 'A' && RX.test(n.nodeValue)) hits.push(n);
+          }
+          hits.forEach(function (tn) {
+            var m = tn.nodeValue.match(RX);
+            if (!m) return;
+            var url = m[0];
+            var idx = tn.nodeValue.indexOf(url);
+            var rest = tn.splitText(idx);
+            rest.nodeValue = rest.nodeValue.slice(url.length);
+            var a = document.createElement('a');
+            a.href = url;
+            a.target = '_blank';
+            a.rel = 'noopener';
+            a.textContent = '↗ ouvrir';
+            a.title = url;
+            a.style.cssText = 'color:#2b7bff;font-weight:600;text-decoration:underline;white-space:nowrap';
+            a.addEventListener('click', function (e) { e.stopPropagation(); });
+            rest.parentNode.insertBefore(a, rest);
+          });
+        }
+        function scan() {
+          try { roots(document.body, []).forEach(linkifyRoot); } catch (e) {}
+        }
+        var pending = false;
+        function schedule() { if (!pending) { pending = true; setTimeout(function () { pending = false; scan(); }, 300); } }
+        window.addEventListener('load', function () {
+          scan();
+          new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true });
+        });
+      })();
+    </script>
   </body>
 </html>
