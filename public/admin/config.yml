@@ -65,6 +65,7 @@ collections:
       - name: title
         label: "Titre (sert de H1 et de balise <title>)"
         widget: string
+        hint: "Pour choisir où le titre passe à la ligne, insérez « // » à l'endroit de la coupure (ex. « Titre LinkedIn : // 15 exemples pour indépendants »). Le titre reste sur une seule ligne pour Google."
 
       - name: description
         label: "Description SEO (meta description, ~150 caractères)"

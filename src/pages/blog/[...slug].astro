@@ -14,25 +14,40 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await post.render();
 
-// Coupe le H1 après le premier " : " si titleBreak (affichage seulement, le titre SEO reste entier)
-const titleParts = post.data.titleBreak ? post.data.title.split(/ : (.+)/s) : null;
+// Titre du H1 : l'autrice choisit où couper en insérant « // » (ou un vrai
+// retour à la ligne) dans le titre, là où elle veut un passage à la ligne.
+// À défaut, l'ancienne option titleBreak coupe après le premier " : ".
+// Dans tous les cas, le titre SEO (<title> et données structurées) reste
+// sur une seule ligne.
+const rawTitle = post.data.title;
+const manualLines = rawTitle.split(/\s*\/\/\s*|\r?\n/).map((s) => s.trim()).filter(Boolean);
+let titleLines;
+if (manualLines.length > 1) {
+  titleLines = manualLines;
+} else if (post.data.titleBreak) {
+  const parts = rawTitle.split(/ : (.+)/s);
+  titleLines = parts[1] ? [`${parts[0]} :`, parts[1]] : [rawTitle];
+} else {
+  titleLines = [rawTitle];
+}
+const titleClean = titleLines.join(' ');
 const dateFr = post.data.date.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
 
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: post.data.title,
+  headline: titleClean,
   description: post.data.description,
   datePublished: post.data.date.toISOString(),
   author: { "@type": "Organization", name: "Eagle Eye Digital", url: "https://eagleeye.digital" },
   publisher: { "@type": "Organization", name: "Eagle Eye Digital" },
 };
 ---
-<Base title={post.data.title} description={post.data.description}>
+<Base title={titleClean} description={post.data.description}>
   <Header />
   <main class="page prose">
     <span class="eyebrow">Blog</span>
-    <h1>{titleParts && titleParts[1] ? (<>{titleParts[0]} :<br />{titleParts[1]}</>) : post.data.title}</h1>
+    <h1>{titleLines.map((line, i) => (<>{i > 0 && <br />}{line}</>))}</h1>
     <p class="post-meta">Publié le {dateFr} · Eagle Eye Digital</p>
     <Content />
     <section>
