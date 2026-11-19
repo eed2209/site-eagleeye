@@ -148,4 +148,4 @@ Le titre n'est que la première brique d'un profil qui travaille pour vous. La p
 
 Pour aller plus loin, notre [formation LinkedIn](/offres/formation-linkedin/) vous aide à construire un profil, une ligne éditoriale et des messages qui attirent vos clients.
 
-Et pour savoir où vous en êtes aujourd'hui, le [diagnostic gratuit](/diagnostic-linkedin/) vous donne votre score en 2 minutes.
+Et pour savoir où vous en êtes aujourd'hui, le [diagnostic gratuit](/scan/) vous donne votre score en 2 minutes.
