@@ -28,6 +28,11 @@ const photos = ['ev-01', 'ev-02', 'ev-03', 'ev-04', 'ev-05'];
 >
   <Header />
   <main class="page">
+    <div class="id-gallery">
+      {photos.map((p) => (
+        <img src={`/images/id3/${p}.jpg`} alt="Ambiance de l'Indépendance Day à Toulouse" loading="lazy" />
+      ))}
+    </div>
     <span class="eyebrow">Événement</span>
     <h1>L'Indépendance Day</h1>
     <p class="lede">La journée toulousaine qui réunit les indépendants, freelances et dirigeants de TPE pour une journée de conférences, d'ateliers et de networking. Créé et animé par Nassim Amisse, fondateur d'Eagle Eye Digital.</p>
@@ -58,15 +63,6 @@ const photos = ['ev-01', 'ev-02', 'ev-03', 'ev-04', 'ev-05'];
     <section>
       <h2>Pour qui ?</h2>
       <p>Pour les indépendants, freelances, solopreneurs et dirigeants de TPE d'Occitanie et au-delà, quel que soit leur secteur. Que vous débutiez ou que vous soyez installé depuis des années, vous y trouverez des idées et des contacts utiles.</p>
-    </section>
-
-    <section>
-      <h2>En images</h2>
-      <div class="book-proof">
-        {photos.map((p) => (
-          <img src={`/images/id3/${p}.jpg`} alt="Ambiance de l'Indépendance Day à Toulouse" loading="lazy" />
-        ))}
-      </div>
     </section>
 
     <section>
