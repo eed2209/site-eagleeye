@@ -27,7 +27,7 @@
   }
   :root[data-theme="light"]{
     --bg:#DCE8FB;
-    --bg-soft:#CEDFFB;
+    --bg-soft:#FFFFFF;
     --panel:#FFFFFF;
     --edge:#11151F;
     --ink:#0B0E1A;
