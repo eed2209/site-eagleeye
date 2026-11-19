@@ -934,7 +934,6 @@
 .id-track img{height:185px;width:auto;border-radius:10px;display:block;box-shadow:var(--shadow)}
 .id-track-left{animation:id-scroll 90s linear infinite}
 .id-track-right{animation:id-scroll 90s linear infinite reverse}
-.id-carousel:hover .id-track{animation-play-state:paused}
 @keyframes id-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.id-track{animation:none}.id-row{overflow-x:auto}}
 /* Page Independance Day : CTA en bordeaux */
