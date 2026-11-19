@@ -22,7 +22,7 @@ const posts = (await getCollection('blog', ({ data }) => data.draft !== true && 
       <ul class="post-list">
         {posts.map((post) => (
           <li class="post-card">
-            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            <a href={`/blog/${post.slug}/`}>{post.data.title.replace(/\s*\/\/\s*/g, ' ')}</a>
             <p>{post.data.description}</p>
           </li>
         ))}
