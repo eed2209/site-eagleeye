@@ -1,0 +1,91 @@
+# ==========================================================================
+# Sveltia CMS — board d'édition des articles du blog Eagle Eye Digital.
+#
+# Enregistrer un article dans le board crée un commit sur
+# eed2209/site-eagleeye (branche main), ce qui déclenche l'auto-déploiement.
+# Aucun code à toucher : on remplit les champs, on enregistre, c'est en ligne.
+# ==========================================================================
+
+backend:
+  name: github
+  repo: eed2209/site-eagleeye
+  branch: main
+  # URL du relais d'authentification GitHub (worker Sveltia / service VPS).
+  # À remplir une fois le relais déployé (voir les instructions fournies).
+  # Exemple : https://sveltia-cms-auth.mon-compte.workers.dev
+  base_url: https://REMPLACER-PAR-URL-DU-RELAIS-OAUTH
+
+# Permet d'éditer en local (sur http://localhost) sans passer par GitHub, via
+# `npx @sveltia/cms-proxy-server`. Sans aucun effet en production.
+local_backend: true
+
+# Interface en français.
+locale: fr
+
+# Les images uploadées depuis le board atterrissent dans public/images,
+# et sont référencées dans les articles par /images/...
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: blog
+    label: "Articles de blog"
+    label_singular: "Article"
+    description: "Les articles du cocon SEO. Un article = un mot-clé = un lien vers sa page pilier."
+    folder: "src/content/blog"
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    preview_path: "blog/{{slug}}"
+    summary: "{{title}}"
+    sortable_fields: [date, title]
+    fields:
+      - name: title
+        label: "Titre (sert de H1 et de balise <title>)"
+        widget: string
+
+      - name: description
+        label: "Description SEO (meta description, ~150 caractères)"
+        widget: text
+        hint: "Phrase d'accroche affichée dans Google sous le titre. Doit donner envie de cliquer."
+
+      - name: date
+        label: "Date de publication"
+        widget: datetime
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        picker_utc: false
+
+      - name: keywords
+        label: "Mots-clés SEO"
+        label_singular: "Mot-clé"
+        widget: list
+        required: false
+        default: []
+        hint: "Le mot-clé principal en premier, puis 2-3 variantes."
+
+      - name: pilier
+        label: "Page pilier (maillage interne)"
+        widget: select
+        required: false
+        hint: "La page offre/méthode vers laquelle cet article renvoie en fin d'article."
+        options:
+          - { label: "Formation LinkedIn", value: "/offres/formation-linkedin/" }
+          - { label: "Accompagnement prospection", value: "/offres/accompagnement-prospection/" }
+          - { label: "Méthode (webinaire / conversion)", value: "/methode/" }
+          - { label: "Diagnostic LinkedIn", value: "/diagnostic-linkedin/" }
+          - { label: "Campagnes multicanales", value: "/offres/campagnes-multicanales/" }
+          - { label: "À propos / autorité", value: "/a-propos/" }
+
+      - name: titleBreak
+        label: "Couper le titre après le premier « : » (affichage du H1 seulement)"
+        widget: boolean
+        default: false
+        required: false
+
+      - name: body
+        label: "Contenu de l'article"
+        widget: markdown
+        hint: "Rédigez librement. Pensez au maillage : 2-3 liens vers des articles de la même grappe, et le lien vers la page pilier en fin d'article."
