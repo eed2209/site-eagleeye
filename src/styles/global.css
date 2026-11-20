@@ -578,8 +578,8 @@
   /* ---------- Offres — vedette + empilées ---------- */
   .offres{padding:44px 0 100px;position:relative}
   .offres::before{
-    content:"";position:absolute;inset:0 0 0 22%;
-    background:var(--bg-soft);border-radius:32px 0 0 32px;z-index:-1;
+    content:"";position:absolute;inset:0;
+    background:var(--bg-soft);z-index:-1;
   }
   @media (max-width:880px){.offres::before{inset:0}}
   .offres-head{margin-bottom:56px;max-width:520px}
