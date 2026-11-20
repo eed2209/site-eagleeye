@@ -11,7 +11,7 @@ Votre profil LinkedIn est visité avant chaque rendez-vous. Avant chaque répons
 
 S'il ressemble à un CV, il travaille contre vous.
 
-![Optimiser son profil LinkedIn](/images/profil-checklist.gif)
+![Optimiser son profil LinkedIn](/images/profil-checklist.webp)
 
 Voici la checklist que nous appliquons avec chaque client.
 

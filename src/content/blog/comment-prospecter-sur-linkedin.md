@@ -14,7 +14,7 @@ C'est une mécanique simple. Répétée chaque semaine. Qui transforme des incon
 
 Rien de magique. Voici la méthode que nous appliquons avec nos clients.
 
-![Prospection LinkedIn méthodique](/images/prospection-intro.gif)
+![Prospection LinkedIn méthodique](/images/prospection-intro.webp)
 
 ## ➪ Étape 1 : définir une cible étroite
 
@@ -56,7 +56,7 @@ Et relancez. La majorité des réponses arrivent après la première relance. 2 
 
 ## ➪ Étape 5 : mesurer chaque semaine
 
-![Suivre ses chiffres de prospection LinkedIn](/images/prospection-mesure.gif)
+![Suivre ses chiffres de prospection LinkedIn](/images/prospection-mesure.webp)
 
 La prospection se pilote avec 4 chiffres :
 

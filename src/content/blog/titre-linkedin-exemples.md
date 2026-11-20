@@ -25,7 +25,7 @@ Un bon titre répond en une phrase à la seule question que se pose le visiteur 
 
 ## ➪ La formule en 3 blocs
 
-![defunès, la zizanie référence](/images/maxresdefault.png)
+![defunès, la zizanie référence](/images/maxresdefault.webp)
 
 Un titre qui accroche tient en 3 morceaux :
 
@@ -113,7 +113,7 @@ Vous n'êtes pas obligé de caser les 3 à chaque fois. Mais si votre titre n'a 
 
 ## ➪ Les 4 erreurs qui gâchent un titre
 
-![](/images/1567150409431.gif)
+![](/images/1567150409431.webp)
 
 1. **Ne mettre que son poste.** « Gérant » ou « Consultant » ne dit rien de ce que vous changez pour vos clients.
 2. **Empiler les mots-clés** séparés par des barres sans aucun bénéfice : « Marketing | Communication | Stratégie | Digital ». On lit une table des matières, pas une promesse.

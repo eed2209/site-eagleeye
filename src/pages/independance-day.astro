@@ -17,7 +17,7 @@ const eventSchema = {
   organizer: { "@type": "Organization", name: "Eagle Eye Digital", url: "https://eagleeye.digital" },
   description: "La journée toulousaine des indépendants, freelances et dirigeants de TPE : conférences, ateliers et networking à l'Espace Diagora.",
   url: "https://independance-day.com",
-  image: "https://eagleeye.digital/images/id3/ev-01.jpg",
+  image: "https://eagleeye.digital/images/id3/ev-01.webp",
 };
 
 const photos = Array.from({ length: 18 }, (_, i) => 'id-' + String(i + 1).padStart(2, '0'));
@@ -36,14 +36,14 @@ const photos = Array.from({ length: 18 }, (_, i) => 'id-' + String(i + 1).padSta
       <div class="id-row">
         <div class="id-track id-track-left">
           {photos.concat(photos).map((p) => (
-            <img src={`/images/id3/${p}.jpg`} alt="Ambiance de l'Indépendance Day à Toulouse" loading="lazy" />
+            <img src={`/images/id3/${p}.webp`} alt="Ambiance de l'Indépendance Day à Toulouse" loading="lazy" />
           ))}
         </div>
       </div>
       <div class="id-row">
         <div class="id-track id-track-right">
           {photos.slice().reverse().concat(photos.slice().reverse()).map((p) => (
-            <img src={`/images/id3/${p}.jpg`} alt="Ambiance de l'Indépendance Day à Toulouse" loading="lazy" />
+            <img src={`/images/id3/${p}.webp`} alt="Ambiance de l'Indépendance Day à Toulouse" loading="lazy" />
           ))}
         </div>
       </div>

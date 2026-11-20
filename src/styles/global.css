@@ -909,7 +909,7 @@
    la largeur du texte). Pour fixer une taille, voir les classes/width ci-dessous. */
 .prose img{display:block;height:auto;max-width:100%;margin:24px auto;border-radius:12px;box-shadow:var(--shadow)}
 /* Tailles rapides : ajouter une classe sur l'image dans le board.
-   Ex : <img src="/images/photo.jpg" alt="..." class="img-s"> */
+   Ex : <img src="/images/photo.webp" alt="..." class="img-s"> */
 .prose img.img-s{max-width:300px}
 .prose img.img-m{max-width:520px}
 .prose img.img-l{max-width:760px}

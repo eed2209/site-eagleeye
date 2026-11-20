@@ -7,7 +7,7 @@ keywords: ["ssi linkedin", "social selling index", "score linkedin"]
 pilier: "/diagnostic-linkedin/"
 ---
 
-<img src="/images/ssi-score.jpg" alt="Exemple de score SSI LinkedIn : 88 sur 100, réparti sur les 4 piliers" style="width:520px;max-width:100%;height:auto;border-radius:8px;" />
+<img src="/images/ssi-score.webp" alt="Exemple de score SSI LinkedIn : 88 sur 100, réparti sur les 4 piliers" style="width:520px;max-width:100%;height:auto;border-radius:8px;" />
 
 Le Social Selling Index, ou SSI, est le score officiel que LinkedIn attribue à votre activité commerciale sur le réseau.
 

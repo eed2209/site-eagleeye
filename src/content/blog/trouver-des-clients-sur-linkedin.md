@@ -25,7 +25,7 @@ C'est le socle : titre orienté bénéfice client, section Infos qui parle de le
 
 2 ou 3 recommandations récentes rassurent plus que n'importe quel argumentaire.
 
-![Les recommandations clients rassurent sur LinkedIn](/images/reco-clients.gif)
+![Les recommandations clients rassurent sur LinkedIn](/images/reco-clients.webp)
 
 Demandez-les à la fin de chaque mission réussie. C'est le meilleur moment.
 
@@ -39,7 +39,7 @@ La régularité bat le génie. C'est celui qui publie chaque semaine qu'on retie
 
 Commenter les publications de vos cibles et des comptes qu'elles suivent vous rend visible sans rien vendre.
 
-![Commenter pour être visible sur LinkedIn](/images/commentaires-strategiques.gif)
+![Commenter pour être visible sur LinkedIn](/images/commentaires-strategiques.webp)
 
 15 minutes par jour de commentaires pertinents génèrent souvent plus de visites de profil que vos propres posts.
 
