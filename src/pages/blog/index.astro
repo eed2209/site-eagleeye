@@ -7,6 +7,8 @@ const now = Date.now();
 const posts = (await getCollection('blog', ({ data }) => data.draft !== true && data.date.valueOf() <= now)).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
+const categories = [...new Set(posts.map((p) => p.data.category).filter(Boolean))].sort();
+const fmtDate = (d) => d.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 <Base
   title="Blog : prospection LinkedIn pour indépendants et TPE"
@@ -18,12 +20,24 @@ const posts = (await getCollection('blog', ({ data }) => data.draft !== true && 
     <h1>Trouver des clients sur LinkedIn, article après article.</h1>
     <p class="lede">Des conseils applicables tout de suite, tirés de 6 ans d'accompagnement d'indépendants et de TPE.</p>
 
+    {categories.length > 0 && (
+      <div class="cat-filter" aria-label="Filtrer par catégorie">
+        <button class="cat-chip is-active" data-filter="*" type="button">Tous</button>
+        {categories.map((c) => (
+          <button class="cat-chip" data-filter={c} type="button">{c}</button>
+        ))}
+      </div>
+    )}
+
     <section>
-      <ul class="post-grid">
+      <ul class="post-grid" id="postGrid">
         {posts.map((post) => (
-          <li class="post-card">
+          <li class="post-card" data-category={post.data.category || ''}>
             <a href={`/blog/${post.slug}/`}>
-              <span class="post-card-date">{post.data.date.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              <span class="post-card-meta">
+                {post.data.category && <span class="post-card-cat">{post.data.category}</span>}
+                <span class="post-card-date">{fmtDate(post.data.date)}</span>
+              </span>
               <h2 class="post-card-title">{post.data.title.replace(/\s*\/\/\s*/g, ' ')}</h2>
               <p class="post-card-desc">{post.data.description}</p>
               <span class="post-card-more">Lire l'article →</span>
@@ -31,6 +45,29 @@ const posts = (await getCollection('blog', ({ data }) => data.draft !== true && 
           </li>
         ))}
       </ul>
+      <p class="cat-empty" id="catEmpty" hidden>Aucun article dans cette catégorie pour le moment.</p>
     </section>
   </main>
+
+  <script>
+    (function () {
+      const chips = Array.from(document.querySelectorAll('.cat-chip'));
+      const cards = Array.from(document.querySelectorAll('#postGrid .post-card'));
+      const empty = document.getElementById('catEmpty');
+      chips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+          chips.forEach((c) => c.classList.remove('is-active'));
+          chip.classList.add('is-active');
+          const f = chip.getAttribute('data-filter');
+          let shown = 0;
+          cards.forEach((card) => {
+            const ok = f === '*' || card.getAttribute('data-category') === f;
+            card.hidden = !ok;
+            if (ok) shown++;
+          });
+          if (empty) empty.hidden = shown !== 0;
+        });
+      });
+    })();
+  </script>
 </Base>

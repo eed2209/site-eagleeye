@@ -5,6 +5,7 @@ date: 2026-07-16
 draft: false
 keywords: ["ssi linkedin", "social selling index", "score linkedin"]
 pilier: "/diagnostic-linkedin/"
+category: "Mesure & résultats"
 ---
 
 <img src="/images/ssi-score.webp" alt="Exemple de score SSI LinkedIn : 88 sur 100, réparti sur les 4 piliers" style="width:520px;max-width:100%;height:auto;border-radius:8px;" />

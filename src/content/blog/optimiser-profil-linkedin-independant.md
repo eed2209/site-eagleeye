@@ -5,6 +5,7 @@ date: 2026-07-16
 draft: false
 keywords: ["optimiser profil linkedin", "profil linkedin indépendant", "titre linkedin"]
 pilier: "/offres/formation-linkedin/"
+category: "Profil LinkedIn"
 ---
 
 Votre profil LinkedIn est visité avant chaque rendez-vous. Avant chaque réponse à un message. Avant chaque mise en relation.

@@ -105,6 +105,19 @@ collections:
           - { label: "Campagnes multicanales", value: "/offres/campagnes-multicanales/" }
           - { label: "À propos / autorité", value: "/a-propos/" }
 
+      - name: category
+        label: "Catégorie"
+        widget: select
+        required: false
+        hint: "Classe l'article sur la page Blog (filtres par thème). On choisit ensemble la bonne catégorie à chaque article."
+        options:
+          - "Profil LinkedIn"
+          - "Prospection"
+          - "Contenu & visibilité"
+          - "Webinaire & conversion"
+          - "Mesure & résultats"
+          - "Multicanal & publicité"
+
       - name: titleBreak
         label: "Couper le titre après le premier « : » (affichage du H1 seulement)"
         widget: boolean

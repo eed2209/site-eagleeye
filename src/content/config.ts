@@ -10,6 +10,7 @@ const blog = defineCollection({
     pilier: z.string().optional(), // page pilier vers laquelle cet article fait le maillage
     titleBreak: z.boolean().default(false), // couper le H1 après le premier " : " (affichage seulement)
     draft: z.boolean().default(false), // true = brouillon : exclu du site (liste, page, sitemap)
+    category: z.string().default(''), // catégorie affichée et filtrable sur /blog
   }),
 });
 

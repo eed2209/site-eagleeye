@@ -5,6 +5,7 @@ date: 2026-07-16
 draft: false
 keywords: ["comment prospecter sur linkedin", "prospection linkedin", "prospection linkedin indépendant"]
 pilier: "/offres/accompagnement-prospection/"
+category: "Prospection"
 titleBreak: true
 ---
 

@@ -5,6 +5,7 @@ date: 2026-07-16
 draft: false
 keywords: ["trouver des clients sur linkedin", "trouver des clients indépendant", "linkedin tpe"]
 pilier: "/offres/accompagnement-prospection/"
+category: "Prospection"
 ---
 
 LinkedIn est le seul réseau social où vos futurs clients affichent leur métier, leur entreprise et leurs problèmes du moment.

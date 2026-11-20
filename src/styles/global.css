@@ -944,11 +944,19 @@
 .post-card{background:var(--panel);border:1px solid var(--edge);border-radius:16px;box-shadow:var(--shadow);transition:transform .18s ease,border-color .18s ease}
 .post-card:hover{transform:translateY(-4px);border-color:var(--cyan)}
 .post-card > a{display:flex;flex-direction:column;height:100%;padding:24px;text-decoration:none;color:inherit}
-.post-card-date{font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
+.post-card-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.post-card-cat{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--cyan);background:var(--ghost);padding:3px 9px;border-radius:999px}
+.post-card-date{font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
 .post-card-title{font-size:1.16rem;font-weight:700;line-height:1.32;margin:0 0 10px;color:var(--ink);transition:color .18s ease}
 .post-card:hover .post-card-title{color:var(--cyan)}
 .post-card-desc{color:var(--muted);font-size:.93rem;line-height:1.5;margin:0 0 18px;flex:1}
 .post-card-more{font-weight:600;color:var(--cyan);font-size:.88rem;margin-top:auto}
+/* Filtres par categorie (page blog) */
+.cat-filter{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0}
+.cat-chip{font:inherit;font-size:.85rem;font-weight:600;padding:8px 16px;border-radius:999px;border:1px solid var(--edge);background:var(--panel);color:var(--muted);cursor:pointer;transition:color .15s ease,border-color .15s ease,background .15s ease}
+.cat-chip:hover{color:var(--ink);border-color:var(--cyan)}
+.cat-chip.is-active{background:var(--grad);color:#fff;border-color:transparent}
+.cat-empty{color:var(--muted);margin-top:24px}
 .faq dt{font-weight:600;color:var(--ink);margin-top:18px}
 .faq dd{margin:6px 0 0;color:var(--muted);max-width:68ch}
 

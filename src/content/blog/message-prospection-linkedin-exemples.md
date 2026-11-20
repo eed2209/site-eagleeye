@@ -5,6 +5,7 @@ date: 2026-07-16
 draft: false
 keywords: ["message prospection linkedin", "exemple message linkedin", "prospection linkedin"]
 pilier: "/offres/accompagnement-prospection/"
+category: "Prospection"
 titleBreak: true
 ---
 

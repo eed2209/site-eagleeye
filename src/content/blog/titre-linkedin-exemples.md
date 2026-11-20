@@ -8,6 +8,7 @@ keywords:
   - titre linkedin
   - accroche linkedin indépendant
 pilier: /offres/formation-linkedin/
+category: "Profil LinkedIn"
 titleBreak: true
 ---
 
