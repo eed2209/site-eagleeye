@@ -20,7 +20,7 @@
          rende en DOM clair ou en shadow DOM. -->
     <script>
       (function () {
-        var RX = /https:\/\/eagleeye\.digital\/blog\/[A-Za-z0-9._~\-\/]+\//;
+        var RX = /https:\/\/eagleeye\.digital\/[A-Za-z0-9._~\-\/]+\//;
         function roots(node, acc) {
           acc.push(node);
           var els = node.querySelectorAll ? node.querySelectorAll('*') : [];

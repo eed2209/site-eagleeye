@@ -115,3 +115,25 @@ collections:
         label: "Contenu de l'article"
         widget: markdown
         hint: "Rédigez librement. Pensez au maillage : 2-3 liens vers des articles de la même grappe, et le lien vers la page pilier en fin d'article."
+
+  - name: pages
+    label: "Pages du site"
+    label_singular: "Page"
+    description: "Les pages fixes du site (hors articles de blog). Édition du texte uniquement."
+    folder: "src/content/pages"
+    create: false
+    delete: false
+    extension: md
+    format: frontmatter
+    identifier_field: h1
+    summary: "{{h1}}   ·   https://eagleeye.digital/{{slug}}/"
+    preview_path: "{{slug}}"
+    fields:
+      - { name: title, label: "Titre SEO (balise <title>)", widget: string }
+      - name: description
+        label: "Description SEO (meta)"
+        widget: text
+      - { name: eyebrow, label: "Surtitre (petit texte au-dessus du titre)", widget: string, required: false }
+      - { name: h1, label: "Titre principal (H1)", widget: string }
+      - { name: lede, label: "Accroche / chapô", widget: text, required: false }
+      - { name: body, label: "Contenu de la page", widget: markdown }
