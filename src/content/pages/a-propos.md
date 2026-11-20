@@ -1,10 +1,12 @@
 ---
 title: "À propos d'Eagle Eye Digital : qui sommes-nous ?"
 description: "Eagle Eye Digital, agence toulousaine fondée par Nassim : 6 ans d'expertise LinkedIn au service des indépendants et TPE, et fondateurs de l'Indépendance Day."
-eyebrow: "À propos"
-h1: "Qui est derrière Eagle Eye Digital."
+eyebrow: À propos
+h1: Qui est derrière Eagle Eye Digital.
 lede: "Une agence toulousaine avec une conviction : la prospection se pilote avec des chiffres, pas avec de l'espoir."
 ---
+
+![](/images/Design%20sans%20titre%20%281%29-1.png)
 
 ## Nassim Amisse, fondateur
 
