@@ -120,19 +120,9 @@ if (location.hostname === 'eagleeye.digital' || location.hostname === 'www.eagle
     });
   }, true);
 
-  /* révélation au chargement : la page arrive derrière le rapace */
-  if (!reduced && wipe){
-    busy = true;
-    wipe.classList.add('on', 'hold');
-    setTimeout(function(){
-      wipe.classList.remove('hold');
-      wipe.classList.add('exit');
-      setTimeout(function(){
-        wipe.classList.remove('on', 'exit');
-        busy = false;
-      }, 580);
-    }, 400);
-  }
+  /* Révélation au chargement désactivée : le rideau recouvrait la page déjà
+     peinte (~1 s), ce qui dégradait le Speed Index. La transition « rapace »
+     reste jouée au clic sur les liens internes. */
 })();
 
 /* ================= Bandeau : duplication pour boucle infinie ================= */
