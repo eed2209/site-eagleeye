@@ -207,6 +207,21 @@
     width:17px;height:17px;flex:none;color:#fff;
     stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;
   }
+  /* Les doublons ne servent qu'au défilement mobile */
+  .trust-item[aria-hidden="true"]{display:none}
+  @keyframes trust-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  /* Mobile : 1 seule ligne qui défile doucement (au lieu de 3 lignes empilées) */
+  @media (max-width:640px){
+    .trust{overflow:hidden}
+    .trust .wrap{flex-wrap:nowrap;justify-content:flex-start;width:max-content;gap:0;padding:11px 0;animation:trust-scroll 26s linear infinite}
+    .trust-item{padding:0}
+    .trust-item[aria-hidden="true"]{display:flex}
+    .trust-item + .trust-item::before{content:none}
+    .trust-item::after{content:"◆";font-size:.5rem;color:rgba(255,255,255,.55);margin:0 16px}
+  }
+  @media (max-width:640px) and (prefers-reduced-motion:reduce){
+    .trust .wrap{animation:none;overflow-x:auto}
+  }
 
   /* scanner card — déborde en bas du hero */
   .scanner-col{position:relative;z-index:3}
