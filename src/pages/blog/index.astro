@@ -19,11 +19,15 @@ const posts = (await getCollection('blog', ({ data }) => data.draft !== true && 
     <p class="lede">Des conseils applicables tout de suite, tirés de 6 ans d'accompagnement d'indépendants et de TPE.</p>
 
     <section>
-      <ul class="post-list">
+      <ul class="post-grid">
         {posts.map((post) => (
           <li class="post-card">
-            <a href={`/blog/${post.slug}/`}>{post.data.title.replace(/\s*\/\/\s*/g, ' ')}</a>
-            <p>{post.data.description}</p>
+            <a href={`/blog/${post.slug}/`}>
+              <span class="post-card-date">{post.data.date.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              <h2 class="post-card-title">{post.data.title.replace(/\s*\/\/\s*/g, ' ')}</h2>
+              <p class="post-card-desc">{post.data.description}</p>
+              <span class="post-card-more">Lire l'article →</span>
+            </a>
           </li>
         ))}
       </ul>

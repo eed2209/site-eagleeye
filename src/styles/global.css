@@ -940,11 +940,15 @@
 .id-page .btn{background:linear-gradient(100deg,#6E1423,#9B1C31);color:#fff;box-shadow:0 10px 26px -12px rgba(110,20,35,.6)}
 .id-page .btn:hover{filter:brightness(1.08)}
 .post-meta{font-size:.8rem;color:var(--muted);margin-bottom:26px}
-.post-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:18px;max-width:none}
-.post-card{background:var(--panel);border:1px solid var(--edge);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow)}
-.post-card a{text-decoration:none;color:var(--ink);font-weight:600;font-size:1.08rem}
-.post-card a:hover{color:var(--cyan)}
-.post-card p{margin:8px 0 0;font-size:.9rem}
+.post-grid{list-style:none;padding:0;margin:30px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.post-card{background:var(--panel);border:1px solid var(--edge);border-radius:16px;box-shadow:var(--shadow);transition:transform .18s ease,border-color .18s ease}
+.post-card:hover{transform:translateY(-4px);border-color:var(--cyan)}
+.post-card > a{display:flex;flex-direction:column;height:100%;padding:24px;text-decoration:none;color:inherit}
+.post-card-date{font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
+.post-card-title{font-size:1.16rem;font-weight:700;line-height:1.32;margin:0 0 10px;color:var(--ink);transition:color .18s ease}
+.post-card:hover .post-card-title{color:var(--cyan)}
+.post-card-desc{color:var(--muted);font-size:.93rem;line-height:1.5;margin:0 0 18px;flex:1}
+.post-card-more{font-weight:600;color:var(--cyan);font-size:.88rem;margin-top:auto}
 .faq dt{font-weight:600;color:var(--ink);margin-top:18px}
 .faq dd{margin:6px 0 0;color:var(--muted);max-width:68ch}
 
