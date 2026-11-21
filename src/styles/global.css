@@ -585,6 +585,10 @@
   .offres-head{margin-bottom:56px;max-width:520px}
   .offres-head h2{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:700;margin:14px 0}
   .offres-head p{color:var(--muted)}
+  .offres-score-cta{margin-top:22px}
+  .offres-score-cta p{margin:0 0 12px;color:var(--ink);font-weight:600}
+  .offres-rdv-cta{grid-column:1/-1;text-align:center;margin-top:50px}
+  .offres-rdv-cta p{margin:0 0 14px;color:var(--ink);font-weight:600;font-size:1.1rem}
   /* plan de vol : 3 étapes ascendantes */
   .flight{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
   @media (max-width:880px){.flight{grid-template-columns:1fr}}
