@@ -40,7 +40,7 @@ Au-delà de 5 posts par semaine, le gain devient marginal pour un indépendant. 
 
 ## ➪ Pourquoi publier trop souvent peut vous desservir
 
-![Jim Carrey et Jeff Daniels hurlant dans le film Dumb and Dumber](/images/dumb-and-dumber-yell.gif "Trop publier finit par matraquer votre audience")
+![Jim Carrey et Jeff Daniels hurlant dans le film Dumb and Dumber](/images/dumb-and-dumber-yell.webp "Trop publier finit par matraquer votre audience")
 
 Poster tous les jours part d'une bonne intention, mais entraîne 3 effets pervers :
 
