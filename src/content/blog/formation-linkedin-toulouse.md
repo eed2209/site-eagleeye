@@ -2,7 +2,7 @@
 draft: true
 title: 'Formation LinkedIn à Toulouse : le guide pour indépendants et TPE'
 description: Vous cherchez une formation LinkedIn à Toulouse ? Ce que vous devez apprendre, pour qui c'est fait, et pourquoi être accompagné par une agence qui connaît le tissu local change tout.
-date: 2026-12-03
+date: 2026-12-10
 keywords:
   - formation linkedin toulouse
   - formation linkedin
