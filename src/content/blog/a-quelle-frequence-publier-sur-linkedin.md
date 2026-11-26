@@ -18,7 +18,7 @@ La réponse courte : **entre 2 et 3 posts par semaine suffisent largement**. La 
 
 Voici comment trouver le rythme qui vous convient, et surtout comment le tenir.
 
-![](/images/commentaires-strategiques.webp)
+![Jim Carrey tape frénétiquement au clavier, image humoristique](/images/commentaires-strategiques.webp "Publier à toute vitesse n'est pas une stratégie")
 
 ## ➪ La vraie réponse : la régularité bat la fréquence
 
@@ -40,7 +40,7 @@ Au-delà de 5 posts par semaine, le gain devient marginal pour un indépendant. 
 
 ## ➪ Pourquoi publier trop souvent peut vous desservir
 
-![](/images/dumb-and-dumber-yell.gif)
+![Jim Carrey et Jeff Daniels hurlant dans le film Dumb and Dumber](/images/dumb-and-dumber-yell.gif "Trop publier finit par matraquer votre audience")
 
 Poster tous les jours part d'une bonne intention, mais entraîne 3 effets pervers :
 
