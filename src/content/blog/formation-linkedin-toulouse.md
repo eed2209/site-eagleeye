@@ -1,15 +1,20 @@
 ---
-title: "Formation LinkedIn à Toulouse : le guide pour indépendants et TPE"
-description: "Vous cherchez une formation LinkedIn à Toulouse ? Ce que vous devez apprendre, pour qui c'est fait, et pourquoi être accompagné par une agence qui connaît le tissu local change tout."
-date: 2026-12-03
 draft: true
-keywords: ["formation linkedin toulouse", "formation linkedin", "se former à linkedin toulouse"]
-pilier: "/offres/formation-linkedin/"
-category: "Local & Toulouse"
+title: 'Formation LinkedIn à Toulouse : le guide pour indépendants et TPE'
+description: Vous cherchez une formation LinkedIn à Toulouse ? Ce que vous devez apprendre, pour qui c'est fait, et pourquoi être accompagné par une agence qui connaît le tissu local change tout.
+date: 2026-12-03
+keywords:
+  - formation linkedin toulouse
+  - formation linkedin
+  - se former à linkedin toulouse
+pilier: /offres/formation-linkedin/
+category: Local & Toulouse
 titleBreak: true
 ---
 
 Vous êtes indépendant ou dirigeant de TPE à Toulouse, et vous savez que LinkedIn pourrait vous apporter des clients. Mais entre un profil qui dort, des posts qui ne décollent pas et des messages de prospection qui restent sans réponse, vous tournez en rond.
+
+![](/images/be3fc712d5ceafaa0ef0a66816919ee7.gif)
 
 Une formation LinkedIn sert exactement à ça : transformer un outil que vous subissez en une machine à rendez-vous que vous pilotez. Voici ce qu'elle doit vous apporter, et pourquoi l'ancrage toulousain compte plus qu'on ne le croit.
 
@@ -40,7 +45,7 @@ On peut se former à LinkedIn depuis n'importe où. Alors pourquoi privilégier 
 
 Parce que **connaître le terrain change le conseil**. Eagle Eye Digital est une agence toulousaine, fondée par Nassim Amisse, avec 6 ans d'expertise LinkedIn et des centaines d'indépendants et de TPE accompagnés. Cette connaissance du tissu économique local - artisans, consultants, professions libérales, dirigeants de TPE de la région - se retrouve dans les exemples, les cibles et les messages travaillés ensemble.
 
-Nous sommes aussi les fondateurs de [l'Indépendance Day](/independance-day/), la journée qui réunit chaque année 300 indépendants, freelances et dirigeants de TPE au Diagora, à Labège. Se former avec une équipe qui anime réellement le réseau local, c'est bénéficier d'un carnet d'adresses et d'exemples concrets, pas seulement de théorie.
+Nous sommes aussi les fondateurs de [l'Indépendance Day](/independance-day/), la journée qui réunit chaque année 150 indépendants, freelances et dirigeants de TPE au Diagora, à Labège. Se former avec une équipe qui anime réellement le réseau local, c'est bénéficier d'un carnet d'adresses et d'exemples concrets, pas seulement de théorie.
 
 ## ➪ Présentiel, distanciel : comment ça se passe
 
