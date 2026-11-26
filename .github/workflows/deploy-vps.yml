@@ -13,6 +13,10 @@ concurrency:
   group: deploy-vps
   cancel-in-progress: true
 
+# Nécessaire pour que l'étape de conversion puisse recommit les WebP.
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -26,6 +30,27 @@ jobs:
 
       - name: Installer les dépendances
         run: npm ci
+
+      # Toute image (GIF/PNG/JPG) déposée depuis le board est convertie en
+      # WebP (GIF -> WebP animé) et ses références sont réécrites. ffmpeg est
+      # préinstallé sur les runners GitHub.
+      - name: Convertir les nouvelles images en WebP
+        run: node scripts/convert-images.mjs
+
+      - name: Enregistrer les images converties dans le dépôt
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Aucune conversion : rien à enregistrer."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Conversion automatique des images en WebP [skip ci]"
+          # Au cas où le board aurait poussé entre-temps : on se rebase avant.
+          # (Un push via GITHUB_TOKEN ne redéclenche pas de workflow : pas de boucle.)
+          git pull --rebase --no-edit origin main
+          git push origin HEAD:main
 
       - name: Construire le site (version production, chemins racine)
         run: npm run build

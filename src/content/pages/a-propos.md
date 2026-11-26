@@ -6,7 +6,7 @@ h1: Qui est derrière Eagle Eye Digital.
 lede: "Une agence toulousaine avec une conviction : la prospection se pilote avec des chiffres, pas avec de l'espoir."
 ---
 
-![](/images/Design%20sans%20titre%20%281%29-1.png)
+![](/images/Design%20sans%20titre%20%281%29-1.webp)
 
 ## Nassim Amisse, fondateur
 
