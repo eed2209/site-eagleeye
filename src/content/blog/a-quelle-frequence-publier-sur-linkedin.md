@@ -1,23 +1,28 @@
 ---
-title: "À quelle fréquence publier sur LinkedIn : le bon rythme pour un indépendant"
-description: "1, 3 ou 5 posts par semaine ? Le bon rythme de publication sur LinkedIn dépend moins du nombre que de la régularité. Voici comment trouver le vôtre et le tenir."
-date: 2026-11-26
 draft: true
-keywords: ["à quelle fréquence publier sur linkedin", "fréquence publication linkedin", "nombre de posts linkedin par semaine"]
-pilier: "/offres/formation-linkedin/"
-category: "Contenu & visibilité"
+title: 'À quelle fréquence publier sur LinkedIn : le bon rythme pour un indépendant'
+description: 1, 3 ou 5 posts par semaine ? Le bon rythme de publication sur LinkedIn dépend moins du nombre que de la régularité. Voici comment trouver le vôtre et le tenir.
+date: 2026-11-26
+keywords:
+  - à quelle fréquence publier sur linkedin
+  - fréquence publication linkedin
+  - nombre de posts linkedin par semaine
+pilier: /offres/formation-linkedin/
+category: Contenu & visibilité
 titleBreak: true
 ---
 
-« Combien de fois par semaine dois-je publier sur LinkedIn ? » C'est l'une des premières questions que se posent les indépendants qui veulent se rendre visibles sur le réseau.
+**« Combien de fois par semaine dois-je publier sur LinkedIn ? »** C'est l'une des premières questions que se posent les indépendants qui veulent se rendre visibles sur le réseau.
 
-La réponse courte : entre 2 et 3 posts par semaine suffisent largement. La réponse honnête : le chiffre compte beaucoup moins que la régularité.
+La réponse courte : **entre 2 et 3 posts par semaine suffisent largement**. La réponse honnête : le chiffre compte beaucoup moins que la régularité.
 
 Voici comment trouver le rythme qui vous convient, et surtout comment le tenir.
 
+![](/images/commentaires-strategiques.webp)
+
 ## ➪ La vraie réponse : la régularité bat la fréquence
 
-LinkedIn, comme tous les réseaux, récompense la constance. Un indépendant qui publie 2 fois par semaine pendant 6 mois obtient bien plus de visibilité que celui qui poste 7 fois en une semaine, puis disparaît pendant un mois.
+LinkedIn, comme tous les réseaux, **récompense la constance**. Un indépendant qui publie 2 fois par semaine pendant 6 mois obtient bien plus de visibilité que celui qui poste 7 fois en une semaine, puis disparaît pendant un mois.
 
 Pourquoi ? Parce que l'algorithme apprend à reconnaître les comptes actifs et fiables. Et parce que votre audience a besoin de vous revoir plusieurs fois avant de vous faire confiance.
 
@@ -35,6 +40,8 @@ Au-delà de 5 posts par semaine, le gain devient marginal pour un indépendant. 
 
 ## ➪ Pourquoi publier trop souvent peut vous desservir
 
+![](/images/dumb-and-dumber-yell.gif)
+
 Poster tous les jours part d'une bonne intention, mais entraîne 3 effets pervers :
 
 1. **La qualité chute.** Trouver un bon sujet par semaine est faisable. En trouver 7 pousse à publier pour publier, avec des posts sans intérêt qui diluent votre message.
@@ -45,7 +52,7 @@ Sur LinkedIn, la régularité dans la durée vaut toujours mieux que l'intensit�
 
 ## ➪ Combien de temps avant de voir des résultats
 
-Soyons clairs : publier sur LinkedIn n'est pas un levier à résultat immédiat. Comptez en moyenne 3 à 6 mois de régularité avant que le contenu ne génère des conversations et des rendez-vous réguliers.
+Soyons clairs : **publier sur LinkedIn n'est pas un levier à résultat immédiat**. Comptez en moyenne 3 à 6 mois de régularité avant que le contenu ne génère des conversations et des rendez-vous réguliers.
 
 Les premières semaines servent à roder votre ligne éditoriale et à réhabituer votre réseau à vous voir. La visibilité et les demandes entrantes arrivent ensuite, par effet cumulé.
 
