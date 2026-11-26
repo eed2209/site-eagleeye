@@ -14,7 +14,7 @@ titleBreak: true
 
 Vous êtes indépendant ou dirigeant de TPE à Toulouse, et vous savez que LinkedIn pourrait vous apporter des clients. Mais entre un profil qui dort, des posts qui ne décollent pas et des messages de prospection qui restent sans réponse, vous tournez en rond.
 
-![](/images/be3fc712d5ceafaa0ef0a66816919ee7.gif)
+![Un chat joue au DJ sur une platine vinyle, image humoristique](/images/be3fc712d5ceafaa0ef0a66816919ee7.webp "Arrêtez de tourner en rond sur LinkedIn")
 
 Une formation LinkedIn sert exactement à ça : transformer un outil que vous subissez en une machine à rendez-vous que vous pilotez. Voici ce qu'elle doit vous apporter, et pourquoi l'ancrage toulousain compte plus qu'on ne le croit.
 
