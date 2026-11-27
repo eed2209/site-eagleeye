@@ -60,7 +60,7 @@ Nous avons détaillé la mécanique complète dans [comment prospecter sur Linke
 
 LinkedIn amplifie le réel.
 
-Un salon, une conférence, un afterwork : chaque rencontre physique devient une connexion en ligne qui se souvient de vous. C'est toute la logique de l'Indépendance Day que nous organisons à Toulouse : 300 indépendants dans une salle, des centaines de connexions qualifiées ensuite.
+Un salon, une conférence, un afterwork : chaque rencontre physique devient une connexion en ligne qui se souvient de vous. C'est toute la logique de l'Indépendance Day que nous organisons à Toulouse : 150 indépendants dans une salle, des centaines de connexions qualifiées ensuite.
 
 <video src="/videos/evenements-reseau.mp4" autoplay loop muted playsinline preload="metadata" style="width:480px;max-width:100%;height:auto;border-radius:8px;"></video>
 

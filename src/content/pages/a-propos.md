@@ -10,7 +10,7 @@ lede: "Une agence toulousaine avec une conviction : la prospection se pilote ave
 
 ## Nassim Amisse, fondateur
 
-6 ans d'expertise LinkedIn, des centaines d'indépendants et de TPE accompagnés. Nassim est aussi le fondateur de [l'Indépendance Day](/independance-day/), la journée toulousaine qui réunit 300 indépendants, freelances et dirigeants de TPE chaque année au Diagora.
+6 ans d'expertise LinkedIn, des centaines d'indépendants et de TPE accompagnés. Nassim est aussi le fondateur de [l'Indépendance Day](/independance-day/), la journée toulousaine qui réunit 150 indépendants, freelances et dirigeants de TPE chaque année au Diagora.
 
 « Votre réseau contient déjà vos prochains clients. Notre travail, c'est de les révéler. »
 

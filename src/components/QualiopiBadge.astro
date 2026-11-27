@@ -1,0 +1,29 @@
+---
+// Badge de certification Qualiopi. Le logo officiel doit être déposé dans
+// public/images/qualiopi.webp (uploader l'image nommée « qualiopi » depuis le
+// board suffit : la CI la convertit en WebP). Tant que le fichier n'existe pas,
+// le badge ne s'affiche nulle part — aucun risque d'image cassée en prod.
+//
+// La mention légale est OBLIGATOIRE à côté du logo (catégorie certifiée).
+import { existsSync } from 'node:fs';
+
+interface Props {
+  variant?: 'footer' | 'block';
+}
+const { variant = 'block' } = Astro.props;
+const hasLogo = existsSync('public/images/qualiopi.webp');
+---
+{hasLogo && (
+  <div class:list={['qualiopi', `qualiopi-${variant}`]}>
+    <img
+      src="/images/qualiopi.webp"
+      alt="Organisme de formation certifié Qualiopi"
+      width="86"
+      height="86"
+      loading="lazy"
+      decoding="async"
+    />
+    <p>La certification qualité a été délivrée au titre de la catégorie d'actions
+      suivante : <strong>Actions de formation</strong>.</p>
+  </div>
+)}

@@ -1173,6 +1173,24 @@
   .quote-grid{grid-template-columns:1fr}
 }
 
+/* ---------- Badge Qualiopi ---------- */
+.qualiopi{display:flex;align-items:center;gap:14px}
+.qualiopi img{flex:none;width:72px;height:72px;object-fit:contain;background:#fff;border-radius:8px;padding:4px}
+.qualiopi p{margin:0;color:var(--muted);font-size:.8rem;line-height:1.45;max-width:46ch}
+.qualiopi p strong{color:var(--ink)}
+/* variante pied de page : compacte, centrée, séparée du reste */
+.qualiopi-footer{
+  justify-content:center;margin:4px auto 0;padding-top:16px;max-width:560px;
+  border-top:1px solid var(--edge);
+}
+.qualiopi-footer img{width:56px;height:56px}
+.qualiopi-footer p{font-size:.74rem;text-align:left}
+/* variante bloc : encart dans une page */
+.qualiopi-block{
+  margin:18px 0;padding:18px 20px;border:1px solid var(--edge);border-radius:12px;
+  background:var(--ghost);
+}
+
 /* ---------- Tableau comparatif (pages commerciales) ---------- */
 .cmp-wrap{overflow-x:auto;margin:16px 0}
 .cmp-table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem}
