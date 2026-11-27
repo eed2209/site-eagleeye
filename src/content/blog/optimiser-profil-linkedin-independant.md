@@ -6,6 +6,7 @@ draft: false
 keywords: ["optimiser profil linkedin", "profil linkedin indépendant", "titre linkedin"]
 pilier: "/offres/formation-linkedin/"
 category: "Profil LinkedIn"
+scanCta: "Votre profil LinkedIn convertit-il vos visiteurs en clients ? Scannez-le en 2 minutes et recevez votre score sur 100 avec vos 3 actions prioritaires."
 ---
 
 Votre profil LinkedIn est visité avant chaque rendez-vous. Avant chaque réponse à un message. Avant chaque mise en relation.
@@ -22,7 +23,7 @@ Voici la checklist que nous appliquons avec chaque client.
 
 « J'aide les TPE du bâtiment à trouver 5 chantiers par mois grâce à LinkedIn » dit tout.
 
-Votre titre suit vos commentaires et vos messages partout. C'est votre slogan.
+Votre titre suit vos commentaires et vos messages partout. C'est votre slogan. Pour le travailler à fond, voir nos [15 exemples de titres LinkedIn](/blog/titre-linkedin-exemples/).
 
 ## ➪ 2. La photo et la bannière
 
@@ -35,6 +36,11 @@ C'est la première impression. Elle se joue en une seconde.
 Racontez leur problème, votre méthode, et donnez une preuve chiffrée.
 
 Personne ne lit un parcours professionnel. Tout le monde lit la description de son propre problème.
+
+<aside class="scan-cta">
+  <p>Pas sûr que votre profil coche ces cases ? En 2 minutes, le diagnostic note votre profil et vous dit exactement quoi corriger en premier.</p>
+  <a class="btn" href="/scan/">Scanner mon profil gratuitement →</a>
+</aside>
 
 ## ➪ 4. Les recommandations
 
@@ -55,6 +61,8 @@ Chaque expérience doit contenir au moins un chiffre : clients accompagnés, ré
 Un détail. Mais un détail visible : linkedin.com/in/votre-nom, et un moyen de vous contacter accessible.
 
 ---
+
+Une fois votre profil prêt à recevoir des visites, passez à l'action : voici [comment prospecter sur LinkedIn en 5 étapes](/blog/comment-prospecter-sur-linkedin/).
 
 Pour aller plus loin, notre [formation LinkedIn](/offres/formation-linkedin/) couvre le profil, la ligne éditoriale et les premiers messages de prospection.
 

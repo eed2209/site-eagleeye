@@ -9,6 +9,7 @@ keywords:
   - se former à linkedin toulouse
 pilier: /offres/formation-linkedin/
 category: Local & Toulouse
+scanCta: "Avant de vous former, voyez où vous en êtes : scannez votre profil en 2 minutes et recevez votre score sur 100 avec vos 3 actions prioritaires."
 titleBreak: true
 ---
 
@@ -32,7 +33,7 @@ L'objectif n'est pas de « faire des posts ». C'est d'obtenir des rendez-vous q
 
 Chez Eagle Eye Digital, la [formation LinkedIn](/offres/formation-linkedin/) correspond à la première étape de notre [méthode 3C+2](/methode/) : la **Crédibilité**. En clair, vous apprenez à :
 
-- Réécrire votre profil pour qu'un visiteur comprenne en 5 secondes à qui vous êtes utile et à quel résultat.
+- [Réécrire votre profil](/blog/optimiser-profil-linkedin-independant/) pour qu'un visiteur comprenne en 5 secondes à qui vous êtes utile et à quel résultat.
 - Construire une ligne éditoriale simple, pensée pour un emploi du temps d'indépendant, pas d'influenceur.
 - Envoyer vos premiers messages de prospection avec la bonne cadence et le bon ton.
 - Lire les 4 chiffres qui comptent (vues de profil, taux d'acceptation, taux de réponse, rendez-vous) au lieu de publier à l'aveugle.
@@ -46,6 +47,11 @@ On peut se former à LinkedIn depuis n'importe où. Alors pourquoi privilégier 
 Parce que **connaître le terrain change le conseil**. Eagle Eye Digital est une agence toulousaine, fondée par Nassim Amisse, avec 6 ans d'expertise LinkedIn et des centaines d'indépendants et de TPE accompagnés. Cette connaissance du tissu économique local - artisans, consultants, professions libérales, dirigeants de TPE de la région - se retrouve dans les exemples, les cibles et les messages travaillés ensemble.
 
 Nous sommes aussi les fondateurs de [l'Indépendance Day](/independance-day/), la journée qui réunit chaque année 150 indépendants, freelances et dirigeants de TPE au Diagora, à Labège. Se former avec une équipe qui anime réellement le réseau local, c'est bénéficier d'un carnet d'adresses et d'exemples concrets, pas seulement de théorie.
+
+<aside class="scan-cta">
+  <p>Avant de vous former, mesurez votre point de départ : le diagnostic note votre profil et votre prospection en 2 minutes, et vous donne vos 3 actions prioritaires.</p>
+  <a class="btn" href="/scan/">Scanner mon profil gratuitement →</a>
+</aside>
 
 ## ➪ Présentiel, distanciel : comment ça se passe
 

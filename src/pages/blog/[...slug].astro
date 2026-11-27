@@ -15,6 +15,21 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await post.render();
 
+// Articles liés : priorité à la même catégorie, puis complétés par les plus
+// récents des autres catégories, jusqu'à 3. Exclut l'article courant et les
+// brouillons / articles programmés (date future).
+const now = Date.now();
+const allPosts = (await getCollection('blog', ({ data }) => data.draft !== true && data.date.valueOf() <= now))
+  .filter((p) => p.slug !== post.slug)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const sameCat = allPosts.filter((p) => p.data.category && p.data.category === post.data.category);
+const related = [...sameCat, ...allPosts.filter((p) => !sameCat.includes(p))].slice(0, 3);
+
+// CTA scanner de fin d'article : accroche contextualisée si fournie en
+// frontmatter (scanCta), sinon un texte générique.
+const scanCtaText = post.data.scanCta ||
+  "Faites le point en 2 minutes : scannez votre profil LinkedIn et recevez votre score sur 100 avec vos 3 actions prioritaires.";
+
 // Titre du H1 : l'autrice choisit où couper en insérant « // » (ou un vrai
 // retour à la ligne) dans le titre, là où elle veut un passage à la ligne.
 // À défaut, l'ancienne option titleBreak coupe après le premier " : ".
@@ -51,11 +66,26 @@ const articleSchema = {
     <h1>{titleLines.map((line, i) => (<>{i > 0 && <br />}{line}</>))}</h1>
     <p class="post-meta">Publié le {dateFr} · Eagle Eye Digital</p>
     <Content />
-    <section>
-      <h2>Passez à l'action</h2>
-      <p>Mesurez précisément où vous en êtes avec le diagnostic LinkedIn complet : votre score sur les 5 piliers et vos 3 actions prioritaires.</p>
-      <a class="btn" href="/scan/">Faire mon diagnostic gratuit</a>
-    </section>
+
+    <aside class="scan-cta">
+      <p>{scanCtaText}</p>
+      <a class="btn" href="/scan/">Scanner mon profil gratuitement →</a>
+    </aside>
+
+    {related.length > 0 && (
+      <nav class="article-related" aria-label="Articles liés">
+        <h2>À lire aussi</h2>
+        <ul class="rel-grid">
+          {related.map((p) => (
+            <li class="rel-card">
+              {p.data.category && <span class="rel-cat">{p.data.category}</span>}
+              <a href={`/blog/${p.slug}/`}>{p.data.title.replace(/\s*\/\/\s*/g, ' ')}</a>
+              <span class="rel-more">Lire l'article →</span>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
   </main>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 </Base>

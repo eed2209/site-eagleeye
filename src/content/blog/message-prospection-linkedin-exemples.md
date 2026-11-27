@@ -6,6 +6,7 @@ draft: false
 keywords: ["message prospection linkedin", "exemple message linkedin", "prospection linkedin"]
 pilier: "/offres/accompagnement-prospection/"
 category: "Prospection"
+scanCta: "Vos messages de prospection restent sans réponse ? Scannez votre profil et votre approche en 2 minutes et recevez vos 3 actions prioritaires."
 titleBreak: true
 ---
 
@@ -41,6 +42,11 @@ Vous prouvez que vous avez lu. C'est rare. Donc remarqué.
 
 Une question à laquelle il est agréable de répondre.
 
+<aside class="scan-cta">
+  <p>Un bon message ne sert à rien si votre profil ne rassure pas. Scannez votre profil en 2 minutes et recevez vos 3 actions prioritaires.</p>
+  <a class="btn" href="/scan/">Scanner mon profil gratuitement →</a>
+</aside>
+
 ## ➪ Exemple 4 : la mise en relation contextualisée
 
 > Bonjour Thomas, nous étions tous les deux à l'Indépendance Day au Diagora. Votre atelier sur la trésorerie était très concret. Connectons-nous !
@@ -57,4 +63,4 @@ La majorité des réponses arrivent après la première relance. Relancez, toujo
 
 L'écriture des messages n'est qu'un étage de la machine.
 
-Le ciblage, le rythme et les relances font le reste. 👉 C'est exactement ce que nous pilotons avec vous dans l'[accompagnement prospection](/offres/accompagnement-prospection/). Commencez par mesurer votre situation avec le [diagnostic gratuit](/diagnostic-linkedin/).
+Le [ciblage, le rythme et les relances](/blog/comment-prospecter-sur-linkedin/) font le reste. 👉 C'est exactement ce que nous pilotons avec vous dans l'[accompagnement prospection](/offres/accompagnement-prospection/). Commencez par mesurer votre situation avec le [diagnostic gratuit](/diagnostic-linkedin/).

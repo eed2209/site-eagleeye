@@ -6,6 +6,7 @@ draft: false
 keywords: ["ssi linkedin", "social selling index", "score linkedin"]
 pilier: "/diagnostic-linkedin/"
 category: "Mesure & résultats"
+scanCta: "Le SSI mesure votre activité, pas vos résultats. Scannez ce qui compte vraiment en 2 minutes et recevez votre score sur 100 avec vos 3 actions prioritaires."
 ---
 
 <img src="/images/ssi-score.webp" alt="Exemple de score SSI LinkedIn : 88 sur 100, réparti sur les 4 piliers" style="width:520px;max-width:100%;height:auto;border-radius:8px;" />
@@ -35,9 +36,14 @@ Le SSI mesure votre **activité**. Pas vos **résultats**.
 
 Vous pouvez avoir un SSI de 75 et 0 client. Il suffit d'être très actif auprès des mauvaises personnes, avec un profil qui ne convertit pas.
 
-À l'inverse, des indépendants au SSI moyen remplissent leur agenda. Parce que leur ciblage et leurs messages sont excellents.
+À l'inverse, des indépendants au SSI moyen remplissent leur agenda. Parce que leur [ciblage et leurs messages](/blog/comment-prospecter-sur-linkedin/) sont excellents.
 
 Autre limite : le SSI est pensé pour les commerciaux équipés de Sales Navigator. Une partie du score récompense simplement l'utilisation des outils payants de LinkedIn.
+
+<aside class="scan-cta">
+  <p>Envie d'un score qui mesure vos résultats, pas juste votre activité ? Le diagnostic vous le donne en 2 minutes, avec vos 3 actions prioritaires.</p>
+  <a class="btn" href="/scan/">Scanner mon profil gratuitement →</a>
+</aside>
 
 ## ➪ Les chiffres qui comptent davantage
 

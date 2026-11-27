@@ -9,6 +9,7 @@ keywords:
   - accroche linkedin indépendant
 pilier: /offres/formation-linkedin/
 category: "Profil LinkedIn"
+scanCta: "Votre titre accroche-t-il vraiment vos clients ? Scannez votre profil en 2 minutes et recevez votre score sur 100 avec vos 3 actions prioritaires."
 titleBreak: true
 ---
 
@@ -111,6 +112,11 @@ Vous n'êtes pas obligé de caser les 3 à chaque fois. Mais si votre titre n'a 
 15. > Assistante indépendante | je décharge les dirigeants de 20 h de tâches par mois
 
     Un chiffre rend immédiatement tangible un service abstrait.
+
+<aside class="scan-cta">
+  <p>Un bon titre attire l'œil, mais c'est tout le profil qui transforme. Scannez le vôtre en 2 minutes et voyez où vous perdez des clients.</p>
+  <a class="btn" href="/scan/">Scanner mon profil gratuitement →</a>
+</aside>
 
 ## ➪ Les 4 erreurs qui gâchent un titre
 

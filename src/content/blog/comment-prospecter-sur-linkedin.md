@@ -6,6 +6,7 @@ draft: false
 keywords: ["comment prospecter sur linkedin", "prospection linkedin", "prospection linkedin indépendant"]
 pilier: "/offres/accompagnement-prospection/"
 category: "Prospection"
+scanCta: "Vous prospectez mais trop peu de rendez-vous arrivent ? Scannez votre profil et votre méthode en 2 minutes et recevez vos 3 actions prioritaires."
 titleBreak: true
 ---
 
@@ -46,6 +47,11 @@ Un point commun, une raison honnête de se connecter, et c'est tout. Nos [5 exem
 Le rythme qui fonctionne pour un indépendant : 10 demandes ciblées par jour ouvré. Soit environ 200 par mois.
 
 Au-delà, la qualité chute et LinkedIn peut restreindre votre compte.
+
+<aside class="scan-cta">
+  <p>Avant d'envoyer la première demande, vérifiez que votre profil est prêt à convertir. Scannez-le en 2 minutes et recevez vos 3 actions prioritaires.</p>
+  <a class="btn" href="/scan/">Scanner mon profil gratuitement →</a>
+</aside>
 
 ## ➪ Étape 4 : la conversation avant la vente
 

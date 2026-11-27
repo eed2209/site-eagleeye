@@ -6,6 +6,7 @@ draft: false
 keywords: ["trouver des clients sur linkedin", "trouver des clients indépendant", "linkedin tpe"]
 pilier: "/offres/accompagnement-prospection/"
 category: "Prospection"
+scanCta: "Vous activez plusieurs leviers mais les clients ne suivent pas ? Scannez votre profil en 2 minutes et recevez votre score sur 100 avec vos 3 actions prioritaires."
 ---
 
 LinkedIn est le seul réseau social où vos futurs clients affichent leur métier, leur entreprise et leurs problèmes du moment.
@@ -32,7 +33,7 @@ Demandez-les à la fin de chaque mission réussie. C'est le meilleur moment.
 
 ## ➪ 3. La publication régulière
 
-Un post par semaine suffit, s'il est utile à votre cible. Un conseil applicable, un retour d'expérience chiffré, une erreur courante à éviter.
+Un post par semaine suffit, s'il est utile à votre cible. Un conseil applicable, un retour d'expérience chiffré, une erreur courante à éviter. (On détaille [à quelle fréquence publier sur LinkedIn](/blog/a-quelle-frequence-publier-sur-linkedin/) dans un guide dédié.)
 
 La régularité bat le génie. C'est celui qui publie chaque semaine qu'on retient. Pas celui qui a publié un très bon post il y a 6 mois.
 
@@ -43,6 +44,11 @@ Commenter les publications de vos cibles et des comptes qu'elles suivent vous re
 ![Commenter pour être visible sur LinkedIn](/images/commentaires-strategiques.webp)
 
 15 minutes par jour de commentaires pertinents génèrent souvent plus de visites de profil que vos propres posts.
+
+<aside class="scan-cta">
+  <p>Lequel de ces leviers vous rapportera le plus, vu votre situation ? Le diagnostic vous le dit en 2 minutes, avec vos 3 actions prioritaires.</p>
+  <a class="btn" href="/scan/">Scanner mon profil gratuitement →</a>
+</aside>
 
 ## ➪ 5. La prospection directe
 

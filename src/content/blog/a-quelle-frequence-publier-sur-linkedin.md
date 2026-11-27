@@ -9,6 +9,7 @@ keywords:
   - nombre de posts linkedin par semaine
 pilier: /offres/formation-linkedin/
 category: Contenu & visibilité
+scanCta: "Vous publiez régulièrement mais ça ne génère rien ? Scannez votre profil en 2 minutes et recevez vos 3 actions prioritaires."
 titleBreak: true
 ---
 
@@ -58,6 +59,11 @@ Les premières semaines servent à roder votre ligne éditoriale et à réhabitu
 
 C'est précisément pour ça que la fréquence idéale est celle que vous tiendrez sur la durée, pas celle qui impressionne la première semaine.
 
+<aside class="scan-cta">
+  <p>Vous publiez régulièrement mais ça ne génère rien ? Le problème vient souvent du profil ou du ciblage, pas du rythme. Scannez votre profil en 2 minutes et recevez vos 3 actions prioritaires.</p>
+  <a class="btn" href="/scan/">Scanner mon profil gratuitement →</a>
+</aside>
+
 ## ➪ Comment tenir le rythme sans y passer vos journées
 
 Le secret des indépendants réguliers n'est pas la motivation, c'est la méthode. Trois réflexes qui changent tout :
@@ -77,7 +83,7 @@ Les jours de semaine en matinée (du mardi au jeudi, entre 8 h et 10 h) fonction
 Le trafic est plus faible, mais la concurrence aussi. Si votre cible consulte LinkedIn le dimanche soir, un post peut très bien ressortir. À tester selon votre audience.
 
 **Vaut-il mieux publier ou commenter ?**
-Les deux sont complémentaires. Commenter chez les autres vous rend visible sans produire de contenu, c'est le levier le plus rentable quand vous manquez de temps. L'idéal : 2 à 3 posts par semaine, et quelques commentaires utiles chaque jour.
+Les deux sont complémentaires. [Commenter chez les autres](/blog/trouver-des-clients-sur-linkedin/) vous rend visible sans produire de contenu, c'est le levier le plus rentable quand vous manquez de temps. L'idéal : 2 à 3 posts par semaine, et quelques commentaires utiles chaque jour.
 
 **Combien de posts pour commencer à avoir des résultats ?**
 Il n'y a pas de seuil magique, mais comptez une vingtaine de publications régulières avant que votre réseau vous identifie clairement sur un sujet. D'où l'importance de tenir le rythme plusieurs mois.
