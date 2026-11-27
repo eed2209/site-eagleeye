@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import { getCollection } from 'astro:content';
+import { WEBINAR_URL } from '../../lib/site';
 
 const now = Date.now();
 const posts = (await getCollection('blog', ({ data }) => data.draft !== true && data.date.valueOf() <= now)).sort(
@@ -19,6 +20,17 @@ const fmtDate = (d) => d.toLocaleDateString('fr-FR', { year: 'numeric', month: '
     <span class="eyebrow">Blog</span>
     <h1>Trouver des clients sur LinkedIn, article après article.</h1>
     <p class="lede">Des conseils applicables tout de suite, tirés de 6 ans d'accompagnement d'indépendants et de TPE.</p>
+
+    {WEBINAR_URL && (
+      <aside class="webinar-banner">
+        <div class="wb-txt">
+          <span class="wb-eyebrow">Webinaire gratuit</span>
+          <h2>Prochaine masterclass LinkedIn &times; IA</h2>
+          <p>90 minutes en direct avec Nassim Amisse pour transformer LinkedIn en machine à rendez-vous. Inscription gratuite, places limitées.</p>
+        </div>
+        <a class="btn" href={WEBINAR_URL} target="_blank" rel="noopener">M'inscrire au prochain webinaire</a>
+      </aside>
+    )}
 
     {categories.length > 0 && (
       <div class="cat-filter" aria-label="Filtrer par catégorie">

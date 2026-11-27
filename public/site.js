@@ -19,6 +19,10 @@ if (location.hostname === 'eagleeye.digital' || location.hostname === 'www.eagle
   RDV_URL = 'https://rdv.eagleeye.digital';
 }
 
+/* URL d'inscription au webinaire (tunnel masterclass). Vide = bouton masqué,
+   comme pour le RDV. Le second CTA des résultats du scanner pointe dessus. */
+var WEBINAR_URL = 'https://masterclass.eagleeye.digital';
+
 /* Liens directs vers la prise de RDV : tout <a data-rdv="..."> pointe vers
    l'outil (la valeur de data-rdv sert de traceur utm_medium). Masqué si
    l'outil n'est pas disponible (démo GitHub). */
@@ -712,6 +716,18 @@ if (location.hostname === 'eagleeye.digital' || location.hostname === 'www.eagle
         rdv.href = RDV_URL + (RDV_URL.indexOf('?') === -1 ? '?' : '&') + q1;
         rdv.style.display = 'flex';
       }
+    }
+
+    /* 2e porte de sortie : le webinaire gratuit. Alternative douce au RDV —
+       précieuse notamment quand le RDV est masqué (score faible + autonomie). */
+    var webinar = document.getElementById('webinarCta');
+    if (webinar && WEBINAR_URL){
+      var wq = 'eed_score=' + s.global +
+              '&utm_source=site&utm_medium=scanner&utm_campaign=webinaire';
+      webinar.href = WEBINAR_URL + (WEBINAR_URL.indexOf('?') === -1 ? '?' : '&') + wq;
+      webinar.style.display = 'flex';
+    } else if (webinar) {
+      webinar.style.display = 'none';
     }
   }
 

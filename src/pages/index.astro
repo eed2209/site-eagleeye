@@ -1,10 +1,42 @@
 ---
 import Base from '../layouts/Base.astro';
 import body from '../home-body.html?raw';
+import { getCollection } from 'astro:content';
+
+// Derniers articles du blog, injectés dans la home à l'emplacement du
+// marqueur <!--DERNIERS_ARTICLES-->. Donne du jus de maillage interne au blog
+// depuis la page la plus forte du site.
+const now = Date.now();
+const latest = (await getCollection('blog', ({ data }) => data.draft !== true && data.date.valueOf() <= now))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const cards = latest.map((p) => {
+  const title = esc(p.data.title.replace(/\s*\/\/\s*/g, ' '));
+  const cat = p.data.category ? `<span class="rel-cat">${esc(p.data.category)}</span>` : '';
+  return `<li class="rel-card">${cat}<a href="/blog/${p.slug}/">${title}</a><span class="rel-more">Lire l'article →</span></li>`;
+}).join('');
+
+const blogSection = latest.length === 0 ? '' : `
+<section class="home-blog" id="blog-latest">
+  <div class="wrap">
+    <div class="home-blog-head">
+      <div>
+        <span class="eyebrow">Le blog</span>
+        <h2>Trouver des clients sur LinkedIn, article après article.</h2>
+      </div>
+      <a class="link" href="/blog/">Tous les articles →</a>
+    </div>
+    <ul class="rel-grid">${cards}</ul>
+  </div>
+</section>`;
+
+const homeHtml = body.replace('<!--DERNIERS_ARTICLES-->', blogSection);
 ---
 <Base
   title="Eagle Eye Digital : trouvez vos clients grâce à LinkedIn"
   description="Diagnostic LinkedIn gratuit en 10 questions, puis la méthode Eagle Eye Digital : profil, prospection, webinaire, rendez-vous. Pour les indépendants et TPE, à Toulouse et partout en France."
 >
-  <Fragment set:html={body} />
+  <Fragment set:html={homeHtml} />
 </Base>
