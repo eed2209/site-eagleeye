@@ -1,0 +1,105 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+
+const faqItems = [
+  {
+    q: "Que fait une agence de prospection LinkedIn ?",
+    a: "Elle prend en charge votre développement commercial sur LinkedIn : optimisation du profil, ciblage, messages, relances et pilotage par les chiffres, pour vous amener des rendez-vous qualifiés sans que vous ayez à tout gérer vous-même.",
+  },
+  {
+    q: "Comment travaille Eagle Eye Digital ?",
+    a: "Avec le LinkedIn Business Accelerator : les 30 premiers jours, l'équipe met en place les actions (profil, offre, activation du réseau). Les mois suivants, vous sécurisez la durée avec un coaching collectif 3 fois par semaine et un pilotage continu, selon la méthode 3C+2.",
+  },
+  {
+    q: "En combien de temps a-t-on des résultats ?",
+    a: "Les premières conversations arrivent en quelques semaines ; les rendez-vous réguliers se construisent sur la durée. La prospection se pilote avec des chiffres : vues de profil, taux d'acceptation, taux de réponse, rendez-vous obtenus.",
+  },
+  {
+    q: "Faut-il être à Toulouse ?",
+    a: "Non. Eagle Eye Digital est une agence toulousaine mais accompagne des indépendants et des TPE partout en France, et dans 5 pays francophones.",
+  },
+];
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+---
+<Base
+  title="Agence de prospection LinkedIn pour indépendants et TPE | Eagle Eye Digital"
+  description="Déléguez votre prospection LinkedIn à une agence qui pilote tout par les chiffres : profil, ciblage, messages, relances, rendez-vous. Agence toulousaine, 450 entrepreneurs accompagnés."
+>
+  <Header />
+  <main class="page">
+    <span class="eyebrow">Agence de prospection LinkedIn</span>
+    <h1>Votre prospection LinkedIn, pilotée par une agence.</h1>
+    <p class="lede">Vous n'avez pas le temps de prospecter, ou vous voulez des résultats plus vite ? Nous installons et pilotons votre machine à rendez-vous sur LinkedIn, mesurée à chaque étape et sans sur-vente.</p>
+
+    <ul class="proof-row">
+      <li><b>450</b>entrepreneurs accompagnés</li>
+      <li><b>4,8/5</b>sur 47 avis Google</li>
+      <li><b>5 pays</b>FR · BE · CH · MA · CA</li>
+      <li><b>6 ans</b>d'expertise LinkedIn</li>
+    </ul>
+
+    <section>
+      <h2>La promesse</h2>
+      <p>Notre conviction depuis le premier jour : la prospection se pilote avec des chiffres, pas avec de l'espoir. Chaque étape se mesure, chaque chiffre se règle. Vous gardez la main sur votre image ; nous prenons en charge la mécanique.</p>
+    </section>
+
+    <section>
+      <h2>La méthode 3C+2</h2>
+      <p>Notre méthode signature structure la prospection en 5 maillons, dans cet ordre :</p>
+      <ul>
+        <li><strong>Crédibilité</strong> : un profil et des publications qui inspirent confiance.</li>
+        <li><strong>Connexions</strong> : faire entrer proactivement les bonnes personnes dans votre réseau.</li>
+        <li><strong>Conquête</strong> : engager la conversation par message, au bon moment.</li>
+        <li><strong>Conversion</strong> : transformer les rendez-vous en clients.</li>
+        <li><strong>Catalyseur</strong> : automatisations et IA pour démultiplier les résultats.</li>
+      </ul>
+      <p>Découvrez <a href="/methode-3c-plus-2/">la méthode 3C+2 en détail</a>, ou notre offre d'<a href="/offres/accompagnement-prospection/">accompagnement prospection</a>.</p>
+    </section>
+
+    <section>
+      <h2>Des résultats concrets</h2>
+      <ul class="quote-grid">
+        <li class="quote-card">
+          <span class="q-stars" aria-hidden="true">★★★★★</span>
+          <blockquote>« J'ai triplé ma visibilité sur LinkedIn en seulement un mois. Des réponses précises et immédiatement applicables. »</blockquote>
+          <figcaption>Pierre Petruzzelli</figcaption>
+        </li>
+        <li class="quote-card">
+          <span class="q-stars" aria-hidden="true">★★★★★</span>
+          <blockquote>« Eagle Eye Digital a mis en place une solution pour optimiser ma prospection : réseau élargi, contacts et abonnés en hausse. »</blockquote>
+          <figcaption>Aurélie Malochet</figcaption>
+        </li>
+        <li class="quote-card">
+          <span class="q-stars" aria-hidden="true">★★★★★</span>
+          <blockquote>« Une stratégie de prospection qui a abouti à la signature de 5 contrats. »</blockquote>
+          <figcaption>Bernard Quidarré</figcaption>
+        </li>
+      </ul>
+      <p><a href="/temoignages/">Voir tous les témoignages →</a></p>
+    </section>
+
+    <section class="faq">
+      <h2>Questions fréquentes</h2>
+      <dl>
+        {faqItems.map((f) => (<><dt>{f.q}</dt><dd>{f.a}</dd></>))}
+      </dl>
+    </section>
+
+    <section>
+      <h2>Par où commencer ?</h2>
+      <p>Faites le point en 2 minutes. Le diagnostic gratuit note votre profil et votre prospection, et vous donne vos 3 actions prioritaires.</p>
+      <a class="btn" href="/scan/">Scanner mon profil gratuitement →</a>
+      <p>Vous savez déjà où vous en êtes ? <a data-rdv="agence-prospection">Prenez rendez-vous</a> avec notre équipe.</p>
+    </section>
+  </main>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</Base>

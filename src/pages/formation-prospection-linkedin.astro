@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+
+const faqItems = [
+  {
+    q: "À qui s'adresse cette formation à la prospection LinkedIn ?",
+    a: "Aux indépendants, freelances et dirigeants de TPE qui veulent apprendre à trouver des clients sur LinkedIn par eux-mêmes, sans déléguer. Aucun prérequis technique : on part de votre profil actuel.",
+  },
+  {
+    q: "Que vais-je savoir faire à la fin ?",
+    a: "Définir une cible précise, optimiser votre profil pour qu'il convertisse, écrire des messages de prospection qui obtiennent des réponses, tenir une cadence réaliste et lire les 4 chiffres qui comptent (vues, acceptation, réponse, rendez-vous).",
+  },
+  {
+    q: "La formation est-elle finançable ?",
+    a: "Oui. Eagle Eye Digital est un organisme de formation certifié Qualiopi, ce qui ouvre la voie à une prise en charge selon votre situation. Nous vous indiquons les démarches.",
+  },
+  {
+    q: "Formation ou accompagnement : quelle différence ?",
+    a: "La formation vous rend autonome : vous apprenez et vous appliquez. L'accompagnement (LinkedIn Business Accelerator) installe la machine avec vous et pilote la prospection à vos côtés. Le diagnostic gratuit vous oriente vers l'option adaptée à votre étape.",
+  },
+];
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+---
+<Base
+  title="Formation prospection LinkedIn pour indépendants et TPE | Eagle Eye Digital"
+  description="Apprenez à prospecter sur LinkedIn et à remplir votre agenda : profil qui convertit, messages qui obtiennent des réponses, cadence tenable. Formation certifiée Qualiopi, à Toulouse et à distance."
+>
+  <Header />
+  <main class="page">
+    <span class="eyebrow">Formation prospection LinkedIn</span>
+    <h1>Apprenez à prospecter sur LinkedIn, et remplissez votre agenda.</h1>
+    <p class="lede">Une formation concrète pour les indépendants et les TPE : vous repartez avec un profil qui convertit, des messages qui obtiennent des réponses et une méthode de prospection que vous tenez dans la durée.</p>
+
+    <ul class="proof-row">
+      <li><b>450</b>entrepreneurs accompagnés</li>
+      <li><b>4,8/5</b>sur 47 avis Google</li>
+      <li><b>6 ans</b>d'expertise LinkedIn</li>
+      <li><b>Qualiopi</b>organisme certifié, finançable</li>
+    </ul>
+
+    <section>
+      <h2>La promesse</h2>
+      <p>La plupart des formations LinkedIn vous noient sous les fonctionnalités. Nous faisons l'inverse : une seule chose compte, obtenir des rendez-vous qualifiés. Vous apprenez à prospecter avec méthode, sans harceler personne et sans y passer vos journées.</p>
+      <p>Comptez environ 30 minutes de prospection par jour ouvré une fois la méthode en place : 10 demandes ciblées, les réponses du jour, 2 ou 3 relances.</p>
+    </section>
+
+    <section>
+      <h2>La méthode 3C+2</h2>
+      <p>Notre méthode signature structure la prospection en 5 maillons, dans cet ordre :</p>
+      <ul>
+        <li><strong>Crédibilité</strong> : un profil et des publications qui donnent envie de vous parler.</li>
+        <li><strong>Connexions</strong> : faire entrer les bonnes personnes dans votre réseau.</li>
+        <li><strong>Conquête</strong> : engager la conversation par message, au bon moment.</li>
+        <li><strong>Conversion</strong> : transformer les rendez-vous en clients.</li>
+        <li><strong>Catalyseur</strong> : les bons outils et l'IA pour gagner du temps.</li>
+      </ul>
+      <p>Découvrez <a href="/methode-3c-plus-2/">la méthode 3C+2 en détail</a>.</p>
+    </section>
+
+    <section>
+      <h2>Ils l'ont fait</h2>
+      <ul class="quote-grid">
+        <li class="quote-card">
+          <span class="q-stars" aria-hidden="true">★★★★★</span>
+          <blockquote>« J'ai triplé ma visibilité sur LinkedIn grâce à un accompagnement précis et extrêmement efficace en seulement un mois. »</blockquote>
+          <figcaption>Pierre Petruzzelli</figcaption>
+        </li>
+        <li class="quote-card">
+          <span class="q-stars" aria-hidden="true">★★★★★</span>
+          <blockquote>« Résultat : 1200 abonnés LinkedIn en 3 mois et un niveau d'autonomie que je n'aurais jamais imaginé atteindre. »</blockquote>
+          <figcaption>Philippe Griffol</figcaption>
+        </li>
+        <li class="quote-card">
+          <span class="q-stars" aria-hidden="true">★★★★★</span>
+          <blockquote>« Une stratégie de prospection qui a abouti à la signature de 5 contrats. »</blockquote>
+          <figcaption>Bernard Quidarré</figcaption>
+        </li>
+      </ul>
+      <p><a href="/temoignages/">Voir tous les témoignages →</a></p>
+    </section>
+
+    <section class="faq">
+      <h2>Questions fréquentes</h2>
+      <dl>
+        {faqItems.map((f) => (<><dt>{f.q}</dt><dd>{f.a}</dd></>))}
+      </dl>
+    </section>
+
+    <section>
+      <h2>Par où commencer ?</h2>
+      <p>Mesurez d'abord où vous en êtes. Le diagnostic gratuit note votre profil et votre prospection en 2 minutes, et vous donne vos 3 actions prioritaires.</p>
+      <a class="btn" href="/scan/">Scanner mon profil gratuitement →</a>
+      <p>Vous préférez en parler ? <a data-rdv="formation-prospection">Prenez rendez-vous</a> avec notre équipe.</p>
+    </section>
+  </main>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</Base>

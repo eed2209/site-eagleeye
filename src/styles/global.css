@@ -1152,6 +1152,39 @@
 .webinar-banner p{margin:0;color:var(--muted);font-size:.92rem;max-width:52ch}
 .webinar-banner .btn{margin:0;white-space:nowrap}
 
+/* ---------- Pages commerciales : preuves + citations clients ---------- */
+.proof-row{
+  list-style:none;display:flex;flex-wrap:wrap;gap:14px 30px;margin:18px 0 6px;padding:0;
+}
+.proof-row li{color:var(--muted);font-size:.9rem;font-weight:600;margin:0}
+.proof-row b{display:block;color:var(--ink);font-size:1.6rem;line-height:1;font-weight:800;margin-bottom:4px}
+.quote-grid{
+  list-style:none;margin:16px 0 0;padding:0;display:grid;gap:16px;
+  grid-template-columns:repeat(3,1fr);
+}
+.quote-card{
+  background:var(--bg-soft);border:1px solid var(--edge);border-radius:14px;
+  padding:20px 22px;display:flex;flex-direction:column;
+}
+.quote-card blockquote{margin:0 0 12px;color:var(--ink);font-size:.95rem;line-height:1.55}
+.quote-card figcaption{margin-top:auto;color:var(--muted);font-size:.85rem;font-weight:600}
+.quote-card .q-stars{color:var(--gold);letter-spacing:1px;font-size:.95rem;margin-bottom:10px}
+@media (max-width:760px){
+  .quote-grid{grid-template-columns:1fr}
+}
+
+/* ---------- Tableau comparatif (pages commerciales) ---------- */
+.cmp-wrap{overflow-x:auto;margin:16px 0}
+.cmp-table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem}
+.cmp-table th,.cmp-table td{
+  text-align:left;padding:12px 14px;border-bottom:1px solid var(--edge);color:var(--muted);
+  vertical-align:top;
+}
+.cmp-table thead th{color:var(--ink);font-weight:700;border-bottom:2px solid var(--edge)}
+.cmp-table tbody th{color:var(--ink);font-weight:600;white-space:nowrap}
+.cmp-table td.hi{color:var(--ink)}
+.cmp-table .col-eed{background:var(--ghost)}
+
 /* ---------- 2e CTA (webinaire) dans les résultats du scanner ---------- */
 .webinar-cta{
   justify-content:center;width:100%;margin-bottom:12px;

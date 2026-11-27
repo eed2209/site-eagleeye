@@ -1,0 +1,144 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+
+const faqItems = [
+  {
+    q: "Agence, freelance ou recrutement interne : quelle est la différence ?",
+    a: "Un freelance exécute des tâches (envoyer des messages, publier) mais rarement une stratégie complète pilotée par les chiffres. Un commercial interne coûte cher et met des mois à être rentable. Une agence spécialisée apporte une méthode éprouvée, des outils et un pilotage, pour un coût et un délai maîtrisés.",
+  },
+  {
+    q: "Et si je veux rester autonome ?",
+    a: "C'est possible et parfois la meilleure option quand on débute : une formation vous rend capable de prospecter vous-même. Voir notre page Formation prospection LinkedIn. Le diagnostic gratuit vous aide à choisir entre vous former et être accompagné.",
+  },
+  {
+    q: "Combien ça coûte ?",
+    a: "Cela dépend de votre étape et de l'option choisie. Le principe d'Eagle Eye Digital est de ne pas sur-vendre : le diagnostic oriente chacun vers l'offre adaptée, de la formation à l'accompagnement complet.",
+  },
+  {
+    q: "Comment être sûr de faire le bon choix ?",
+    a: "Commencez par mesurer votre situation avec le diagnostic LinkedIn gratuit : il situe votre niveau et indique si vous avez surtout besoin de vous former, d'être accompagné, ou de passer à l'échelle.",
+  },
+];
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+---
+<Base
+  title="Prospection LinkedIn : agence, freelance ou en interne ? | Eagle Eye Digital"
+  description="Faut-il confier sa prospection LinkedIn à une agence, un freelance, un commercial interne, ou se former soi-même ? Comparatif honnête des coûts, délais et résultats pour indépendants et TPE."
+>
+  <Header />
+  <main class="page">
+    <span class="eyebrow">Comparatif</span>
+    <h1>Prospection LinkedIn : agence, freelance ou en interne ?</h1>
+    <p class="lede">Quatre façons de développer votre activité sur LinkedIn : vous former, prendre un freelance, recruter en interne, ou confier le pilotage à une agence spécialisée. Voici un comparatif honnête pour choisir selon votre étape.</p>
+
+    <section>
+      <h2>Le comparatif en un coup d'œil</h2>
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th>Critère</th>
+              <th>Se former</th>
+              <th>Freelance</th>
+              <th>Interne</th>
+              <th class="col-eed">Agence spécialisée</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Coût de départ</th>
+              <td class="hi">Faible</td>
+              <td>Variable</td>
+              <td>Élevé (salaire)</td>
+              <td class="col-eed">Maîtrisé</td>
+            </tr>
+            <tr>
+              <th>Délai avant résultats</th>
+              <td>Dépend de vous</td>
+              <td>Moyen</td>
+              <td>Long (montée en compétence)</td>
+              <td class="col-eed hi">Rapide</td>
+            </tr>
+            <tr>
+              <th>Méthode &amp; pilotage</th>
+              <td>À acquérir</td>
+              <td>Inégal</td>
+              <td>À construire</td>
+              <td class="col-eed hi">Éprouvés, mesurés</td>
+            </tr>
+            <tr>
+              <th>Votre temps mobilisé</th>
+              <td>Élevé</td>
+              <td>Moyen</td>
+              <td>Management</td>
+              <td class="col-eed">Faible</td>
+            </tr>
+            <tr>
+              <th>Autonomie finale</th>
+              <td class="hi">Totale</td>
+              <td>Faible</td>
+              <td>Interne</td>
+              <td class="col-eed">Transférée</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Il n'y a pas de bon choix dans l'absolu : il y a le bon choix <strong>pour votre étape</strong>.</p>
+    </section>
+
+    <section>
+      <h2>Comment choisir selon votre situation</h2>
+      <ul>
+        <li><strong>Vous débutez et voulez rester autonome</strong> : commencez par vous former. Voir la <a href="/formation-prospection-linkedin/">formation prospection LinkedIn</a>.</li>
+        <li><strong>Vous manquez de temps et voulez des résultats plus vite</strong> : déléguez le pilotage. Voir l'<a href="/agence-prospection-linkedin/">agence de prospection LinkedIn</a>.</li>
+        <li><strong>Vous ne savez pas encore</strong> : laissez le diagnostic trancher. Il situe votre niveau en 2 minutes.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Pourquoi une agence comme Eagle Eye Digital</h2>
+      <p>Notre méthode <a href="/methode-3c-plus-2/">3C+2</a> structure la prospection en 5 maillons mesurés : Crédibilité, Connexions, Conquête, Conversion, Catalyseur. Plus de 450 entrepreneurs accompagnés, 4,8/5 sur 47 avis Google, et une garantie satisfait ou remboursé jamais activée à ce jour.</p>
+      <ul class="quote-grid">
+        <li class="quote-card">
+          <span class="q-stars" aria-hidden="true">★★★★★</span>
+          <blockquote>« J'ai triplé ma visibilité sur LinkedIn en seulement un mois. »</blockquote>
+          <figcaption>Pierre Petruzzelli</figcaption>
+        </li>
+        <li class="quote-card">
+          <span class="q-stars" aria-hidden="true">★★★★★</span>
+          <blockquote>« 1200 abonnés LinkedIn en 3 mois, et une autonomie que je n'aurais jamais imaginée. »</blockquote>
+          <figcaption>Philippe Griffol</figcaption>
+        </li>
+        <li class="quote-card">
+          <span class="q-stars" aria-hidden="true">★★★★★</span>
+          <blockquote>« Une stratégie de prospection qui a abouti à la signature de 5 contrats. »</blockquote>
+          <figcaption>Bernard Quidarré</figcaption>
+        </li>
+      </ul>
+    </section>
+
+    <section class="faq">
+      <h2>Questions fréquentes</h2>
+      <dl>
+        {faqItems.map((f) => (<><dt>{f.q}</dt><dd>{f.a}</dd></>))}
+      </dl>
+    </section>
+
+    <section>
+      <h2>Par où commencer ?</h2>
+      <p>Avant de choisir, mesurez votre situation. Le diagnostic gratuit vous donne votre score sur 100 et vos 3 actions prioritaires en 2 minutes.</p>
+      <a class="btn" href="/scan/">Scanner mon profil gratuitement →</a>
+      <p>Une question ? <a data-rdv="comparatif-prospection">Prenez rendez-vous</a> avec notre équipe.</p>
+    </section>
+  </main>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</Base>
